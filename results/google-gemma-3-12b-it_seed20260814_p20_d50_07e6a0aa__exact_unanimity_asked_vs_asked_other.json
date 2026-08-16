@@ -1,0 +1,29 @@
+{
+ "contrast": "asked:asked_other",
+ "prefix": "google-gemma-3-12b-it_seed20260814_p20_d50_07e6a0aa",
+ "n_rows": 120,
+ "n_pairs": 20,
+ "orbit_size": 1048576,
+ "observed_gap": 0.07017543859649122,
+ "observed_acc_unanimous": 0.7368421052631579,
+ "observed_best_single": 0.6666666666666666,
+ "observed_n_unanimous": 38,
+ "tail_count": 55660,
+ "zero_unanimity_assignments": 0,
+ "p_enumerated": 0.053081512451171875,
+ "method": "exhaustive_enumeration_fast_algebra",
+ "empty_subset_convention": "treated as no bonus (gap = 0), not skipped",
+ "threshold": 0.05,
+ "threshold_count": 52428.8,
+ "margin_assignments": 3231.199999999997,
+ "count_certified": false,
+ "count_caveat": "NOT a certified count. The fast orbit algebra reconstructs centroids from sums and a Gram matrix; the production classifier forms means and normalises. The two agree except on near-ties, where floating-point reduction order differs, and the count is therefore host-dependent at the +/-few level (55,657-55,660 observed across implementations and machines). The DECISION is insensitive to this: it would take an error of 3231 assignments to cross the threshold, and the largest discrepancy observed is 3.",
+ "code_sha256": "ca42d31a888042fac0d7b779d996be549683e84fe01b86e6a392f7b7dab638ba",
+ "dependency_sha256": {
+  "sprint_converge.py": "9d0d5f39bd52021e0387a87ea60923188ad583123a3fdb6b37f40636e072d295"
+ },
+ "n_input_files": 60,
+ "input_manifest_sha256": "734c1b5c24417d9756ebf0308295d1376cacdfe37bf49a962a0b6fdaa5913b9a",
+ "numpy_version": "2.3.2",
+ "python_version": "3.13.6"
+}

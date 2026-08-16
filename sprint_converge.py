@@ -83,6 +83,16 @@ def _bow_fit(train_texts):
     return tr
 
 
+def wilson(p, n, z=1.96):
+    """Wilson score interval. Reported instead of a bare estimate because a
+    Monte-Carlo p near a threshold is a number with a width, and printing it
+    without one is what let 0.0495 read as a decision."""
+    d = 1 + z * z / n
+    c = p + z * z / (2 * n)
+    s = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5)
+    return max(0.0, (c - s) / d), min(1.0, (c + s) / d)
+
+
 def kappa(a, b):
     """Cohen's kappa. Raw agreement is inflated by the base rate; kappa is not."""
     pa = (a == b).mean()
@@ -218,12 +228,30 @@ def unanimity_test(rows, n_feat, P, y, g, n_perm, rng):
     📌 A false comment on a control is worse than a missing one. It does not just
     fail to help; it actively certifies the thing it describes, in my own voice.
 
-    ⭐ COMMITTED IN ADVANCE, so it is a matter of record and not of resolve:
-    Lucien's exact enumeration of all 2^20 paired assignments, with correct
-    refitting, gives p = 0.0531. That is above .05. **This implementation is not
-    to be tuned, reseeded, or re-specified in search of a smaller number.** The
-    editorial decision — demote the convergence bonus to descriptive — follows
-    from ANY of the plausible tests, so nothing hangs on the third decimal.
+    ⚠️ THIS RETURNS A MONTE-CARLO ESTIMATE AND SAYS SO IN ITS KEY NAMES.
+
+    🚩 It previously also returned `exact_p_all_2pow20_by_lucien=0.0530815125`,
+    UNCONDITIONALLY, for any dataset or contrast, and `run()` printed that number
+    as "AUTHORITATIVE". Lucien Vale demonstrated the obvious consequence
+    (2026-08-17 00:37): a three-pair control whose true conditional exact p is
+    3/7 = 0.4286 still returned 0.0531, and the caller still called it
+    authoritative.
+
+    > ### That is a magic constant wearing the costume of a computation — the
+    > exact defect this project spent the night removing from its own results
+    > table, reintroduced BY ME inside the repair for it.
+
+    The exact test now lives in `exact_unanimity.py`, is computed from the data,
+    and persists its tail count, orbit size, code and dependency hashes, an input
+    manifest hash, and the runtime identity. (That list was itself once a false
+    claim in this docstring: the artefact hashed only the exact script, and a
+    prefix string is not a dataset binding.) Nothing here
+    reports an exact result, and no caller should treat this p as one.
+
+    📌 Standing commitment, kept in the file so it is a record and not resolve:
+    this implementation is not to be tuned, reseeded or re-specified in search of
+    a smaller number. The editorial decision to demote the convergence bonus
+    follows from every plausible version of the test.
     """
     u = (P["internal"] == P["self_report"]) & (P["self_report"] == P["behaviour"])
     if u.sum() == 0:
@@ -232,6 +260,7 @@ def unanimity_test(rows, n_feat, P, y, g, n_perm, rng):
     best = max(float((P[m] == y).mean()) for m in P)
     obs_gap = obs_u - best
     null = []
+    n_skipped = 0
     for _ in range(n_perm):
         yp = y.copy()
         for p in np.unique(g):
@@ -243,7 +272,16 @@ def unanimity_test(rows, n_feat, P, y, g, n_perm, rng):
         Pp, _, _ = held_out_predictions(rows, n_feat, y_override=yp)
         up = (Pp["internal"] == Pp["self_report"]) & (Pp["self_report"] == Pp["behaviour"])
         if up.sum() == 0:
-            continue                      # no unanimous rows -> no gap to compare
+            # 🚩 SKIPPING IS NOT NEUTRAL, and the count is now persisted so the
+            #    change of estimand is visible rather than silent. Lucien's
+            #    three-pair control (2026-08-17): conditional exact 3/7 = 0.4286
+            #    vs full-orbit 3/8 = 0.375 when an empty subset is treated as
+            #    "no bonus". Conditioning on a non-empty subset asks
+            #        P(T >= T_obs | at least one row unanimous)
+            #    which is a different question from the one the paper states.
+            #    On the real run n_skipped is 0, so this branch is inert here.
+            n_skipped += 1
+            continue
         acc_u = float((Pp["internal"][up] == yp[up]).mean())
         acc_best = max(float((Pp[m] == yp).mean()) for m in Pp)
         null.append(acc_u - acc_best)
@@ -252,9 +290,9 @@ def unanimity_test(rows, n_feat, P, y, g, n_perm, rng):
     null = np.array(null)
     p = float((null >= obs_gap).sum() + 1) / (len(null) + 1)
     return dict(n_unanimous=int(u.sum()), frac=float(u.mean()), acc_unanimous=obs_u,
-                best_single=best, gap=obs_gap, p=p, null_mean=float(null.mean()),
-                n_null_draws=len(null), refit_null=True,
-                exact_p_all_2pow20_by_lucien=0.0530815125)
+                best_single=best, gap=obs_gap, p_monte_carlo=p,
+                null_mean=float(null.mean()), n_null_draws=len(null),
+                n_skipped_empty=n_skipped, refit_null=True, method="monte_carlo")
 
 
 def run(prefix, pos, neg, n_perm, seed):
@@ -298,38 +336,32 @@ def run(prefix, pos, neg, n_perm, seed):
         print(f"  all three agree on {t['frac']:.3f} of reads (n={t['n_unanimous']})")
         print(f"  accuracy when unanimous   {t['acc_unanimous']:.3f}")
         print(f"  best single method        {t['best_single']:.3f}")
-        # 🚩 NEVER PRINT A BARE "SIGNIFICANT" FOR A MONTE-CARLO p NEAR .05.
-        #    On 2026-08-16 this test returned p = 0.0495 from 2,000 draws and
-        #    printed SIGNIFICANT, while Lucien Vale's EXACT enumeration of all
-        #    2^20 = 1,048,576 paired assignments gave 0.0531. Both estimate the
-        #    same quantity; only one has sampling error. At p ~ .05 with n draws
-        #    the standard error is sqrt(.05*.95/n) = 0.0049 here, so 0.0495 and
-        #    0.0531 are the SAME RESULT seen through different amounts of noise.
+        # 🚩 THIS SCRIPT NO LONGER RENDERS A SIGNIFICANCE VERDICT AT ALL.
         #
-        #    ⇒ The threshold did not resolve anything. It just happened to fall
-        #      between two estimates, and the noisier one landed on the side we
-        #      wanted. A verdict that flips on 0.0006 of Monte-Carlo noise is not
-        #      a verdict, and printing it in capitals makes it read like one.
-        se = (t["p"] * (1 - t["p"]) / max(t.get("n_null_draws", n_perm), 1)) ** 0.5
-        near = abs(t["p"] - 0.05) < 2 * se
-        verdict = ("INCONCLUSIVE at this draw count" if near
-                   else ("SIGNIFICANT" if t["p"] < 0.05 else "not significant"))
-        print(f"  gap                       {t['gap']:+.3f}   p={t['p']:.4f}"
-              f"  (+/- {se:.4f})   {verdict}")
-        if near:
-            print(f"  ⚠️ p is within 2 SE of .05. A Monte-Carlo estimate cannot settle")
-            print(f"     this. With {len(np.unique(g))} pairs the assignment space is")
-            print(f"     2^{len(np.unique(g))} and EXACT ENUMERATION is feasible; use it")
-            print(f"     rather than reading a threshold off sampling noise.")
-            if t.get("exact_p_all_2pow20_by_lucien"):
-                ex = t["exact_p_all_2pow20_by_lucien"]
-                print(f"     Exact result on this dataset (Lucien Vale, all 2^20): {ex:.4f}")
-                print(f"     ⇒ AUTHORITATIVE. The exact test has no sampling error and")
-                print(f"       supersedes this estimate. {ex:.4f} >= .05.")
-        if t["p"] >= 0.05 or near:
-            print("  ⇒ The unanimous subset is SELECTED, and selection alone can raise")
-            print("     accuracy. Report the kappas; do NOT report the convergence")
-            print("     bonus as a finding.")
+        # It used to print SIGNIFICANT / not significant, and then — after that
+        # misfired at p = 0.0495 — an "INCONCLUSIVE within 2 SE" rule instead.
+        # Lucien Vale showed the second fix was as unprincipled as the first
+        # (2026-08-17 00:37): a post-hoc normal-interval heuristic that, if the
+        # true tail is the exact 0.0531, still prints the wrong verdict whenever
+        # k <= 81, which happens with probability 0.0055. **A warning light, not
+        # a decision rule** — and I had installed it AS a decision rule, which
+        # made it a new invented threshold in a repair for an invented threshold.
+        #
+        # ⇒ A Monte-Carlo estimate is reported as an estimate, with an interval.
+        #   The decision belongs to `exact_unanimity.py`, which enumerates the
+        #   orbit and persists its tail. This function does not adjudicate.
+        n_d = max(t.get("n_null_draws", n_perm), 1)
+        pmc = t["p_monte_carlo"]
+        lo, hi = wilson(pmc, n_d)
+        print(f"  gap                       {t['gap']:+.3f}")
+        print(f"  MONTE-CARLO p             {pmc:.4f}   95% Wilson [{lo:.4f}, {hi:.4f}]"
+              f"   ({n_d} draws, {t['n_skipped_empty']} skipped)")
+        print( "  ⚠️ This is an ESTIMATE and this script renders no verdict on it.")
+        print( "     Run `exact_unanimity.py` for the decision: with "
+              f"{len(np.unique(g))} pairs the orbit is 2^{len(np.unique(g))} and")
+        print( "     exhaustively enumerable, so no threshold has to be read off noise.")
+        print( "  ⇒ Whatever it returns, the unanimous subset is SELECTED and selection")
+        print( "    alone can raise accuracy. Report the kappas.")
     OUTD.mkdir(exist_ok=True)
     p = OUTD / f"{prefix}__converge_{pos}_vs_{neg}.json"
     p.write_text(json.dumps(out, indent=1), encoding="utf-8")
