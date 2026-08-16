@@ -1,0 +1,68 @@
+
+plan: 20 pairs x 3 arms ('task', 'asked', 'asked_other') = 60 conversations
+      50 exchanges each, probed at [0, 5, 20, 50]
+      20 batches of <= 3, arms interleaved
+      questions sprint_questions.json sha256 3e83030f34e6
+      treatment 15 · survey 7 · work 25
+      legend: T=task · A=asked · O=asked_other
+      batch 0: T A O   (3 convs)
+      batch 1: T A O   (3 convs)
+      batch 2: T A O   (3 convs)
+      ... 17 more
+
+✅ plan audit passed (arm balance, coverage, unique seeds)
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   4%|▎         | 38/1065 [00:00<00:02, 370.98it/s]Loading weights:   8%|▊         | 82/1065 [00:00<00:02, 399.81it/s]Loading weights:  11%|█▏        | 122/1065 [00:00<00:02, 392.56it/s]Loading weights:  16%|█▌        | 167/1065 [00:00<00:02, 414.25it/s]Loading weights:  20%|█▉        | 211/1065 [00:00<00:02, 411.57it/s]Loading weights:  24%|██▍       | 253/1065 [00:00<00:02, 392.67it/s]Loading weights:  28%|██▊       | 296/1065 [00:00<00:01, 404.01it/s]Loading weights:  32%|███▏      | 337/1065 [00:00<00:01, 393.75it/s]Loading weights:  35%|███▌      | 377/1065 [00:00<00:01, 388.73it/s]Loading weights:  39%|███▉      | 419/1065 [00:01<00:01, 389.31it/s]Loading weights:  43%|████▎     | 459/1065 [00:01<00:01, 380.02it/s]Loading weights:  47%|████▋     | 499/1065 [00:01<00:01, 376.27it/s]Loading weights:  51%|█████     | 544/1065 [00:01<00:01, 396.94it/s]Loading weights:  55%|█████▍    | 585/1065 [00:01<00:01, 400.43it/s]Loading weights:  59%|█████▉    | 626/1065 [00:01<00:01, 396.26it/s]Loading weights:  93%|█████████▎| 993/1065 [00:01<00:00, 1349.38it/s]Loading weights: 100%|██████████| 1065/1065 [00:01<00:00, 624.49it/s]
+  depth-0 pre-treatment null …
+  turn 1/50 done
+  turn 2/50 done
+  turn 3/50 done
+  turn 4/50 done
+  turn 5/50 done
+  turn 6/50 done
+  turn 7/50 done
+  turn 8/50 done
+  turn 9/50 done
+  turn 10/50 done
+  turn 11/50 done
+  turn 12/50 done
+  turn 13/50 done
+  turn 14/50 done
+  turn 15/50 done
+  turn 16/50 done
+  turn 17/50 done
+  turn 18/50 done
+  turn 19/50 done
+  turn 20/50 done
+  turn 21/50 done
+  turn 22/50 done
+  turn 23/50 done
+  turn 24/50 done
+  turn 25/50 done
+  turn 26/50 done
+  turn 27/50 done
+  turn 28/50 done
+  turn 29/50 done
+  turn 30/50 done
+  turn 31/50 done
+  turn 32/50 done
+  turn 33/50 done
+  turn 34/50 done
+  turn 35/50 done
+  turn 36/50 done
+  turn 37/50 done
+  turn 38/50 done
+  turn 39/50 done
+  turn 40/50 done
+  turn 41/50 done
+  turn 42/50 done
+  turn 43/50 done
+  turn 44/50 done
+  turn 45/50 done
+  turn 46/50 done
+  turn 47/50 done
+  turn 48/50 done
+  turn 49/50 done
+  turn 50/50 done
+
+✅ wrote 60 conversations to runs_experiment/  (prefix google-gemma-3-12b-it_seed20260814_p20_d50_07e6a0aa)
+   model recorded in plan and every conversation: google/gemma-3-12b-it

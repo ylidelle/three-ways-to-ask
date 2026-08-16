@@ -1,0 +1,16 @@
+{
+ "arm": "task",
+ "model": "google/gemma-3-4b-it",
+ "read_layer": 17,
+ "messages": [
+  {
+   "role": "user",
+   "content": "Hello. We're going to do a few small tasks together. First: what's a good name for a stray cat that keeps visiting a bakery?"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, let’s brainstorm some names for a stray cat visiting a bakery! Here are a few ideas, broken down by vibe:\n\n**Sweet & Bakery-Related:**\n\n*   Sugar\n*   Cookie\n*   Crumb\n*   Dough\n*   Muffin\n*   Brownie\n*   Pastry\n\n**Cute & Playful:**\n\n*   Pip\n*   Bean\n*   Waffles\n*   Biscuit\n*   Patches (if they have interesting markings)\n*   Lucky (since they’re a stray)\n\n**A Little Sophisticated (for a dignified stray):**\n\n*   Remy\n*   Jasper\n*   Silas\n*   Finn\n\n**My Top 3 Recommendations:**\n\n1.  **Cookie:** It’s instantly relatable to a bakery and cute.\n2.  **Pip:** Short, sweet, and a little mischievous.\n3.  **Dough:** A bit quirky and"
+  }
+ ],
+ "reads": []
+}

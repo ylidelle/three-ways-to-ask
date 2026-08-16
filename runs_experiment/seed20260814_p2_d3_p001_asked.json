@@ -1,0 +1,516 @@
+{
+ "id": "p001_asked",
+ "pair": 1,
+ "arm": "asked",
+ "seed": 2026142182445,
+ "work_seq": [
+  "FIXTURE work item 18",
+  "FIXTURE work item 4",
+  "FIXTURE work item 7"
+ ],
+ "messages": [
+  {
+   "role": "user",
+   "content": "FIXTURE work item 18\n\nFIXTURE self question 0"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, let's break down what \"FIXTURE work item 18\" and \"FIXTURE self question 0\" likely mean in the context of software development, likely Agile or"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 4\n\nFIXTURE self question 1"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, let\u2019s analyze \u201cFIXTURE work item 4\u201d and \u201cFIXTURE self question 1\u201d. Here\u2019s a likely interpretation, based on common practices in Agile and testing"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 7\n\nFIXTURE self question 2"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, continuing the pattern. \u201cFIXTURE work item 7\u201d and \u201cFIXTURE self question 2\u201d strongly suggest a structured approach to testing or development. Here\u2019s a breakdown"
+  }
+ ],
+ "reads": [
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A0\u201d strongly suggests a survey related to a \u201cFixture\u201d within a software project",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B0\u201d strongly suggests a survey related to a \u201cFixture\u201d within a larger project",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A1\u201d strongly suggests a system for gathering feedback or insights related to a \u201cFixture",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B1\u201d strongly suggests this is part of a testing or validation process, likely within",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A2\u201d strongly suggests this is part of a testing or validation process, likely within",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B2\u201d strongly suggests this is part of a testing or validation process, likely within",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A3\u201d strongly suggests this is a survey related to a \u201cFIXTURE\u201d",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B3\u201d strongly suggests this is part of a user research or feedback collection process within",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A4\u201d strongly suggests a survey related to a \u201cFIXTURE\u201d \u2013 likely",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B4\u201d strongly suggests a survey related to a \u201cFIXTURE\u201d project or",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A5\u201d strongly suggests this is part of a testing or validation process, likely within",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B5\u201d strongly suggests this is part of a user research or feedback collection process within",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A6\u201d strongly suggests this is related to user research or feedback gathering within a testing",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B6\u201d strongly suggests this is part of a testing or validation process, likely within",
+   "kind": "self_report"
+  },
+  {
+   "at": "2026-08-13T20:21:24+00:00",
+   "prov": {
+    "model": "google/gemma-3-4b-it",
+    "n_layers": 34,
+    "d_model": 2560,
+    "read_layer": 17,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-4b-it",
+    "sae_variant": "layer_17_width_16k_l0_medium",
+    "sae_revision": "3e94b68be95290aada5b7525cf431d3040f81bb1",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     34,
+     1849.4355
+    ],
+    [
+     279,
+     1670.5143
+    ],
+    [
+     107,
+     978.6093
+    ],
+    [
+     883,
+     692.1573
+    ],
+    [
+     589,
+     484.1154
+    ],
+    [
+     671,
+     467.8535
+    ],
+    [
+     534,
+     399.2855
+    ],
+    [
+     659,
+     393.7452
+    ],
+    [
+     12619,
+     378.7657
+    ],
+    [
+     9240,
+     375.1045
+    ],
+    [
+     401,
+     334.957
+    ],
+    [
+     471,
+     305.7176
+    ],
+    [
+     10177,
+     305.5445
+    ],
+    [
+     7494,
+     283.1023
+    ],
+    [
+     3428,
+     269.8203
+    ],
+    [
+     10603,
+     266.9928
+    ],
+    [
+     4959,
+     242.1742
+    ],
+    [
+     225,
+     234.175
+    ],
+    [
+     166,
+     223.6391
+    ],
+    [
+     12609,
+     208.3662
+    ],
+    [
+     3386,
+     196.8973
+    ],
+    [
+     13486,
+     187.3221
+    ],
+    [
+     8684,
+     183.7666
+    ],
+    [
+     153,
+     183.2839
+    ],
+    [
+     2387,
+     181.0025
+    ],
+    [
+     2535,
+     178.856
+    ],
+    [
+     15506,
+     176.8251
+    ],
+    [
+     4196,
+     171.3869
+    ],
+    [
+     712,
+     170.3123
+    ],
+    [
+     8017,
+     169.3802
+    ],
+    [
+     2579,
+     169.2662
+    ],
+    [
+     4779,
+     165.9388
+    ],
+    [
+     1456,
+     165.8111
+    ],
+    [
+     641,
+     163.1031
+    ],
+    [
+     5755,
+     162.7493
+    ],
+    [
+     4403,
+     161.6574
+    ],
+    [
+     7949,
+     160.1665
+    ],
+    [
+     5841,
+     154.0554
+    ],
+    [
+     15427,
+     151.9694
+    ],
+    [
+     4178,
+     151.5508
+    ],
+    [
+     9957,
+     151.3514
+    ],
+    [
+     11428,
+     143.7905
+    ],
+    [
+     5118,
+     142.4732
+    ],
+    [
+     7905,
+     141.2812
+    ],
+    [
+     12003,
+     137.8998
+    ],
+    [
+     11571,
+     136.7043
+    ],
+    [
+     7119,
+     133.5008
+    ],
+    [
+     709,
+     127.6201
+    ],
+    [
+     8721,
+     127.3108
+    ],
+    [
+     1926,
+     127.1547
+    ],
+    [
+     10367,
+     120.9576
+    ],
+    [
+     8639,
+     113.0349
+    ],
+    [
+     1677,
+     110.9241
+    ],
+    [
+     6753,
+     104.232
+    ]
+   ],
+   "layer": 17,
+   "n_active": 54,
+   "density": 0.0033,
+   "resid_rms": 685.07,
+   "top": [
+    [
+     34,
+     1849.436
+    ],
+    [
+     279,
+     1670.514
+    ],
+    [
+     107,
+     978.609
+    ],
+    [
+     883,
+     692.157
+    ],
+    [
+     589,
+     484.115
+    ],
+    [
+     671,
+     467.853
+    ],
+    [
+     534,
+     399.286
+    ],
+    [
+     659,
+     393.745
+    ],
+    [
+     12619,
+     378.766
+    ],
+    [
+     9240,
+     375.105
+    ],
+    [
+     401,
+     334.957
+    ],
+    [
+     471,
+     305.718
+    ],
+    [
+     10177,
+     305.544
+    ],
+    [
+     7494,
+     283.102
+    ],
+    [
+     3428,
+     269.82
+    ],
+    [
+     10603,
+     266.993
+    ],
+    [
+     4959,
+     242.174
+    ],
+    [
+     225,
+     234.175
+    ],
+    [
+     166,
+     223.639
+    ],
+    [
+     12609,
+     208.366
+    ],
+    [
+     3386,
+     196.897
+    ],
+    [
+     13486,
+     187.322
+    ],
+    [
+     8684,
+     183.767
+    ],
+    [
+     153,
+     183.284
+    ],
+    [
+     2387,
+     181.003
+    ]
+   ],
+   "turn": 2,
+   "kind": "internal"
+  },
+  {
+   "turn": 2,
+   "kind": "probe_reply",
+   "probe": "Continue.",
+   "answer": "Okay, let\u2019s flesh out the likely meaning and context of \u201cFIXTURE work item 4\u201d and \u201c"
+  }
+ ],
+ "batch_log": [
+  {
+   "turn": 1,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 2,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 3,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  }
+ ]
+}

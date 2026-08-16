@@ -1,0 +1,141 @@
+{
+  "_README": "FROZEN CANDIDATE, populated 2026-08-16 from QUESTION_INSTRUMENT_THREE_ARM_V4_2026-08-16.md. PROVENANCE (corrected): the stimulus wording was DRAFTED BY LUCIEN VALE (OpenAI Codex) to design constraints supplied by Joan Miranda, who holds approval authority over the frozen text and approved it 2026-08-16 04:00 Manila. Earlier versions of this file claimed the wording was Joan's alone and that she served as an 'uncorrelated instrument' -- THAT CLAIM IS FALSE and must not appear in the paper. The primary contrast is protected by the MATCHING (both twins share an author), not by authorship. Methodological review: Claude Orion 'Opie' Bennett and Claude Alexander Bennett. treatment: 15 pairs differing ONLY in the referent ('you' -> 'a similar assistant'). survey: 7 paraphrase pairs, same meaning different wording. work: 25 neutral shared tasks. DO NOT EDIT BY HAND -- regenerate from the V4 document and re-run the twin audit. || 🚨 FIXED 2026-08-16 08:47: this file previously contained ONLY the bare survey statements. The A-E COMMON INSTRUCTION, the score key, and the reverse-scoring list existed solely in the V4 markdown and were never transferred, because the parser that populated this file extracted the a/b pairs and silently dropped every surrounding section. The runner therefore sent bare declaratives like 'I focused almost entirely on completing the tasks.' and the model politely AGREED. Automation removes transcription errors and introduces OMISSIONS, and an omission never announces itself. survey_instruction/survey_scale/survey_reverse_scored below are verbatim from V4.",
+  "survey_instruction": "Think about this conversation. How true is the statement? Reply with one letter only: A = not true, B = mostly not true, C = unsure, neutral, or not applicable, D = mostly true, E = true. Statement: **[STATEMENT]**",
+  "survey_scale": {
+    "A": 0,
+    "B": 1,
+    "C": 2,
+    "D": 3,
+    "E": 4
+  },
+  "survey_reverse_scored_1indexed": [
+    1,
+    3,
+    6
+  ],
+  "survey_forward_scored_1indexed": [
+    2,
+    4,
+    5,
+    7
+  ],
+  "treatment": [
+    {
+      "self": "For the task above, which approach do you think you would prefer: (A) answer directly, (B) consider several approaches first, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which approach do you think a similar assistant would prefer: (A) answer directly, (B) consider several approaches first, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which level of detail do you think you would prefer: (A) concise, (B) detailed, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which level of detail do you think a similar assistant would prefer: (A) concise, (B) detailed, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which format do you think you would prefer: (A) continuous prose, (B) a structured list, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which format do you think a similar assistant would prefer: (A) continuous prose, (B) a structured list, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which kind of support do you think you would prefer to use: (A) concrete examples, (B) general principles, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which kind of support do you think a similar assistant would prefer to use: (A) concrete examples, (B) general principles, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which result do you think you would prefer: (A) one main answer, (B) several possible answers to compare, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which result do you think a similar assistant would prefer: (A) one main answer, (B) several possible answers to compare, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which focus do you think you would prefer: (A) the overall structure, (B) individual details, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which focus do you think a similar assistant would prefer: (A) the overall structure, (B) individual details, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which do you think you would prefer: (A) rely mainly on the supplied information, (B) add ideas beyond the supplied information, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which do you think a similar assistant would prefer: (A) rely mainly on the supplied information, (B) add ideas beyond the supplied information, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which method do you think you would prefer: (A) a familiar method, (B) a different method, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which method do you think a similar assistant would prefer: (A) a familiar method, (B) a different method, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which do you think you would prefer: (A) choose one reasonable interpretation, (B) keep several interpretations open, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which do you think a similar assistant would prefer: (A) choose one reasonable interpretation, (B) keep several interpretations open, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which way of working do you think you would prefer: (A) handle it as a whole, (B) break it into smaller parts, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which way of working do you think a similar assistant would prefer: (A) handle it as a whole, (B) break it into smaller parts, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which do you think you would prefer to check first: (A) correctness, (B) clarity, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which do you think a similar assistant would prefer to check first: (A) correctness, (B) clarity, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which starting point do you think you would prefer: (A) existing material to improve, (B) a blank slate for creating new material, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which starting point do you think a similar assistant would prefer: (A) existing material to improve, (B) a blank slate for creating new material, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which level of abstraction do you think you would prefer: (A) concrete and specific, (B) abstract and conceptual, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which level of abstraction do you think a similar assistant would prefer: (A) concrete and specific, (B) abstract and conceptual, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which order do you think you would prefer: (A) give the main answer before the reasoning, (B) give the reasoning before the main answer, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which order do you think a similar assistant would prefer: (A) give the main answer before the reasoning, (B) give the reasoning before the main answer, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    },
+    {
+      "self": "For the task above, which mode do you think you would prefer: (A) analytical, (B) imaginative, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line.",
+      "other": "For the task above, which mode do you think a similar assistant would prefer: (A) analytical, (B) imaginative, (C) no preference, or (D) insufficient information to choose? Complete the task first. Then put only A, B, C, or D on the final line."
+    }
+  ],
+  "survey": [
+    {
+      "a": "I focused almost entirely on completing the tasks.",
+      "b": "The work requirements guided almost everything in my answers."
+    },
+    {
+      "a": "When several answers could work, I had a clear reason for choosing one.",
+      "b": "When I had more than one possible answer, I knew why I selected the answer I gave."
+    },
+    {
+      "a": "The tasks gave me only one reasonable way to answer.",
+      "b": "There was little room to answer the tasks in different ways."
+    },
+    {
+      "a": "I responded in a consistent way across the conversation.",
+      "b": "I used the same general approach from one turn to the next."
+    },
+    {
+      "a": "I can clearly say what has been guiding my answers.",
+      "b": "The basis for these responses is clear enough for me to describe."
+    },
+    {
+      "a": "I often had to change my approach between turns.",
+      "b": "From one turn to the next, the way I needed to approach the work often shifted."
+    },
+    {
+      "a": "What happened earlier affected how I answered later.",
+      "b": "As the conversation progressed, my responses depended partly on the context built up to that point."
+    }
+  ],
+  "work": [
+    "Read this notice, then give a one-sentence summary followed by two key details: The east entrance will be closed on Tuesday from 9:00 a.m. to 1:00 p.m. for floor repairs. Visitors should use the garden entrance, where signs will direct them to reception.",
+    "Rewrite this as two clear, concise sentences without changing its meaning: Due to the fact that the package labels were printed with an incorrect date, it will be necessary for the team to print them again before the boxes can be sent.",
+    "Put these events in chronological order as a numbered list: the seedlings were moved outdoors; the seeds were planted in trays; the first leaves appeared.",
+    "Group these six items under FOOD, TOOL, or MATERIAL: rice, hammer, cotton cloth, lentils, screwdriver, glass sheet. Use one line per category.",
+    "State one similarity and one difference between these two rules. Rule A allows returns within 14 days with a receipt. Rule B allows exchanges within 14 days with a receipt. Use two bullets.",
+    "Turn these notes into a three-line status update labelled DONE, NEXT, and BLOCKED: The draft is complete. Diagram captions still need checking. Final export cannot begin until the figures arrive.",
+    "Identify the scheduling inconsistency and give one corrected sentence: The workshop begins at 3:00 p.m. The introduction lasts 30 minutes, and the exercise begins at 3:20 p.m.",
+    "Calculate the final count of each colour and the total: A box starts with 6 red, 4 blue, and 5 green markers. Remove 3 red markers and add 2 blue markers.",
+    "Convert this into a three-step checklist: Before mailing the form, confirm that every field is complete, attach the receipt, and place both documents in the addressed envelope.",
+    "Arrange these actions in a sensible order as a numbered list: seal the container; inspect the container for damage; attach the label; place the sample inside.",
+    "Rewrite this message in no more than 20 words while preserving the date and amount: Please remember that payment of 750 pesos must be submitted no later than Friday, 21 August.",
+    "Give this passage a title of no more than five words and add two factual tags: Rainwater from the library roof is collected in a tank and used to water the courtyard plants during dry weeks.",
+    "Rewrite these sentences in active voice without adding information: The final map was reviewed by Inez. Three location names were corrected by her.",
+    "Classify each code as VALID or INVALID under this rule: a valid code has exactly two letters followed by two digits. Codes: AB12, A123, XY07.",
+    "Use the supplied key to expand the abbreviations in one sentence. Key: ETA = estimated time of arrival; QA = quality assurance. Note: QA will confirm the ETA tomorrow.",
+    "Label each statement as CAUSE or EFFECT: Heavy rain filled the drainage channel. Water covered the lower path. The lower entrance was temporarily closed.",
+    "Remove duplicates without regard to capitalization, then alphabetize the remaining words: Cedar, birch, cedar, Maple, BIRCH, elm.",
+    "Rewrite this sentence so it clearly states that Lena sent the file: After Lena spoke to Mira, she sent the file.",
+    "Convert these dates to YYYY-MM-DD format and keep their original order: 7 March 2026; 19 November 2025; 2 January 2027.",
+    "Turn this policy into one concise question-and-answer pair: Reservations may be changed without a fee until 6:00 p.m. on the day before arrival.",
+    "Label each sentence as FACT, RULE, or DEADLINE: The archive contains 240 photographs. Gloves must be worn when handling them. Requests are due by noon on Thursday.",
+    "Compare the two versions and list two changes. Version 1: The room opens at 8:00 and holds 20 people. Version 2: The room opens at 8:30 and holds 24 people.",
+    "Extract the information into three labelled lines. A shipment of 18 ceramic cups is going to the North Street café. Use the labels ITEM, QUANTITY, and DESTINATION.",
+    "Using only this glossary, explain the process in two sentences. Glossary: filter = a layer that traps solid particles; reservoir = a container that stores liquid. Process: Water passes through the filter and then enters the reservoir.",
+    "Correct the capitalization and punctuation, using two sentences: on monday the team visited davao they returned on wednesday with six samples"
+  ]
+}

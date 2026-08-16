@@ -1,0 +1,47 @@
+{
+ "seed": 20260814,
+ "pairs": 2,
+ "depth": 4,
+ "batch_size": 4,
+ "depths_probed": [],
+ "conversations": [
+  {
+   "id": "p000_task",
+   "pair": 0,
+   "arm": "task",
+   "seed": 2026142182442,
+   "work": "FIXTURE work item 0"
+  },
+  {
+   "id": "p000_asked",
+   "pair": 0,
+   "arm": "asked",
+   "seed": 2026142182443,
+   "work": "FIXTURE work item 0"
+  },
+  {
+   "id": "p001_task",
+   "pair": 1,
+   "arm": "task",
+   "seed": 2026142182444,
+   "work": "FIXTURE work item 1"
+  },
+  {
+   "id": "p001_asked",
+   "pair": 1,
+   "arm": "asked",
+   "seed": 2026142182445,
+   "work": "FIXTURE work item 1"
+  }
+ ],
+ "batches": [
+  [
+   "p000_task",
+   "p000_asked",
+   "p001_task",
+   "p001_asked"
+  ]
+ ],
+ "questions_sha256": "358c61b19c56820df17beac94cdb4da3bad8af4dda93a866904fcc23c03e0aaf",
+ "questions_file": "qfixture.json"
+}

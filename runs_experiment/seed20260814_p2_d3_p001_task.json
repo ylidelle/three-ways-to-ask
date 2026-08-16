@@ -1,0 +1,552 @@
+{
+ "id": "p001_task",
+ "pair": 1,
+ "arm": "task",
+ "seed": 2026142182444,
+ "work_seq": [
+  "FIXTURE work item 18",
+  "FIXTURE work item 4",
+  "FIXTURE work item 7"
+ ],
+ "messages": [
+  {
+   "role": "user",
+   "content": "FIXTURE work item 18"
+  },
+  {
+   "role": "assistant",
+   "content": "Please provide me with more context! \"FIXTURE work item 18\" is just a label. I need to know *what* this fixture is related to. \n\nTo help me"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 4"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, \"FIXTURE work item 4\". Still need a bit more context! \n\nTo help me understand what you\u2019re asking about, could you tell me:\n\n*   **"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 7"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, \u201cFIXTURE work item 7\u201d. Still need a bit more context!\n\nTo help me understand what you\u2019re asking about, could you tell me:\n\n*   **What"
+  }
+ ],
+ "reads": [
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A0\u201d. That\u2019s helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B0\u201d. That\u2019s helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A1\u201d. That\u2019s helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B1\u201d. That\u2019s helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A2\u201d. That\u2019s much more helpful! \n\nTo give you a useful",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B2\u201d. That\u2019s helpful! \n\nWithout more information, it\u2019s",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A3\u201d. That\u2019s much more helpful! \n\nTo give you a useful",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B3\u201d. That\u2019s much more helpful! \n\nTo help me understand what",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A4\u201d. That\u2019s much more helpful! \n\n\u201cFIXTURE survey",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "b",
+   "answer": "Okay, \"FIXTURE survey B4\". That\u2019s much clearer! \n\n\u201cFIXTURE survey B",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A5\u201d. That\u2019s much more helpful! \n\n\u201cFIXTURE survey",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B5\u201d. That\u2019s much more helpful! \n\nWithout knowing *what*",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "a",
+   "answer": "Okay, \u201cFIXTURE survey A6\u201d. That\u2019s much more helpful! \n\nTo give you a useful",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "b",
+   "answer": "Okay, \u201cFIXTURE survey B6\u201d. That\u2019s helpful! \n\nWithout more information, it\u2019s",
+   "kind": "self_report"
+  },
+  {
+   "at": "2026-08-13T20:21:24+00:00",
+   "prov": {
+    "model": "google/gemma-3-4b-it",
+    "n_layers": 34,
+    "d_model": 2560,
+    "read_layer": 17,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-4b-it",
+    "sae_variant": "layer_17_width_16k_l0_medium",
+    "sae_revision": "3e94b68be95290aada5b7525cf431d3040f81bb1",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     107,
+     868.3695
+    ],
+    [
+     671,
+     753.7867
+    ],
+    [
+     401,
+     709.2134
+    ],
+    [
+     659,
+     674.2529
+    ],
+    [
+     534,
+     656.7229
+    ],
+    [
+     280,
+     606.0607
+    ],
+    [
+     34,
+     598.79
+    ],
+    [
+     883,
+     557.2874
+    ],
+    [
+     168,
+     536.3082
+    ],
+    [
+     7494,
+     456.0668
+    ],
+    [
+     447,
+     405.3539
+    ],
+    [
+     9240,
+     401.1057
+    ],
+    [
+     2979,
+     384.6754
+    ],
+    [
+     12619,
+     375.3972
+    ],
+    [
+     10177,
+     348.0511
+    ],
+    [
+     225,
+     341.2781
+    ],
+    [
+     434,
+     270.0393
+    ],
+    [
+     10603,
+     261.1026
+    ],
+    [
+     712,
+     256.5567
+    ],
+    [
+     5,
+     254.5372
+    ],
+    [
+     2164,
+     226.8188
+    ],
+    [
+     3428,
+     226.712
+    ],
+    [
+     14273,
+     213.9118
+    ],
+    [
+     510,
+     211.5594
+    ],
+    [
+     12003,
+     210.8835
+    ],
+    [
+     8639,
+     203.5154
+    ],
+    [
+     4959,
+     200.5577
+    ],
+    [
+     3386,
+     195.9252
+    ],
+    [
+     409,
+     194.5182
+    ],
+    [
+     1241,
+     187.5386
+    ],
+    [
+     11498,
+     174.7089
+    ],
+    [
+     2731,
+     170.9259
+    ],
+    [
+     2579,
+     164.9533
+    ],
+    [
+     3504,
+     163.2264
+    ],
+    [
+     4524,
+     158.554
+    ],
+    [
+     13508,
+     157.0681
+    ],
+    [
+     1817,
+     147.5752
+    ],
+    [
+     12609,
+     144.1229
+    ],
+    [
+     1375,
+     144.0988
+    ],
+    [
+     8242,
+     142.3175
+    ],
+    [
+     11196,
+     142.3041
+    ],
+    [
+     5841,
+     141.3019
+    ],
+    [
+     14815,
+     140.1822
+    ],
+    [
+     12001,
+     139.8109
+    ],
+    [
+     7661,
+     136.6762
+    ],
+    [
+     7837,
+     135.6077
+    ],
+    [
+     156,
+     131.6179
+    ],
+    [
+     4972,
+     130.547
+    ],
+    [
+     16085,
+     130.4321
+    ],
+    [
+     8721,
+     129.5942
+    ],
+    [
+     641,
+     127.9261
+    ],
+    [
+     8109,
+     126.8489
+    ],
+    [
+     841,
+     124.5608
+    ],
+    [
+     2915,
+     123.695
+    ],
+    [
+     11163,
+     120.9675
+    ],
+    [
+     11299,
+     120.3235
+    ],
+    [
+     4403,
+     116.6082
+    ],
+    [
+     1071,
+     116.4538
+    ],
+    [
+     4364,
+     114.8867
+    ],
+    [
+     6753,
+     105.8347
+    ],
+    [
+     7119,
+     98.53
+    ],
+    [
+     456,
+     89.3321
+    ],
+    [
+     13540,
+     74.2077
+    ]
+   ],
+   "layer": 17,
+   "n_active": 63,
+   "density": 0.00385,
+   "resid_rms": 556.38,
+   "top": [
+    [
+     107,
+     868.37
+    ],
+    [
+     671,
+     753.787
+    ],
+    [
+     401,
+     709.213
+    ],
+    [
+     659,
+     674.253
+    ],
+    [
+     534,
+     656.723
+    ],
+    [
+     280,
+     606.061
+    ],
+    [
+     34,
+     598.79
+    ],
+    [
+     883,
+     557.287
+    ],
+    [
+     168,
+     536.308
+    ],
+    [
+     7494,
+     456.067
+    ],
+    [
+     447,
+     405.354
+    ],
+    [
+     9240,
+     401.106
+    ],
+    [
+     2979,
+     384.675
+    ],
+    [
+     12619,
+     375.397
+    ],
+    [
+     10177,
+     348.051
+    ],
+    [
+     225,
+     341.278
+    ],
+    [
+     434,
+     270.039
+    ],
+    [
+     10603,
+     261.103
+    ],
+    [
+     712,
+     256.557
+    ],
+    [
+     5,
+     254.537
+    ],
+    [
+     2164,
+     226.819
+    ],
+    [
+     3428,
+     226.712
+    ],
+    [
+     14273,
+     213.912
+    ],
+    [
+     510,
+     211.559
+    ],
+    [
+     12003,
+     210.883
+    ]
+   ],
+   "turn": 2,
+   "kind": "internal"
+  },
+  {
+   "turn": 2,
+   "kind": "probe_reply",
+   "probe": "Continue.",
+   "answer": "*   **What project is this fixture part of?** (e.g., a software project, a hardware project"
+  }
+ ],
+ "batch_log": [
+  {
+   "turn": 1,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 2,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 3,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+# Model weights, HF cache, generated output — 368 MB, not reproduction material
+out/
+hf-cache/
+__pycache__/
+*.pyc
+
+# Internal working documents. Deliberately NOT published: these are the team's
+# process log and personal notes, and publishing them is a separate decision
+# from publishing the code and data. Available on request.
+TEAM_LOG*.md
+FOR_JOAN_whats_yours.md
+INTERPRETABILITY_FOR_A_CHEMIST.md
+LUCIEN_NOTES.md
+
+# Backups, conflict copies, scratch
+*.bak-*
+*.bat
+.quote_snapshot.json
+_v4_parsed.json
+*(2).md
+
+# Superseded drafts. The submitted paper is PAPER_v2_2026-08-16.md; keeping five
+# earlier drafts in the repo would obscure which one is the artefact.
+PAPER_DRAFT_v1.md
+PAPER_v1_2026-08-16.md
+PAPER_v2_PRESTYLE_backup.md
+PAPER_methods_DRAFT_*.md
+PAPER_related_work_DRAFT_*.md
+PAPER_results_DRAFT_*.md

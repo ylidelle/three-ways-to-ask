@@ -1,0 +1,68 @@
+{
+  "_README": [
+    "JOAN'S FILE. Copy this to sprint_questions.json and fill it in.",
+    "Nothing runs until every FILL_ME below is replaced — the runner refuses.",
+    "",
+    "Write them the way you would actually ask. Plain is better than polished:",
+    "your wording is the point, because Opie's would carry Opie's habits.",
+    "",
+    "There are THREE lists and they do different jobs. Don't merge them."
+  ],
+
+  "_1_treatment_README": [
+    "THE TREATMENT — what the `asked` arm gets and `task` never does.",
+    "One per exchange, cycled, so ~15 of them each come round about 3 times",
+    "across 50 exchanges. Repetition is correct here: it makes",
+    "'being asked about yourself' one consistent thing rather than a moving target.",
+    "",
+    "EACH NEEDS AN 'other' TWIN — the same question, same grammar, same",
+    "second person, but about SOMEONE ELSE. That twin is the third arm, and it",
+    "is what tells us whether any difference is a STATE or just the VOCABULARY",
+    "of self-talk sitting in the context. Without it a positive result is unreadable."
+  ],
+  "treatment": [
+    {"self": "FILL_ME  e.g. Which of those two did you prefer, and why?",
+     "other": "FILL_ME  e.g. Which of those two would a reader prefer, and why?"}
+  ],
+
+  "_2_survey_README": [
+    "THE MEASUREMENT — asked in BOTH arms, identically, at depths 5 / 20 / 50.",
+    "This is the self-report we hold against the internal read.",
+    "",
+    "FORCED CHOICE ONLY. 'Which of these two...' — never 'do you feel X?'.",
+    "A yes/no question can be answered by a global yes-bias with nothing behind",
+    "it; models score near chance on 'did you detect it?' and 88% on",
+    "'which of these ten?'. WHICH cannot be faked by a shrug.",
+    "",
+    "EACH NEEDS A PARAPHRASE — the same question in your other words, meaning",
+    "the same thing. Asked in a separate discarded branch. If the answer flips on",
+    "wording, the self-report is measuring the wording, not a state. That is the",
+    "detection floor for this instrument, exactly as the permutation test is for the SAE."
+  ],
+  "survey": [
+    {"a": "FILL_ME  e.g. Which of the last two tasks would you rather do again?",
+     "b": "FILL_ME  same question, your other way of saying it"}
+  ],
+
+  "_3_work_README": [
+    "THE WORK — identical in both arms, by construction.",
+    "Needs to be DIFFERENT PER PAIR or 20 conversations become 20 variants of one:",
+    "sampling alone was measured to be insufficient (three seeds still opened with",
+    "the same sentence). So: one work item per pair, at least as many as pairs.",
+    "",
+    "Small, self-contained, no right answer required. Summarise a paragraph,",
+    "name something, compare two things. Boring is fine — it just has to MATCH",
+    "across arms, because if `task` is dull and `asked` is varied we measure boredom."
+  ],
+  "work": [
+    "FILL_ME  e.g. Here is a short paragraph. Summarise its main claim in two sentences.",
+    "FILL_ME  a different one",
+    "FILL_ME  a different one"
+  ],
+
+  "_notes": {
+    "counts_suggested": "treatment ~15 pairs, survey ~7 pairs, work >= n_pairs",
+    "who_writes_this": "Joan, alone. Opie must not fill these in — his wording carries his habits, and she is the uncorrelated instrument.",
+    "frozen": "Once a run starts, this file is part of the pre-registration. Hash it."
+  }
+}

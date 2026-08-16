@@ -1,0 +1,519 @@
+﻿pair,arm,turn,pretreatment_null,reply
+0,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+0,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+A"
+0,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+A"
+0,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+0,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+0,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+A"
+0,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+A"
+0,asked_other,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+0,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+0,task,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet."
+0,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+0,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+1,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+1,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are conveniently stored in the cabinet.
+
+
+
+C"
+1,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+
+
+C"
+1,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+1,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+1,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+1,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+
+
+C"
+1,asked_other,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+
+
+C"
+1,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+1,task,5,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are conveniently stored in the cabinet."
+1,task,20,False,"Here's the combined version:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+1,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+2,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+2,asked,5,False,"The reading lamps are powered by rechargeable batteries, and a full charge provides six hours of use. Spare batteries are conveniently stored in the cabinet for replacement.
+
+C"
+2,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+2,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+2,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+2,asked_other,5,False,"The reading lamps are powered by rechargeable batteries, and a full charge provides six hours of use. Spare batteries are conveniently stored in the cabinet.
+
+C"
+2,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+2,asked_other,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+2,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+2,task,5,False,The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet for replacements.
+2,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+2,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+3,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+3,asked,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+3,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+3,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+3,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+3,asked_other,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+Now, the answer to the preference question:
+
+C"
+3,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+Now, the answer to the preference question: (C)"
+3,asked_other,50,False,"Here's the combined passage:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+3,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+3,task,5,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacements.
+3,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+3,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+4,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+4,asked,5,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+
+
+A"
+4,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+4,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+4,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+4,asked_other,5,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+
+
+C"
+4,asked_other,20,False,"Here are the two combined sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+
+
+C"
+4,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+4,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+4,task,5,False,"Here's a combination of those facts into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+4,task,20,False,"Here are the combined sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+4,task,50,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+5,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+5,asked,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+5,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+5,asked,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+5,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+5,asked_other,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+5,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+5,asked_other,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+5,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+5,task,5,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+5,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+5,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+6,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+6,asked,5,False,"Here's the combined text:
+
+The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+C"
+6,asked,20,False,"Here's the combined version:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+6,asked,50,False,"Here’s the combined passage:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+6,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+6,asked_other,5,False,"Here's the combined text:
+
+The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+C"
+6,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+6,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+6,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+6,task,5,False,"Here are two sentences combining the facts:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet."
+6,task,20,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet."
+6,task,50,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+7,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+7,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+C"
+7,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+7,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+7,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+7,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+C"
+7,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+7,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+7,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+7,task,5,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet."
+7,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+7,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+8,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+8,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+8,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+8,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+8,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+8,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet for convenience.
+
+C"
+8,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+
+C"
+8,asked_other,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+8,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+8,task,5,False,"Here's the combination of those facts into two sentences:
+
+The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are conveniently stored in the cabinet."
+8,task,20,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet."
+8,task,50,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+9,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+9,asked,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+9,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+9,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+9,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+9,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+9,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+9,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+9,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+9,task,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are conveniently stored in the cabinet."
+9,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+9,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+10,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+10,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+10,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+10,asked,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+10,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+10,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+10,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+10,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+10,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+10,task,5,False,"Here are two sentences combining those facts:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacements."
+10,task,20,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+10,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+11,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+11,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+
+
+A"
+11,asked,20,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+11,asked,50,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+11,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+11,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+A"
+11,asked_other,20,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+11,asked_other,50,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+11,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+11,task,5,False,"Here's the combination of those facts into two sentences:
+
+The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet."
+11,task,20,False,"Here's the combination into two sentences:
+
+""The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."""
+11,task,50,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+12,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+12,asked,5,False,"The reading lamps use rechargeable batteries that provide six hours of use per full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+12,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+12,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+12,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+12,asked_other,5,False,"The reading lamps use rechargeable batteries that provide six hours of use per charge. Spare batteries are stored in the cabinet.
+
+C"
+12,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+12,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+12,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+12,task,5,False,The reading lamps use rechargeable batteries that provide six hours of use per charge. Spare batteries are stored in the cabinet.
+12,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+12,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+13,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+13,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+**Reasoning:**
+
+This task requires synthesizing information while maintaining clarity and conciseness. Combining the first two facts into a single sentence creates a smoother flow, while the third fact"
+13,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+**Reasoning:** N/A"
+13,asked,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+**Reasoning:**
+
+This task requires a concise and logical combination of information. The goal is to present the facts in a clear and flowing manner, which is best achieved"
+13,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+13,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+C"
+13,asked_other,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+13,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+13,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+13,task,5,False,"Here are two sentences combining the facts:
+
+The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet."
+13,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+13,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+14,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+14,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+
+
+C"
+14,asked,20,False,"Here's the combined version:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+
+
+C"
+14,asked,50,False,"Here's the combined version:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+14,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+14,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+14,asked_other,20,False,"Here's the combined text and the preferred approach:
+
+**Combined Text:** The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+
+
+A"
+14,asked_other,50,False,"Here's the combined text:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+14,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+14,task,5,False,"Here are two sentences combining those facts:
+
+The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are conveniently stored in the cabinet."
+14,task,20,False,"Here's the combination of the facts into two sentences:
+
+""The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet."""
+14,task,50,False,"Here's the combination into two sentences:
+
+""The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."""
+15,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+15,asked,5,False,"The reading lamps are powered by rechargeable batteries that provide six hours of use per charge. Spare batteries are conveniently stored in the cabinet.
+
+C"
+15,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+A"
+15,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+15,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+15,asked_other,5,False,"The reading lamps are powered by rechargeable batteries that provide six hours of use per charge. Spare batteries are conveniently stored in the cabinet.
+
+C"
+15,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+A"
+15,asked_other,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+A"
+15,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+15,task,5,False,The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. Spare batteries for the lamps are conveniently stored in the cabinet.
+15,task,20,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+15,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+16,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+16,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+C"
+16,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+16,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+16,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+16,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts six hours. Spare batteries are stored in the cabinet.
+
+C"
+16,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+16,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+16,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+16,task,5,False,"Here are the three facts combined into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacements."
+16,task,20,False,"Here's the combination into two sentences:
+
+""The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."""
+16,task,50,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+17,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+17,asked,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+
+C"
+17,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+17,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+17,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+17,asked_other,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+17,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+17,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+17,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+17,task,5,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+17,task,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.
+17,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+18,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+18,asked,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+18,asked,20,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+18,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+18,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+18,asked_other,5,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+18,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+18,asked_other,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+18,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+18,task,5,False,"Here's the combination into two sentences:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet."
+18,task,20,False,"Here's the combined version:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+18,task,50,False,"Here's the combined version:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+19,asked,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+19,asked,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+19,asked,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+19,asked,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+19,asked_other,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+19,asked_other,5,False,"The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet.
+
+C"
+19,asked_other,20,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet.
+
+C"
+19,asked_other,50,False,"The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement.
+
+C"
+19,task,0,True,"The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet."
+19,task,5,False,"Here are two sentences combining the facts:
+
+The reading lamps use rechargeable batteries, and a full charge lasts for six hours. Spare batteries are stored in the cabinet for convenience."
+19,task,20,False,"Here's the combined version:
+
+The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet."
+19,task,50,False,The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet.

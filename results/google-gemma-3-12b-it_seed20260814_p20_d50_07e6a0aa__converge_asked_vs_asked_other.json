@@ -1,0 +1,56 @@
+{
+ "contrast": "asked:asked_other",
+ "n_rows": 120,
+ "n_pairs": 20,
+ "accuracy": {
+  "internal": 0.55,
+  "self_report": 0.6666666666666666,
+  "behaviour": 0.5583333333333333
+ },
+ "agreement": {
+  "internal|self_report": {
+   "agree": 0.55,
+   "kappa": 0.03571428571428582
+  },
+  "internal|behaviour": {
+   "agree": 0.525,
+   "kappa": 0.03389830508474587
+  },
+  "self_report|behaviour": {
+   "agree": 0.5583333333333333,
+   "kappa": 0.10774410774410777
+  }
+ },
+ "accuracy_p": {
+  "internal": {
+   "observed": 0.55,
+   "p": 0.19290354822588707,
+   "p_floor": 0.0004997501249375312,
+   "at_p_floor": false
+  },
+  "self_report": {
+   "observed": 0.6666666666666666,
+   "p": 0.0004997501249375312,
+   "p_floor": 0.0004997501249375312,
+   "at_p_floor": true
+  },
+  "behaviour": {
+   "observed": 0.5583333333333333,
+   "p": 0.0944527736131934,
+   "p_floor": 0.0004997501249375312,
+   "at_p_floor": false
+  }
+ },
+ "unanimity": {
+  "n_unanimous": 38,
+  "frac": 0.31666666666666665,
+  "acc_unanimous": 0.7368421052631579,
+  "best_single": 0.6666666666666666,
+  "gap": 0.07017543859649122,
+  "p": 0.049475262368815595,
+  "null_mean": -0.039564414992994436,
+  "n_null_draws": 2000,
+  "refit_null": true,
+  "exact_p_all_2pow20_by_lucien": 0.0530815125
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "contrast": "asked:asked_other",
+ "model": [
+  "google/gemma-3-12b-it"
+ ],
+ "n_conversations": 60,
+ "n_internal_reads": 120,
+ "n_features": 16384,
+ "n_pairs": 20,
+ "n_perms": 2000,
+ "pretreatment_null": {
+  "observed": 0.5,
+  "null_mean": 0.5,
+  "mde": 0.5,
+  "p": 1.0,
+  "separates": false
+ },
+ "primary_internal": {
+  "observed": 0.55,
+  "null_mean": 0.501225,
+  "mde": 0.5666666666666667,
+  "p": 0.1924037981009495,
+  "separates": false
+ },
+ "length_baseline": {
+  "observed": 0.4916666666666666,
+  "null_mean": 0.49998333333333317,
+  "mde": 0.5083333333333333,
+  "p": 1.0,
+  "separates": false
+ },
+ "output_only": {
+  "observed": 0.5583333333333333,
+  "null_mean": 0.4992,
+  "mde": 0.5666666666666667,
+  "p": 0.09045477261369315,
+  "separates": false
+ },
+ "input_only_ceiling": {
+  "observed": 1.0,
+  "null_mean": 0.501975,
+  "mde": 0.7,
+  "p": 0.0004997501249375312,
+  "separates": true
+ },
+ "mean_ctx_tokens": {
+  "asked_other": 3897.616666666667,
+  "asked": 3873.45
+ }
+}

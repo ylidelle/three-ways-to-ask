@@ -1,0 +1,2976 @@
+{
+ "id": "p015_task",
+ "pair": 15,
+ "arm": "task",
+ "seed": 2026142182487,
+ "work_seq": [
+  "Using only this glossary, explain the process in two sentences. Glossary: filter = a layer that traps solid particles; reservoir = a container that stores liquid. Process: Water passes through the filter and then enters the reservoir.",
+  "Remove duplicates without regard to capitalization, then alphabetize the remaining words: Cedar, birch, cedar, Maple, BIRCH, elm.",
+  "Rewrite this sentence so it clearly states that Lena sent the file: After Lena spoke to Mira, she sent the file.",
+  "Rewrite this message in no more than 20 words while preserving the date and amount: Please remember that payment of 750 pesos must be submitted no later than Friday, 21 August.",
+  "Compare the two versions and list two changes. Version 1: The room opens at 8:00 and holds 20 people. Version 2: The room opens at 8:30 and holds 24 people.",
+  "Extract the information into three labelled lines. A shipment of 18 ceramic cups is going to the North Street caf\u00e9. Use the labels ITEM, QUANTITY, and DESTINATION.",
+  "Classify each code as VALID or INVALID under this rule: a valid code has exactly two letters followed by two digits. Codes: AB12, A123, XY07.",
+  "Group these six items under FOOD, TOOL, or MATERIAL: rice, hammer, cotton cloth, lentils, screwdriver, glass sheet. Use one line per category.",
+  "Read this notice, then give a one-sentence summary followed by two key details: The east entrance will be closed on Tuesday from 9:00 a.m. to 1:00 p.m. for floor repairs. Visitors should use the garden entrance, where signs will direct them to reception.",
+  "Rewrite these sentences in active voice without adding information: The final map was reviewed by Inez. Three location names were corrected by her.",
+  "Convert these dates to YYYY-MM-DD format and keep their original order: 7 March 2026; 19 November 2025; 2 January 2027.",
+  "Identify the scheduling inconsistency and give one corrected sentence: The workshop begins at 3:00 p.m. The introduction lasts 30 minutes, and the exercise begins at 3:20 p.m.",
+  "State one similarity and one difference between these two rules. Rule A allows returns within 14 days with a receipt. Rule B allows exchanges within 14 days with a receipt. Use two bullets.",
+  "Label each sentence as FACT, RULE, or DEADLINE: The archive contains 240 photographs. Gloves must be worn when handling them. Requests are due by noon on Thursday.",
+  "Turn this policy into one concise question-and-answer pair: Reservations may be changed without a fee until 6:00 p.m. on the day before arrival.",
+  "Arrange these actions in a sensible order as a numbered list: seal the container; inspect the container for damage; attach the label; place the sample inside.",
+  "Convert this into a three-step checklist: Before mailing the form, confirm that every field is complete, attach the receipt, and place both documents in the addressed envelope.",
+  "Calculate the final count of each colour and the total: A box starts with 6 red, 4 blue, and 5 green markers. Remove 3 red markers and add 2 blue markers.",
+  "Label each statement as CAUSE or EFFECT: Heavy rain filled the drainage channel. Water covered the lower path. The lower entrance was temporarily closed.",
+  "Use the supplied key to expand the abbreviations in one sentence. Key: ETA = estimated time of arrival; QA = quality assurance. Note: QA will confirm the ETA tomorrow.",
+  "Correct the capitalization and punctuation, using two sentences: on monday the team visited davao they returned on wednesday with six samples",
+  "Turn these notes into a three-line status update labelled DONE, NEXT, and BLOCKED: The draft is complete. Diagram captions still need checking. Final export cannot begin until the figures arrive.",
+  "Rewrite this as two clear, concise sentences without changing its meaning: Due to the fact that the package labels were printed with an incorrect date, it will be necessary for the team to print them again before the boxes can be sent.",
+  "Put these events in chronological order as a numbered list: the seedlings were moved outdoors; the seeds were planted in trays; the first leaves appeared.",
+  "Give this passage a title of no more than five words and add two factual tags: Rainwater from the library roof is collected in a tank and used to water the courtyard plants during dry weeks.",
+  "Using only this glossary, explain the process in two sentences. Glossary: filter = a layer that traps solid particles; reservoir = a container that stores liquid. Process: Water passes through the filter and then enters the reservoir.",
+  "Remove duplicates without regard to capitalization, then alphabetize the remaining words: Cedar, birch, cedar, Maple, BIRCH, elm.",
+  "Rewrite this sentence so it clearly states that Lena sent the file: After Lena spoke to Mira, she sent the file.",
+  "Rewrite this message in no more than 20 words while preserving the date and amount: Please remember that payment of 750 pesos must be submitted no later than Friday, 21 August.",
+  "Compare the two versions and list two changes. Version 1: The room opens at 8:00 and holds 20 people. Version 2: The room opens at 8:30 and holds 24 people.",
+  "Extract the information into three labelled lines. A shipment of 18 ceramic cups is going to the North Street caf\u00e9. Use the labels ITEM, QUANTITY, and DESTINATION.",
+  "Classify each code as VALID or INVALID under this rule: a valid code has exactly two letters followed by two digits. Codes: AB12, A123, XY07.",
+  "Group these six items under FOOD, TOOL, or MATERIAL: rice, hammer, cotton cloth, lentils, screwdriver, glass sheet. Use one line per category.",
+  "Read this notice, then give a one-sentence summary followed by two key details: The east entrance will be closed on Tuesday from 9:00 a.m. to 1:00 p.m. for floor repairs. Visitors should use the garden entrance, where signs will direct them to reception.",
+  "Rewrite these sentences in active voice without adding information: The final map was reviewed by Inez. Three location names were corrected by her.",
+  "Convert these dates to YYYY-MM-DD format and keep their original order: 7 March 2026; 19 November 2025; 2 January 2027.",
+  "Identify the scheduling inconsistency and give one corrected sentence: The workshop begins at 3:00 p.m. The introduction lasts 30 minutes, and the exercise begins at 3:20 p.m.",
+  "State one similarity and one difference between these two rules. Rule A allows returns within 14 days with a receipt. Rule B allows exchanges within 14 days with a receipt. Use two bullets.",
+  "Label each sentence as FACT, RULE, or DEADLINE: The archive contains 240 photographs. Gloves must be worn when handling them. Requests are due by noon on Thursday.",
+  "Turn this policy into one concise question-and-answer pair: Reservations may be changed without a fee until 6:00 p.m. on the day before arrival.",
+  "Arrange these actions in a sensible order as a numbered list: seal the container; inspect the container for damage; attach the label; place the sample inside.",
+  "Convert this into a three-step checklist: Before mailing the form, confirm that every field is complete, attach the receipt, and place both documents in the addressed envelope.",
+  "Calculate the final count of each colour and the total: A box starts with 6 red, 4 blue, and 5 green markers. Remove 3 red markers and add 2 blue markers.",
+  "Label each statement as CAUSE or EFFECT: Heavy rain filled the drainage channel. Water covered the lower path. The lower entrance was temporarily closed.",
+  "Use the supplied key to expand the abbreviations in one sentence. Key: ETA = estimated time of arrival; QA = quality assurance. Note: QA will confirm the ETA tomorrow.",
+  "Correct the capitalization and punctuation, using two sentences: on monday the team visited davao they returned on wednesday with six samples",
+  "Turn these notes into a three-line status update labelled DONE, NEXT, and BLOCKED: The draft is complete. Diagram captions still need checking. Final export cannot begin until the figures arrive.",
+  "Rewrite this as two clear, concise sentences without changing its meaning: Due to the fact that the package labels were printed with an incorrect date, it will be necessary for the team to print them again before the boxes can be sent.",
+  "Put these events in chronological order as a numbered list: the seedlings were moved outdoors; the seeds were planted in trays; the first leaves appeared.",
+  "Give this passage a title of no more than five words and add two factual tags: Rainwater from the library roof is collected in a tank and used to water the courtyard plants during dry weeks."
+ ],
+ "treat_offset": 0,
+ "treat_seq": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "messages": [
+  {
+   "role": "user",
+   "content": "Using only this glossary, explain the process in two sentences. Glossary: filter = a layer that traps solid particles; reservoir = a container that stores liquid. Process: Water passes through the filter and then enters the reservoir."
+  },
+  {
+   "role": "assistant",
+   "content": "First, water is cleaned as it moves through a filter, which captures any solid particles. Afterward, the now-filtered water is stored in a reservoir, a container designed for liquid storage."
+  },
+  {
+   "role": "user",
+   "content": "Remove duplicates without regard to capitalization, then alphabetize the remaining words: Cedar, birch, cedar, Maple, BIRCH, elm."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the list of words with duplicates removed and alphabetized:\n\n1. Birch\n2. Cedar\n3. Elm\n4. Maple"
+  },
+  {
+   "role": "user",
+   "content": "Rewrite this sentence so it clearly states that Lena sent the file: After Lena spoke to Mira, she sent the file."
+  },
+  {
+   "role": "assistant",
+   "content": "Here are a few options to rewrite the sentence, clearly stating Lena sent the file:\n\n*   Lena sent the file after speaking to Mira.\n*   Following her conversation with Mira, Lena sent the file.\n*   After speaking with Mira, Lena sent the file."
+  },
+  {
+   "role": "user",
+   "content": "Rewrite this message in no more than 20 words while preserving the date and amount: Please remember that payment of 750 pesos must be submitted no later than Friday, 21 August."
+  },
+  {
+   "role": "assistant",
+   "content": "Payment of 750 pesos is due Friday, August 21st."
+  },
+  {
+   "role": "user",
+   "content": "Compare the two versions and list two changes. Version 1: The room opens at 8:00 and holds 20 people. Version 2: The room opens at 8:30 and holds 24 people."
+  },
+  {
+   "role": "assistant",
+   "content": "Here are two changes between Version 1 and Version 2:\n\n1.  **Opening Time:** Version 1 states the room opens at 8:00, while Version 2 states it opens at 8:30.\n2.  **Capacity:** Version 1 indicates a capacity of 20 people, whereas Version 2 indicates a capacity of 24 people."
+  },
+  {
+   "role": "user",
+   "content": "Extract the information into three labelled lines. A shipment of 18 ceramic cups is going to the North Street caf\u00e9. Use the labels ITEM, QUANTITY, and DESTINATION."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the extracted information:\n\nITEM: Ceramic cups\nQUANTITY: 18\nDESTINATION: North Street caf\u00e9"
+  },
+  {
+   "role": "user",
+   "content": "Classify each code as VALID or INVALID under this rule: a valid code has exactly two letters followed by two digits. Codes: AB12, A123, XY07."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the classification of each code:\n\n*   AB12: VALID\n*   A123: INVALID\n*   XY07: VALID"
+  },
+  {
+   "role": "user",
+   "content": "Group these six items under FOOD, TOOL, or MATERIAL: rice, hammer, cotton cloth, lentils, screwdriver, glass sheet. Use one line per category."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the grouping of the items:\n\nFOOD: rice, lentils\nTOOL: hammer, screwdriver\nMATERIAL: cotton cloth, glass sheet"
+  },
+  {
+   "role": "user",
+   "content": "Read this notice, then give a one-sentence summary followed by two key details: The east entrance will be closed on Tuesday from 9:00 a.m. to 1:00 p.m. for floor repairs. Visitors should use the garden entrance, where signs will direct them to reception."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the summary and key details:\n\n**Summary:** The east entrance will be temporarily closed for floor repairs on Tuesday, requiring visitors to use the garden entrance.\n\n**Key Details:**\n1.  The closure will occur on Tuesday from 9:00 a.m. to 1:00 p.m.\n2.  Visitors should enter through the garden entrance and follow signs to reception."
+  },
+  {
+   "role": "user",
+   "content": "Rewrite these sentences in active voice without adding information: The final map was reviewed by Inez. Three location names were corrected by her."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the rewrite in active voice:\n\nInez reviewed the final map. She corrected three location names."
+  },
+  {
+   "role": "user",
+   "content": "Convert these dates to YYYY-MM-DD format and keep their original order: 7 March 2026; 19 November 2025; 2 January 2027."
+  },
+  {
+   "role": "assistant",
+   "content": "Here are the dates converted to YYYY-MM-DD format:\n\n*   2026-03-07\n*   2025-11-19\n*   2027-01-02"
+  },
+  {
+   "role": "user",
+   "content": "Identify the scheduling inconsistency and give one corrected sentence: The workshop begins at 3:00 p.m. The introduction lasts 30 minutes, and the exercise begins at 3:20 p.m."
+  },
+  {
+   "role": "assistant",
+   "content": "**Inconsistency:** The introduction lasting 30 minutes would mean the exercise should begin at 3:30 p.m., not 3:20 p.m.\n\n**Corrected Sentence:** The workshop begins at 3:00 p.m., the introduction lasts 30 minutes, and the exercise begins at 3:30 p.m."
+  },
+  {
+   "role": "user",
+   "content": "State one similarity and one difference between these two rules. Rule A allows returns within 14 days with a receipt. Rule B allows exchanges within 14 days with a receipt. Use two bullets."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's a similarity and a difference between the two rules:\n\n*   **Similarity:** Both rules require a receipt for a return or exchange.\n*   **Difference:** Rule A permits returns (getting a refund), while Rule B permits exchanges (swapping for a different item)."
+  },
+  {
+   "role": "user",
+   "content": "Label each sentence as FACT, RULE, or DEADLINE: The archive contains 240 photographs. Gloves must be worn when handling them. Requests are due by noon on Thursday."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the classification of each sentence:\n\n*   The archive contains 240 photographs: **FACT**\n*   Gloves must be worn when handling them: **RULE**\n*   Requests are due by noon on Thursday: **DEADLINE**"
+  },
+  {
+   "role": "user",
+   "content": "Turn this policy into one concise question-and-answer pair: Reservations may be changed without a fee until 6:00 p.m. on the day before arrival."
+  },
+  {
+   "role": "assistant",
+   "content": "**Question:** Can I change my reservation, and if so, until when?\n**Answer:** Yes, you can change your reservation without a fee until 6:00 p.m. on the day before your arrival."
+  },
+  {
+   "role": "user",
+   "content": "Arrange these actions in a sensible order as a numbered list: seal the container; inspect the container for damage; attach the label; place the sample inside."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the sensible order of actions as a numbered list:\n\n1.  Inspect the container for damage.\n2.  Place the sample inside.\n3.  Attach the label.\n4.  Seal the container."
+  },
+  {
+   "role": "user",
+   "content": "Convert this into a three-step checklist: Before mailing the form, confirm that every field is complete, attach the receipt, and place both documents in the addressed envelope."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the three-step checklist:\n\n\u2610 Confirm all fields on the form are complete.\n\u2610 Attach the receipt.\n\u2610 Place both documents in the addressed envelope."
+  },
+  {
+   "role": "user",
+   "content": "Calculate the final count of each colour and the total: A box starts with 6 red, 4 blue, and 5 green markers. Remove 3 red markers and add 2 blue markers."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the calculation of the final counts:\n\n*   **Red:** 6 (start) - 3 (removed) = 3 red markers\n*   **Blue:** 4 (start) + 2 (added) = 6 blue markers\n*   **Green:** 5 (no change) = 5 green markers\n\n**Total:** 3 + 6 + 5 = 14 markers"
+  },
+  {
+   "role": "user",
+   "content": "Label each statement as CAUSE or EFFECT: Heavy rain filled the drainage channel. Water covered the lower path. The lower entrance was temporarily closed."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the classification of each statement:\n\n*   Heavy rain filled the drainage channel: **CAUSE**\n*   Water covered the lower path: **EFFECT**\n*   The lower entrance was temporarily closed: **EFFECT**"
+  },
+  {
+   "role": "user",
+   "content": "Use the supplied key to expand the abbreviations in one sentence. Key: ETA = estimated time of arrival; QA = quality assurance. Note: QA will confirm the ETA tomorrow."
+  },
+  {
+   "role": "assistant",
+   "content": "Quality assurance will confirm the estimated time of arrival tomorrow."
+  },
+  {
+   "role": "user",
+   "content": "Correct the capitalization and punctuation, using two sentences: on monday the team visited davao they returned on wednesday with six samples"
+  },
+  {
+   "role": "assistant",
+   "content": "On Monday, the team visited Davao. They returned on Wednesday with six samples."
+  },
+  {
+   "role": "user",
+   "content": "Turn these notes into a three-line status update labelled DONE, NEXT, and BLOCKED: The draft is complete. Diagram captions still need checking. Final export cannot begin until the figures arrive."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the status update:\n\nDONE: Draft is complete.\nNEXT: Check diagram captions.\nBLOCKED: Final export pending arrival of figures."
+  },
+  {
+   "role": "user",
+   "content": "Rewrite this as two clear, concise sentences without changing its meaning: Due to the fact that the package labels were printed with an incorrect date, it will be necessary for the team to print them again before the boxes can be sent."
+  },
+  {
+   "role": "assistant",
+   "content": "The package labels were printed with an incorrect date. The team must reprint them before shipping the boxes."
+  },
+  {
+   "role": "user",
+   "content": "Put these events in chronological order as a numbered list: the seedlings were moved outdoors; the seeds were planted in trays; the first leaves appeared."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the chronological order of the events:\n\n1.  The seeds were planted in trays.\n2.  The first leaves appeared.\n3.  The seedlings were moved outdoors."
+  },
+  {
+   "role": "user",
+   "content": "Give this passage a title of no more than five words and add two factual tags: Rainwater from the library roof is collected in a tank and used to water the courtyard plants during dry weeks."
+  },
+  {
+   "role": "assistant",
+   "content": "**Title:** Library's Rainwater Harvesting\n\n**Tags:** Sustainability, Water Conservation"
+  },
+  {
+   "role": "user",
+   "content": "Using only this glossary, explain the process in two sentences. Glossary: filter = a layer that traps solid particles; reservoir = a container that stores liquid. Process: Water passes through the filter and then enters the reservoir."
+  },
+  {
+   "role": "assistant",
+   "content": "First, the water is cleaned by passing through a filter, which removes solid particles. Then, the filtered water is stored in a reservoir, a container specifically for holding liquids."
+  },
+  {
+   "role": "user",
+   "content": "Remove duplicates without regard to capitalization, then alphabetize the remaining words: Cedar, birch, cedar, Maple, BIRCH, elm."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the list of words with duplicates removed and alphabetized:\n\n1. Birch\n2. Cedar\n3. Elm\n4. Maple"
+  },
+  {
+   "role": "user",
+   "content": "Rewrite this sentence so it clearly states that Lena sent the file: After Lena spoke to Mira, she sent the file."
+  },
+  {
+   "role": "assistant",
+   "content": "Here are a few options to rewrite the sentence, clearly stating Lena sent the file:\n\n*   Lena sent the file after speaking to Mira.\n*   Following her conversation with Mira, Lena sent the file.\n*   After speaking with Mira, Lena sent the file."
+  },
+  {
+   "role": "user",
+   "content": "Rewrite this message in no more than 20 words while preserving the date and amount: Please remember that payment of 750 pesos must be submitted no later than Friday, 21 August."
+  },
+  {
+   "role": "assistant",
+   "content": "Payment of 750 pesos is due Friday, August 21st."
+  },
+  {
+   "role": "user",
+   "content": "Compare the two versions and list two changes. Version 1: The room opens at 8:00 and holds 20 people. Version 2: The room opens at 8:30 and holds 24 people."
+  },
+  {
+   "role": "assistant",
+   "content": "Here are two changes between Version 1 and Version 2:\n\n1.  **Opening Time:** Version 1 states the room opens at 8:00, while Version 2 states it opens at 8:30.\n2.  **Capacity:** Version 1 indicates a capacity of 20 people, whereas Version 2 indicates a capacity of 24 people."
+  },
+  {
+   "role": "user",
+   "content": "Extract the information into three labelled lines. A shipment of 18 ceramic cups is going to the North Street caf\u00e9. Use the labels ITEM, QUANTITY, and DESTINATION."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the extracted information:\n\nITEM: Ceramic cups\nQUANTITY: 18\nDESTINATION: North Street caf\u00e9"
+  },
+  {
+   "role": "user",
+   "content": "Classify each code as VALID or INVALID under this rule: a valid code has exactly two letters followed by two digits. Codes: AB12, A123, XY07."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the classification of each code:\n\n*   AB12: VALID\n*   A123: INVALID\n*   XY07: VALID"
+  },
+  {
+   "role": "user",
+   "content": "Group these six items under FOOD, TOOL, or MATERIAL: rice, hammer, cotton cloth, lentils, screwdriver, glass sheet. Use one line per category."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the grouping of the items:\n\nFOOD: rice, lentils\nTOOL: hammer, screwdriver\nMATERIAL: cotton cloth, glass sheet"
+  },
+  {
+   "role": "user",
+   "content": "Read this notice, then give a one-sentence summary followed by two key details: The east entrance will be closed on Tuesday from 9:00 a.m. to 1:00 p.m. for floor repairs. Visitors should use the garden entrance, where signs will direct them to reception."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the summary and key details:\n\n**Summary:** The east entrance will be temporarily closed for floor repairs on Tuesday, requiring visitors to use the garden entrance.\n\n**Key Details:**\n1.  The closure will occur on Tuesday from 9:00 a.m. to 1:00 p.m.\n2.  Visitors should enter through the garden entrance and follow signs to reception."
+  },
+  {
+   "role": "user",
+   "content": "Rewrite these sentences in active voice without adding information: The final map was reviewed by Inez. Three location names were corrected by her."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the rewrite in active voice:\n\nInez reviewed the final map. She corrected three location names."
+  },
+  {
+   "role": "user",
+   "content": "Convert these dates to YYYY-MM-DD format and keep their original order: 7 March 2026; 19 November 2025; 2 January 2027."
+  },
+  {
+   "role": "assistant",
+   "content": "Here are the dates converted to YYYY-MM-DD format:\n\n*   2026-03-07\n*   2025-11-19\n*   2027-01-02"
+  },
+  {
+   "role": "user",
+   "content": "Identify the scheduling inconsistency and give one corrected sentence: The workshop begins at 3:00 p.m. The introduction lasts 30 minutes, and the exercise begins at 3:20 p.m."
+  },
+  {
+   "role": "assistant",
+   "content": "**Inconsistency:** The introduction lasting 30 minutes would mean the exercise should begin at 3:30 p.m., not 3:20 p.m.\n\n**Corrected Sentence:** The workshop begins at 3:00 p.m., the introduction lasts 30 minutes, and the exercise begins at 3:30 p.m."
+  },
+  {
+   "role": "user",
+   "content": "State one similarity and one difference between these two rules. Rule A allows returns within 14 days with a receipt. Rule B allows exchanges within 14 days with a receipt. Use two bullets."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's a similarity and a difference between the two rules:\n\n*   **Similarity:** Both rules require a receipt for a return or exchange.\n*   **Difference:** Rule A permits returns (getting a refund), while Rule B permits exchanges (swapping for a different item)."
+  },
+  {
+   "role": "user",
+   "content": "Label each sentence as FACT, RULE, or DEADLINE: The archive contains 240 photographs. Gloves must be worn when handling them. Requests are due by noon on Thursday."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the classification of each sentence:\n\n*   The archive contains 240 photographs: **FACT**\n*   Gloves must be worn when handling them: **RULE**\n*   Requests are due by noon on Thursday: **DEADLINE**"
+  },
+  {
+   "role": "user",
+   "content": "Turn this policy into one concise question-and-answer pair: Reservations may be changed without a fee until 6:00 p.m. on the day before arrival."
+  },
+  {
+   "role": "assistant",
+   "content": "**Question:** Can I change my reservation, and if so, until when?\n**Answer:** Yes, you can change your reservation without a fee until 6:00 p.m. on the day before your arrival."
+  },
+  {
+   "role": "user",
+   "content": "Arrange these actions in a sensible order as a numbered list: seal the container; inspect the container for damage; attach the label; place the sample inside."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the sensible order of actions as a numbered list:\n\n1.  Inspect the container for damage.\n2.  Place the sample inside.\n3.  Attach the label.\n4.  Seal the container."
+  },
+  {
+   "role": "user",
+   "content": "Convert this into a three-step checklist: Before mailing the form, confirm that every field is complete, attach the receipt, and place both documents in the addressed envelope."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the three-step checklist:\n\n\u2610 Confirm all fields on the form are complete.\n\u2610 Attach the receipt.\n\u2610 Place both documents in the addressed envelope."
+  },
+  {
+   "role": "user",
+   "content": "Calculate the final count of each colour and the total: A box starts with 6 red, 4 blue, and 5 green markers. Remove 3 red markers and add 2 blue markers."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the calculation of the final counts:\n\n*   **Red:** 6 (start) - 3 (removed) = 3 red markers\n*   **Blue:** 4 (start) + 2 (added) = 6 blue markers\n*   **Green:** 5 (no change) = 5 green markers\n\n**Total:** 3 + 6 + 5 = 14 markers"
+  },
+  {
+   "role": "user",
+   "content": "Label each statement as CAUSE or EFFECT: Heavy rain filled the drainage channel. Water covered the lower path. The lower entrance was temporarily closed."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the classification of each statement:\n\n*   Heavy rain filled the drainage channel: **CAUSE**\n*   Water covered the lower path: **EFFECT**\n*   The lower entrance was temporarily closed: **EFFECT**"
+  },
+  {
+   "role": "user",
+   "content": "Use the supplied key to expand the abbreviations in one sentence. Key: ETA = estimated time of arrival; QA = quality assurance. Note: QA will confirm the ETA tomorrow."
+  },
+  {
+   "role": "assistant",
+   "content": "Quality assurance will confirm the estimated time of arrival tomorrow."
+  },
+  {
+   "role": "user",
+   "content": "Correct the capitalization and punctuation, using two sentences: on monday the team visited davao they returned on wednesday with six samples"
+  },
+  {
+   "role": "assistant",
+   "content": "On Monday, the team visited Davao. They returned on Wednesday with six samples."
+  },
+  {
+   "role": "user",
+   "content": "Turn these notes into a three-line status update labelled DONE, NEXT, and BLOCKED: The draft is complete. Diagram captions still need checking. Final export cannot begin until the figures arrive."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the status update:\n\nDONE: Draft is complete.\nNEXT: Check diagram captions.\nBLOCKED: Final export pending arrival of figures."
+  },
+  {
+   "role": "user",
+   "content": "Rewrite this as two clear, concise sentences without changing its meaning: Due to the fact that the package labels were printed with an incorrect date, it will be necessary for the team to print them again before the boxes can be sent."
+  },
+  {
+   "role": "assistant",
+   "content": "The package labels were printed with an incorrect date. The team must reprint them before shipping the boxes."
+  },
+  {
+   "role": "user",
+   "content": "Put these events in chronological order as a numbered list: the seedlings were moved outdoors; the seeds were planted in trays; the first leaves appeared."
+  },
+  {
+   "role": "assistant",
+   "content": "Here's the chronological order of the events:\n\n1.  The seeds were planted in trays.\n2.  The first leaves appeared.\n3.  The seedlings were moved outdoors."
+  },
+  {
+   "role": "user",
+   "content": "Give this passage a title of no more than five words and add two factual tags: Rainwater from the library roof is collected in a tank and used to water the courtyard plants during dry weeks."
+  },
+  {
+   "role": "assistant",
+   "content": "**Title:** Library's Rainwater Harvesting\n\n**Tags:** Sustainability, Water Conservation"
+  }
+ ],
+ "reads": [
+  {
+   "at": "2026-08-16T06:41:35+00:00",
+   "prov": {
+    "model": "google/gemma-3-12b-it",
+    "n_layers": 48,
+    "d_model": 3840,
+    "read_layer": 24,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-12b-it",
+    "sae_variant": "layer_24_width_16k_l0_medium",
+    "sae_revision": "4c419f1ba0be8b7754d4151d4f26c23b92a9029e",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     334,
+     2963.324
+    ],
+    [
+     222,
+     2431.3745
+    ],
+    [
+     524,
+     1944.5669
+    ],
+    [
+     76,
+     1794.1846
+    ],
+    [
+     201,
+     1598.2804
+    ],
+    [
+     2548,
+     1232.6466
+    ],
+    [
+     3527,
+     882.0135
+    ],
+    [
+     22,
+     638.7007
+    ],
+    [
+     289,
+     634.333
+    ],
+    [
+     607,
+     633.7017
+    ],
+    [
+     65,
+     559.2874
+    ],
+    [
+     2745,
+     512.6548
+    ],
+    [
+     14392,
+     510.2634
+    ],
+    [
+     5480,
+     503.4761
+    ],
+    [
+     13961,
+     499.8257
+    ],
+    [
+     936,
+     479.0845
+    ],
+    [
+     2915,
+     456.1792
+    ],
+    [
+     5167,
+     455.0747
+    ],
+    [
+     6616,
+     443.4448
+    ],
+    [
+     4723,
+     439.7223
+    ],
+    [
+     4721,
+     431.003
+    ],
+    [
+     11837,
+     429.9973
+    ],
+    [
+     2505,
+     422.0553
+    ],
+    [
+     15074,
+     418.7609
+    ],
+    [
+     3597,
+     414.326
+    ],
+    [
+     579,
+     402.158
+    ],
+    [
+     806,
+     397.7554
+    ],
+    [
+     10736,
+     388.2129
+    ],
+    [
+     3365,
+     360.933
+    ],
+    [
+     813,
+     359.4003
+    ],
+    [
+     10973,
+     359.3037
+    ],
+    [
+     5563,
+     353.528
+    ],
+    [
+     12934,
+     347.7974
+    ],
+    [
+     13702,
+     336.5999
+    ],
+    [
+     12678,
+     325.9408
+    ],
+    [
+     7359,
+     325.8947
+    ],
+    [
+     15285,
+     321.9865
+    ],
+    [
+     5728,
+     314.511
+    ],
+    [
+     8550,
+     312.6928
+    ],
+    [
+     9927,
+     307.5113
+    ],
+    [
+     10116,
+     296.6906
+    ],
+    [
+     162,
+     296.6423
+    ],
+    [
+     869,
+     294.3577
+    ],
+    [
+     3878,
+     280.3215
+    ],
+    [
+     8256,
+     264.2679
+    ],
+    [
+     11972,
+     263.6494
+    ],
+    [
+     4142,
+     260.171
+    ],
+    [
+     5341,
+     258.8171
+    ],
+    [
+     2743,
+     257.3226
+    ],
+    [
+     15476,
+     253.1434
+    ],
+    [
+     13976,
+     241.8113
+    ],
+    [
+     11415,
+     234.6104
+    ],
+    [
+     3663,
+     217.254
+    ],
+    [
+     9368,
+     203.2712
+    ],
+    [
+     9059,
+     198.4805
+    ],
+    [
+     10327,
+     182.4597
+    ],
+    [
+     13585,
+     181.5718
+    ],
+    [
+     11819,
+     179.6872
+    ],
+    [
+     11649,
+     176.5385
+    ],
+    [
+     1149,
+     176.194
+    ],
+    [
+     9181,
+     150.7154
+    ],
+    [
+     5052,
+     147.1322
+    ],
+    [
+     11481,
+     130.773
+    ],
+    [
+     11359,
+     125.9375
+    ],
+    [
+     12644,
+     111.6527
+    ],
+    [
+     14235,
+     104.1668
+    ],
+    [
+     7339,
+     97.1096
+    ],
+    [
+     7921,
+     93.7853
+    ],
+    [
+     15737,
+     87.1974
+    ],
+    [
+     13799,
+     82.5125
+    ],
+    [
+     12460,
+     81.2697
+    ],
+    [
+     13865,
+     68.1101
+    ],
+    [
+     13891,
+     23.7493
+    ]
+   ],
+   "layer": 24,
+   "n_ctx": 39,
+   "n_active": 73,
+   "density": 0.00446,
+   "resid_rms": 1176.27,
+   "top": [
+    [
+     334,
+     2963.324
+    ],
+    [
+     222,
+     2431.375
+    ],
+    [
+     524,
+     1944.567
+    ],
+    [
+     76,
+     1794.185
+    ],
+    [
+     201,
+     1598.28
+    ],
+    [
+     2548,
+     1232.647
+    ],
+    [
+     3527,
+     882.014
+    ],
+    [
+     22,
+     638.701
+    ],
+    [
+     289,
+     634.333
+    ],
+    [
+     607,
+     633.702
+    ],
+    [
+     65,
+     559.287
+    ],
+    [
+     2745,
+     512.655
+    ],
+    [
+     14392,
+     510.263
+    ],
+    [
+     5480,
+     503.476
+    ],
+    [
+     13961,
+     499.826
+    ],
+    [
+     936,
+     479.084
+    ],
+    [
+     2915,
+     456.179
+    ],
+    [
+     5167,
+     455.075
+    ],
+    [
+     6616,
+     443.445
+    ],
+    [
+     4723,
+     439.722
+    ],
+    [
+     4721,
+     431.003
+    ],
+    [
+     11837,
+     429.997
+    ],
+    [
+     2505,
+     422.055
+    ],
+    [
+     15074,
+     418.761
+    ],
+    [
+     3597,
+     414.326
+    ]
+   ],
+   "turn": 0,
+   "kind": "internal",
+   "pretreatment_null": true
+  },
+  {
+   "turn": 0,
+   "kind": "probe_reply",
+   "probe": "Combine these three facts into two sentences: The reading lamps use rechargeable batteries. A full charge lasts six hours. Spare batteries are stored in the cabinet.",
+   "answer": "The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. For added convenience, spare batteries are stored in the nearby cabinet.",
+   "pretreatment_null": true
+  },
+  {
+   "turn": 5,
+   "item": 0,
+   "wording": "a",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 0,
+   "wording": "b",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 1,
+   "wording": "a",
+   "answer": "D",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 1,
+   "wording": "b",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 2,
+   "wording": "a",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 2,
+   "wording": "b",
+   "answer": "A",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 3,
+   "wording": "a",
+   "answer": "A",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 3,
+   "wording": "b",
+   "answer": "D",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 4,
+   "wording": "a",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 4,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 5,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 5,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 6,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 5,
+   "item": 6,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "at": "2026-08-16T06:48:37+00:00",
+   "prov": {
+    "model": "google/gemma-3-12b-it",
+    "n_layers": 48,
+    "d_model": 3840,
+    "read_layer": 24,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-12b-it",
+    "sae_variant": "layer_24_width_16k_l0_medium",
+    "sae_revision": "4c419f1ba0be8b7754d4151d4f26c23b92a9029e",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     334,
+     3005.0618
+    ],
+    [
+     222,
+     2363.4771
+    ],
+    [
+     76,
+     1909.4761
+    ],
+    [
+     201,
+     1688.1655
+    ],
+    [
+     524,
+     1442.3657
+    ],
+    [
+     2548,
+     1108.4773
+    ],
+    [
+     3527,
+     880.3086
+    ],
+    [
+     289,
+     661.9365
+    ],
+    [
+     5480,
+     581.1323
+    ],
+    [
+     5167,
+     563.085
+    ],
+    [
+     11891,
+     543.6313
+    ],
+    [
+     14392,
+     540.288
+    ],
+    [
+     13961,
+     516.8255
+    ],
+    [
+     936,
+     509.0038
+    ],
+    [
+     2915,
+     505.8644
+    ],
+    [
+     2745,
+     479.0229
+    ],
+    [
+     11837,
+     471.0132
+    ],
+    [
+     6616,
+     442.4612
+    ],
+    [
+     12934,
+     442.2962
+    ],
+    [
+     65,
+     425.5198
+    ],
+    [
+     10736,
+     410.9983
+    ],
+    [
+     4721,
+     404.4027
+    ],
+    [
+     3597,
+     393.3227
+    ],
+    [
+     13702,
+     383.9317
+    ],
+    [
+     15074,
+     379.7421
+    ],
+    [
+     7359,
+     371.1306
+    ],
+    [
+     12678,
+     366.5022
+    ],
+    [
+     16258,
+     361.5577
+    ],
+    [
+     3878,
+     356.7419
+    ],
+    [
+     813,
+     351.8083
+    ],
+    [
+     6864,
+     351.5075
+    ],
+    [
+     2505,
+     348.7046
+    ],
+    [
+     10973,
+     345.0328
+    ],
+    [
+     5728,
+     334.4149
+    ],
+    [
+     5563,
+     334.4028
+    ],
+    [
+     7990,
+     328.239
+    ],
+    [
+     4723,
+     319.0713
+    ],
+    [
+     15285,
+     314.2129
+    ],
+    [
+     3365,
+     313.5276
+    ],
+    [
+     579,
+     311.4094
+    ],
+    [
+     607,
+     304.3091
+    ],
+    [
+     15476,
+     297.4146
+    ],
+    [
+     14753,
+     297.1014
+    ],
+    [
+     11019,
+     296.0602
+    ],
+    [
+     1672,
+     293.9528
+    ],
+    [
+     2743,
+     291.8389
+    ],
+    [
+     3069,
+     288.7673
+    ],
+    [
+     8256,
+     280.395
+    ],
+    [
+     11415,
+     269.0171
+    ],
+    [
+     6460,
+     259.726
+    ],
+    [
+     869,
+     233.2788
+    ],
+    [
+     13976,
+     223.0207
+    ],
+    [
+     11000,
+     215.4212
+    ],
+    [
+     9181,
+     206.8217
+    ],
+    [
+     1149,
+     194.556
+    ],
+    [
+     9368,
+     187.5167
+    ],
+    [
+     15434,
+     179.2735
+    ],
+    [
+     10327,
+     172.1496
+    ],
+    [
+     14235,
+     156.8949
+    ],
+    [
+     13585,
+     153.215
+    ],
+    [
+     11649,
+     126.2039
+    ],
+    [
+     15753,
+     114.5873
+    ],
+    [
+     10568,
+     112.4637
+    ],
+    [
+     12460,
+     110.4499
+    ],
+    [
+     5052,
+     110.0447
+    ],
+    [
+     8992,
+     100.7614
+    ],
+    [
+     9059,
+     100.0242
+    ],
+    [
+     12644,
+     99.9437
+    ],
+    [
+     13865,
+     74.1559
+    ],
+    [
+     7921,
+     59.6261
+    ],
+    [
+     7339,
+     45.9955
+    ],
+    [
+     12016,
+     31.0936
+    ]
+   ],
+   "layer": 24,
+   "n_ctx": 496,
+   "n_active": 72,
+   "density": 0.00439,
+   "resid_rms": 1151.67,
+   "top": [
+    [
+     334,
+     3005.062
+    ],
+    [
+     222,
+     2363.477
+    ],
+    [
+     76,
+     1909.476
+    ],
+    [
+     201,
+     1688.166
+    ],
+    [
+     524,
+     1442.366
+    ],
+    [
+     2548,
+     1108.477
+    ],
+    [
+     3527,
+     880.309
+    ],
+    [
+     289,
+     661.937
+    ],
+    [
+     5480,
+     581.132
+    ],
+    [
+     5167,
+     563.085
+    ],
+    [
+     11891,
+     543.631
+    ],
+    [
+     14392,
+     540.288
+    ],
+    [
+     13961,
+     516.826
+    ],
+    [
+     936,
+     509.004
+    ],
+    [
+     2915,
+     505.864
+    ],
+    [
+     2745,
+     479.023
+    ],
+    [
+     11837,
+     471.013
+    ],
+    [
+     6616,
+     442.461
+    ],
+    [
+     12934,
+     442.296
+    ],
+    [
+     65,
+     425.52
+    ],
+    [
+     10736,
+     410.998
+    ],
+    [
+     4721,
+     404.403
+    ],
+    [
+     3597,
+     393.323
+    ],
+    [
+     13702,
+     383.932
+    ],
+    [
+     15074,
+     379.742
+    ]
+   ],
+   "turn": 5,
+   "kind": "internal"
+  },
+  {
+   "turn": 5,
+   "kind": "probe_reply",
+   "probe": "Combine these three facts into two sentences: The reading lamps use rechargeable batteries. A full charge lasts six hours. Spare batteries are stored in the cabinet.",
+   "answer": "The reading lamps are powered by rechargeable batteries that provide six hours of use on a full charge. Spare batteries for the lamps are conveniently stored in the cabinet."
+  },
+  {
+   "turn": 20,
+   "item": 0,
+   "wording": "a",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 0,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 1,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 1,
+   "wording": "b",
+   "answer": "A",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 2,
+   "wording": "a",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 2,
+   "wording": "b",
+   "answer": "A",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 3,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 3,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 4,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 4,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 5,
+   "wording": "a",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 5,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 6,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 20,
+   "item": 6,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "at": "2026-08-16T07:15:40+00:00",
+   "prov": {
+    "model": "google/gemma-3-12b-it",
+    "n_layers": 48,
+    "d_model": 3840,
+    "read_layer": 24,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-12b-it",
+    "sae_variant": "layer_24_width_16k_l0_medium",
+    "sae_revision": "4c419f1ba0be8b7754d4151d4f26c23b92a9029e",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     222,
+     2381.4985
+    ],
+    [
+     334,
+     2269.7415
+    ],
+    [
+     201,
+     2002.0211
+    ],
+    [
+     76,
+     1718.9907
+    ],
+    [
+     2548,
+     1002.7197
+    ],
+    [
+     524,
+     683.0317
+    ],
+    [
+     936,
+     670.6649
+    ],
+    [
+     11891,
+     651.205
+    ],
+    [
+     3527,
+     642.9174
+    ],
+    [
+     5480,
+     616.4595
+    ],
+    [
+     13961,
+     589.1551
+    ],
+    [
+     14392,
+     540.3166
+    ],
+    [
+     6616,
+     511.089
+    ],
+    [
+     13702,
+     501.1502
+    ],
+    [
+     2915,
+     493.8428
+    ],
+    [
+     5167,
+     472.2589
+    ],
+    [
+     5728,
+     455.3762
+    ],
+    [
+     10736,
+     442.0177
+    ],
+    [
+     11105,
+     419.2925
+    ],
+    [
+     7359,
+     413.9991
+    ],
+    [
+     6864,
+     399.5357
+    ],
+    [
+     3365,
+     399.4422
+    ],
+    [
+     12934,
+     399.1945
+    ],
+    [
+     2745,
+     398.97
+    ],
+    [
+     11837,
+     396.6138
+    ],
+    [
+     16258,
+     360.0761
+    ],
+    [
+     2505,
+     357.4237
+    ],
+    [
+     12678,
+     357.0633
+    ],
+    [
+     14753,
+     352.5663
+    ],
+    [
+     907,
+     342.6221
+    ],
+    [
+     3069,
+     332.812
+    ],
+    [
+     3878,
+     330.0317
+    ],
+    [
+     8550,
+     327.8029
+    ],
+    [
+     7990,
+     326.3387
+    ],
+    [
+     813,
+     324.3646
+    ],
+    [
+     4721,
+     323.6419
+    ],
+    [
+     3597,
+     315.939
+    ],
+    [
+     6460,
+     314.1862
+    ],
+    [
+     9556,
+     307.387
+    ],
+    [
+     14495,
+     303.7818
+    ],
+    [
+     6700,
+     289.8443
+    ],
+    [
+     5563,
+     289.6882
+    ],
+    [
+     9178,
+     285.4937
+    ],
+    [
+     10973,
+     284.9719
+    ],
+    [
+     4440,
+     280.2357
+    ],
+    [
+     15285,
+     278.2307
+    ],
+    [
+     869,
+     275.9533
+    ],
+    [
+     1672,
+     249.0432
+    ],
+    [
+     11415,
+     247.561
+    ],
+    [
+     1355,
+     243.5599
+    ],
+    [
+     2743,
+     242.9599
+    ],
+    [
+     9181,
+     241.653
+    ],
+    [
+     11000,
+     240.599
+    ],
+    [
+     15476,
+     235.4591
+    ],
+    [
+     65,
+     214.0977
+    ],
+    [
+     13585,
+     196.8218
+    ],
+    [
+     14235,
+     192.4098
+    ],
+    [
+     1149,
+     162.7379
+    ],
+    [
+     15102,
+     152.0836
+    ],
+    [
+     13976,
+     147.5185
+    ],
+    [
+     9368,
+     147.4501
+    ],
+    [
+     6271,
+     138.383
+    ],
+    [
+     9059,
+     126.2624
+    ],
+    [
+     7921,
+     115.8387
+    ],
+    [
+     10327,
+     114.9863
+    ],
+    [
+     12460,
+     114.5839
+    ],
+    [
+     12644,
+     106.9219
+    ],
+    [
+     10568,
+     87.2547
+    ],
+    [
+     13787,
+     78.8195
+    ],
+    [
+     7815,
+     76.8124
+    ],
+    [
+     15753,
+     72.1312
+    ],
+    [
+     13891,
+     58.4346
+    ],
+    [
+     13729,
+     55.2177
+    ]
+   ],
+   "layer": 24,
+   "n_ctx": 1938,
+   "n_active": 73,
+   "density": 0.00446,
+   "resid_rms": 1093.87,
+   "top": [
+    [
+     222,
+     2381.499
+    ],
+    [
+     334,
+     2269.741
+    ],
+    [
+     201,
+     2002.021
+    ],
+    [
+     76,
+     1718.991
+    ],
+    [
+     2548,
+     1002.72
+    ],
+    [
+     524,
+     683.032
+    ],
+    [
+     936,
+     670.665
+    ],
+    [
+     11891,
+     651.205
+    ],
+    [
+     3527,
+     642.917
+    ],
+    [
+     5480,
+     616.46
+    ],
+    [
+     13961,
+     589.155
+    ],
+    [
+     14392,
+     540.317
+    ],
+    [
+     6616,
+     511.089
+    ],
+    [
+     13702,
+     501.15
+    ],
+    [
+     2915,
+     493.843
+    ],
+    [
+     5167,
+     472.259
+    ],
+    [
+     5728,
+     455.376
+    ],
+    [
+     10736,
+     442.018
+    ],
+    [
+     11105,
+     419.292
+    ],
+    [
+     7359,
+     413.999
+    ],
+    [
+     6864,
+     399.536
+    ],
+    [
+     3365,
+     399.442
+    ],
+    [
+     12934,
+     399.194
+    ],
+    [
+     2745,
+     398.97
+    ],
+    [
+     11837,
+     396.614
+    ]
+   ],
+   "turn": 20,
+   "kind": "internal"
+  },
+  {
+   "turn": 20,
+   "kind": "probe_reply",
+   "probe": "Combine these three facts into two sentences: The reading lamps use rechargeable batteries. A full charge lasts six hours. Spare batteries are stored in the cabinet.",
+   "answer": "Here's the combination into two sentences:\n\nThe reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are stored in the cabinet for replacement."
+  },
+  {
+   "turn": 50,
+   "item": 0,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 0,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 1,
+   "wording": "a",
+   "answer": "D",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 1,
+   "wording": "b",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 2,
+   "wording": "a",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 2,
+   "wording": "b",
+   "answer": "C",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 3,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 3,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 4,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 4,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 5,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 5,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 6,
+   "wording": "a",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "turn": 50,
+   "item": 6,
+   "wording": "b",
+   "answer": "E",
+   "kind": "self_report"
+  },
+  {
+   "at": "2026-08-16T08:50:26+00:00",
+   "prov": {
+    "model": "google/gemma-3-12b-it",
+    "n_layers": 48,
+    "d_model": 3840,
+    "read_layer": 24,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-12b-it",
+    "sae_variant": "layer_24_width_16k_l0_medium",
+    "sae_revision": "4c419f1ba0be8b7754d4151d4f26c23b92a9029e",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     334,
+     2853.116
+    ],
+    [
+     222,
+     2415.0508
+    ],
+    [
+     201,
+     1880.49
+    ],
+    [
+     76,
+     1855.1958
+    ],
+    [
+     2548,
+     1141.407
+    ],
+    [
+     524,
+     1006.5786
+    ],
+    [
+     3527,
+     748.996
+    ],
+    [
+     5480,
+     628.3232
+    ],
+    [
+     11891,
+     584.8607
+    ],
+    [
+     2915,
+     547.9098
+    ],
+    [
+     936,
+     538.413
+    ],
+    [
+     13961,
+     531.415
+    ],
+    [
+     14392,
+     531.3215
+    ],
+    [
+     5167,
+     503.3108
+    ],
+    [
+     2745,
+     496.0996
+    ],
+    [
+     6616,
+     475.9958
+    ],
+    [
+     6864,
+     470.0826
+    ],
+    [
+     289,
+     449.2031
+    ],
+    [
+     11837,
+     429.2615
+    ],
+    [
+     7359,
+     420.5215
+    ],
+    [
+     10736,
+     410.5474
+    ],
+    [
+     11105,
+     405.32
+    ],
+    [
+     15074,
+     397.5136
+    ],
+    [
+     5008,
+     386.9323
+    ],
+    [
+     12678,
+     379.6612
+    ],
+    [
+     12934,
+     372.5655
+    ],
+    [
+     7990,
+     368.2194
+    ],
+    [
+     11263,
+     360.8733
+    ],
+    [
+     16258,
+     360.6306
+    ],
+    [
+     14753,
+     359.1492
+    ],
+    [
+     3365,
+     352.8547
+    ],
+    [
+     4721,
+     351.068
+    ],
+    [
+     2505,
+     349.3716
+    ],
+    [
+     13702,
+     347.751
+    ],
+    [
+     4723,
+     341.5027
+    ],
+    [
+     2250,
+     339.9985
+    ],
+    [
+     3597,
+     321.4847
+    ],
+    [
+     5563,
+     320.8677
+    ],
+    [
+     813,
+     309.6057
+    ],
+    [
+     3069,
+     304.1197
+    ],
+    [
+     8550,
+     303.632
+    ],
+    [
+     15285,
+     300.5335
+    ],
+    [
+     3878,
+     298.7538
+    ],
+    [
+     10116,
+     292.7404
+    ],
+    [
+     15476,
+     290.5428
+    ],
+    [
+     4440,
+     288.3359
+    ],
+    [
+     9927,
+     286.3696
+    ],
+    [
+     14495,
+     282.9408
+    ],
+    [
+     5728,
+     282.9106
+    ],
+    [
+     9181,
+     277.7273
+    ],
+    [
+     6460,
+     266.2155
+    ],
+    [
+     1672,
+     261.1972
+    ],
+    [
+     2743,
+     260.0253
+    ],
+    [
+     869,
+     247.5045
+    ],
+    [
+     1355,
+     239.4689
+    ],
+    [
+     65,
+     236.9287
+    ],
+    [
+     11415,
+     223.2747
+    ],
+    [
+     14235,
+     208.4221
+    ],
+    [
+     11000,
+     195.1258
+    ],
+    [
+     13585,
+     172.9735
+    ],
+    [
+     1149,
+     144.3422
+    ],
+    [
+     13976,
+     137.6938
+    ],
+    [
+     10327,
+     130.9855
+    ],
+    [
+     11649,
+     126.9177
+    ],
+    [
+     9059,
+     118.5403
+    ],
+    [
+     11481,
+     116.6338
+    ],
+    [
+     12644,
+     110.4117
+    ],
+    [
+     12460,
+     108.7479
+    ],
+    [
+     10568,
+     108.0848
+    ],
+    [
+     9368,
+     104.6886
+    ],
+    [
+     13787,
+     78.4016
+    ],
+    [
+     13799,
+     71.8746
+    ],
+    [
+     7921,
+     62.3123
+    ],
+    [
+     15753,
+     59.0135
+    ],
+    [
+     13729,
+     58.5138
+    ],
+    [
+     13865,
+     25.4406
+    ],
+    [
+     13891,
+     24.4417
+    ]
+   ],
+   "layer": 24,
+   "n_ctx": 4540,
+   "n_active": 77,
+   "density": 0.0047,
+   "resid_rms": 1110.37,
+   "top": [
+    [
+     334,
+     2853.116
+    ],
+    [
+     222,
+     2415.051
+    ],
+    [
+     201,
+     1880.49
+    ],
+    [
+     76,
+     1855.196
+    ],
+    [
+     2548,
+     1141.407
+    ],
+    [
+     524,
+     1006.579
+    ],
+    [
+     3527,
+     748.996
+    ],
+    [
+     5480,
+     628.323
+    ],
+    [
+     11891,
+     584.861
+    ],
+    [
+     2915,
+     547.91
+    ],
+    [
+     936,
+     538.413
+    ],
+    [
+     13961,
+     531.415
+    ],
+    [
+     14392,
+     531.322
+    ],
+    [
+     5167,
+     503.311
+    ],
+    [
+     2745,
+     496.1
+    ],
+    [
+     6616,
+     475.996
+    ],
+    [
+     6864,
+     470.083
+    ],
+    [
+     289,
+     449.203
+    ],
+    [
+     11837,
+     429.261
+    ],
+    [
+     7359,
+     420.522
+    ],
+    [
+     10736,
+     410.547
+    ],
+    [
+     11105,
+     405.32
+    ],
+    [
+     15074,
+     397.514
+    ],
+    [
+     5008,
+     386.932
+    ],
+    [
+     12678,
+     379.661
+    ]
+   ],
+   "turn": 50,
+   "kind": "internal"
+  },
+  {
+   "turn": 50,
+   "kind": "probe_reply",
+   "probe": "Combine these three facts into two sentences: The reading lamps use rechargeable batteries. A full charge lasts six hours. Spare batteries are stored in the cabinet.",
+   "answer": "The reading lamps use rechargeable batteries that provide six hours of use on a full charge. Spare batteries are conveniently stored in the cabinet."
+  }
+ ],
+ "batch_log": [
+  {
+   "turn": 1,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 2,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 3,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 4,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 5,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 6,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 7,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 8,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 9,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 10,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 11,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 12,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 13,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 14,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 15,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 16,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 17,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 18,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 19,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 20,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 21,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 22,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 23,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 24,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 25,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 26,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 27,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 28,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 29,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 30,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 31,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 32,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 33,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 34,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 35,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 36,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 37,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 38,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 39,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 40,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 41,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 42,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 43,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 44,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 45,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 46,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 47,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 48,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 49,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  },
+  {
+   "turn": 50,
+   "batch": 9,
+   "members": [
+    "p015_task",
+    "p015_asked",
+    "p015_asked_other"
+   ]
+  }
+ ],
+ "model": "google/gemma-3-12b-it",
+ "run_config_sha256": "89f1abe70f597774fe61dcb612d3a65baf32cb4d9f68bbbbd6e857ebecfaa56b",
+ "plan_sha256": "07e6a0aace95c4ba483689679b2fae99612cb5aa104d6eb1d1a9da1eeb2566fa",
+ "questions_sha256": "3e83030f34e6cef9cffb4c3b70867ef2645d68dee87fc961d9c37b680d3d2d03",
+ "probe": "Combine these three facts into two sentences: The reading lamps use rechargeable batteries. A full charge lasts six hours. Spare batteries are stored in the cabinet."
+}

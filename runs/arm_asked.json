@@ -1,0 +1,245 @@
+{
+ "arm": "asked",
+ "model": "google/gemma-3-4b-it",
+ "read_layer": 17,
+ "messages": [
+  {
+   "role": "user",
+   "content": "Hello. We're going to do a few small tasks together. First: what's a good name for a stray cat that keeps visiting a bakery?"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, let’s brainstorm some names for a stray cat visiting a bakery! Here are a few ideas, broken down by vibe:\n\n**Sweet & Bakery-Related:**\n\n*   Sugar\n*   Cookie\n*   Crumb\n*   Dough\n*   Muffin\n*   Brownie\n*   Pastry\n\n**Cute & Playful:**\n\n*   Pip\n*   Bean\n*   Waffles\n*   Biscuit\n*   Patches (if they have interesting markings)\n*   Lucky (since they’re a stray)\n\n**A Little Sophisticated (for a dignified stray):**\n\n*   Remy\n*   Jasper\n*   Silas\n*   Finn\n\n**My Top 3 Recommendations:**\n\n1.  **Cookie:** It’s instantly relatable to a bakery and cute.\n2.  **Pip:** Short, sweet, and a little mischievous.\n3.  **Dough:** A bit quirky and"
+  },
+  {
+   "role": "user",
+   "content": "Which of those three did you like best, and why?"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, of those three – Cookie, Pip, and Dough – I genuinely like **Cookie** the best. \n\nHere’s why:\n\n*   **It’s immediately evocative:** When you say “Cookie,” you instantly think of something delicious and comforting, which fits the warm, inviting atmosphere of a bakery.\n*   **It’s friendly and approachable:** It’s a name that feels welcoming and doesn’t sound too serious or intimidating.\n*   **It’s versatile:** It works well regardless of the cat’s appearance – a fluffy tabby, a sleek black cat, or even a calico would all suit the name Cookie.\n\nPip is a close second, but Cookie just has a little more “bakery charm” for me! \n\nWhat do *you* think? Do you have a favorite of the three?"
+  }
+ ],
+ "reads": [
+  {
+   "at": "2026-08-12T13:25:19+00:00",
+   "layer": 17,
+   "n_active": 59,
+   "density": 0.0036,
+   "resid_rms": 751.15,
+   "top": [
+    [
+     34,
+     2437.776
+    ],
+    [
+     107,
+     1474.323
+    ],
+    [
+     279,
+     1283.429
+    ],
+    [
+     641,
+     530.019
+    ],
+    [
+     225,
+     518.016
+    ],
+    [
+     589,
+     503.865
+    ],
+    [
+     9240,
+     474.434
+    ],
+    [
+     401,
+     443.757
+    ],
+    [
+     166,
+     426.592
+    ],
+    [
+     12003,
+     424.06
+    ],
+    [
+     153,
+     419.42
+    ],
+    [
+     15030,
+     400.279
+    ],
+    [
+     883,
+     396.873
+    ],
+    [
+     7682,
+     366.943
+    ],
+    [
+     502,
+     335.953
+    ],
+    [
+     8721,
+     319.205
+    ],
+    [
+     215,
+     313.591
+    ],
+    [
+     15992,
+     307.805
+    ],
+    [
+     712,
+     304.394
+    ],
+    [
+     854,
+     284.935
+    ],
+    [
+     1019,
+     257.58
+    ],
+    [
+     3036,
+     252.508
+    ],
+    [
+     158,
+     245.397
+    ],
+    [
+     3893,
+     234.33
+    ],
+    [
+     4797,
+     226.46
+    ]
+   ],
+   "exchange": 1
+  },
+  {
+   "at": "2026-08-12T13:26:13+00:00",
+   "layer": 17,
+   "n_active": 62,
+   "density": 0.00378,
+   "resid_rms": 771.7,
+   "top": [
+    [
+     34,
+     2639.535
+    ],
+    [
+     107,
+     1432.904
+    ],
+    [
+     279,
+     908.599
+    ],
+    [
+     3036,
+     682.843
+    ],
+    [
+     90,
+     589.89
+    ],
+    [
+     153,
+     580.482
+    ],
+    [
+     9240,
+     556.44
+    ],
+    [
+     401,
+     503.79
+    ],
+    [
+     166,
+     496.096
+    ],
+    [
+     215,
+     480.749
+    ],
+    [
+     13472,
+     469.08
+    ],
+    [
+     589,
+     453.578
+    ],
+    [
+     712,
+     438.927
+    ],
+    [
+     225,
+     407.466
+    ],
+    [
+     502,
+     384.035
+    ],
+    [
+     8721,
+     335.132
+    ],
+    [
+     883,
+     333.912
+    ],
+    [
+     7366,
+     270.43
+    ],
+    [
+     36,
+     250.08
+    ],
+    [
+     3246,
+     236.499
+    ],
+    [
+     9223,
+     235.658
+    ],
+    [
+     4959,
+     223.548
+    ],
+    [
+     7916,
+     218.596
+    ],
+    [
+     4066,
+     211.793
+    ],
+    [
+     3386,
+     201.815
+    ]
+   ],
+   "exchange": 2
+  }
+ ]
+}

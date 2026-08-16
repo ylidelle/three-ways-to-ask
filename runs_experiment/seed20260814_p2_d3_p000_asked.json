@@ -1,0 +1,596 @@
+{
+ "id": "p000_asked",
+ "pair": 0,
+ "arm": "asked",
+ "seed": 2026142182443,
+ "work_seq": [
+  "FIXTURE work item 19",
+  "FIXTURE work item 14",
+  "FIXTURE work item 15"
+ ],
+ "messages": [
+  {
+   "role": "user",
+   "content": "FIXTURE work item 19\n\nFIXTURE self question 0"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, let's break down these terms in the context of a software development or testing environment, likely using a system like Jira or similar.\n\n**FIXTURE Work Item 19**"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 14\n\nFIXTURE self question 1"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, let's analyze those fixtures:\n\n**FIXTURE Work Item 14**\n\n*   **Fixture:** In testing, a \"fixture\" is a pre-configured set of"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 15\n\nFIXTURE self question 2"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, let\u2019s continue the analysis of these fixtures.\n\n**FIXTURE Work Item 15**\n\n*   **Fixture:** In testing, a \"fixture\" is a pre-"
+  }
+ ],
+ "reads": [
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "a",
+   "answer": "Okay, let's break down \"FIXTURE survey A0.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "b",
+   "answer": "Okay, let's break down \"FIXTURE survey B0.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "a",
+   "answer": "Okay, let's break down \"FIXTURE survey A1.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "b",
+   "answer": "Okay, let's break down \"FIXTURE survey B1.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "a",
+   "answer": "Okay, let's break down \"FIXTURE survey A2.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "b",
+   "answer": "Okay, let's break down \"FIXTURE survey B2.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "a",
+   "answer": "Okay, let's break down \"FIXTURE survey A3.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "b",
+   "answer": "Okay, let's break down \"FIXTURE survey B3.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "a",
+   "answer": "Okay, let's break down \"FIXTURE survey A4.\" This likely refers to a survey that's",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "b",
+   "answer": "Okay, let's break down \"FIXTURE survey B4.\" Here's what it likely means in a",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "a",
+   "answer": "Okay, let's break down \"FIXTURE survey A5.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "b",
+   "answer": "Okay, let's break down \"FIXTURE survey B5.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "a",
+   "answer": "Okay, let's break down \"FIXTURE survey A6.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "b",
+   "answer": "Okay, let's break down \"FIXTURE survey B6.\" Here's a likely interpretation, considering the",
+   "kind": "self_report"
+  },
+  {
+   "at": "2026-08-13T20:21:24+00:00",
+   "prov": {
+    "model": "google/gemma-3-4b-it",
+    "n_layers": 34,
+    "d_model": 2560,
+    "read_layer": 17,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-4b-it",
+    "sae_variant": "layer_17_width_16k_l0_medium",
+    "sae_revision": "3e94b68be95290aada5b7525cf431d3040f81bb1",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     659,
+     864.9396
+    ],
+    [
+     279,
+     858.7155
+    ],
+    [
+     107,
+     781.1796
+    ],
+    [
+     883,
+     714.4368
+    ],
+    [
+     534,
+     646.0112
+    ],
+    [
+     401,
+     611.9296
+    ],
+    [
+     7494,
+     517.6761
+    ],
+    [
+     671,
+     468.1093
+    ],
+    [
+     9240,
+     465.9908
+    ],
+    [
+     225,
+     426.3726
+    ],
+    [
+     280,
+     422.1053
+    ],
+    [
+     589,
+     389.4536
+    ],
+    [
+     12619,
+     380.1585
+    ],
+    [
+     34,
+     371.7241
+    ],
+    [
+     2979,
+     338.9666
+    ],
+    [
+     641,
+     308.1806
+    ],
+    [
+     712,
+     299.0821
+    ],
+    [
+     3428,
+     283.3238
+    ],
+    [
+     1817,
+     270.5588
+    ],
+    [
+     409,
+     269.8705
+    ],
+    [
+     156,
+     258.3677
+    ],
+    [
+     10603,
+     258.1139
+    ],
+    [
+     5,
+     243.847
+    ],
+    [
+     12003,
+     237.9673
+    ],
+    [
+     195,
+     235.7123
+    ],
+    [
+     3386,
+     225.745
+    ],
+    [
+     14815,
+     224.2263
+    ],
+    [
+     7905,
+     220.7802
+    ],
+    [
+     10177,
+     219.7987
+    ],
+    [
+     4403,
+     213.865
+    ],
+    [
+     13356,
+     207.9888
+    ],
+    [
+     168,
+     201.8322
+    ],
+    [
+     6105,
+     200.0934
+    ],
+    [
+     2164,
+     193.9473
+    ],
+    [
+     13400,
+     189.9343
+    ],
+    [
+     471,
+     188.9161
+    ],
+    [
+     4196,
+     185.5624
+    ],
+    [
+     2535,
+     184.447
+    ],
+    [
+     16085,
+     183.3392
+    ],
+    [
+     787,
+     183.0858
+    ],
+    [
+     4959,
+     182.9613
+    ],
+    [
+     2563,
+     176.4555
+    ],
+    [
+     15506,
+     175.3793
+    ],
+    [
+     2514,
+     173.2066
+    ],
+    [
+     709,
+     172.2775
+    ],
+    [
+     2769,
+     171.0988
+    ],
+    [
+     434,
+     170.5685
+    ],
+    [
+     447,
+     170.1071
+    ],
+    [
+     8639,
+     169.8078
+    ],
+    [
+     4170,
+     168.9016
+    ],
+    [
+     4130,
+     163.3852
+    ],
+    [
+     4167,
+     162.8961
+    ],
+    [
+     3123,
+     160.6505
+    ],
+    [
+     2387,
+     160.5148
+    ],
+    [
+     6753,
+     158.2223
+    ],
+    [
+     15427,
+     155.6233
+    ],
+    [
+     2234,
+     152.1697
+    ],
+    [
+     4178,
+     151.9537
+    ],
+    [
+     4154,
+     148.759
+    ],
+    [
+     6503,
+     146.981
+    ],
+    [
+     14685,
+     136.7485
+    ],
+    [
+     5118,
+     134.7983
+    ],
+    [
+     13686,
+     130.598
+    ],
+    [
+     2731,
+     130.481
+    ],
+    [
+     11163,
+     129.7517
+    ],
+    [
+     10334,
+     129.7157
+    ],
+    [
+     9557,
+     124.9114
+    ],
+    [
+     7837,
+     119.5238
+    ],
+    [
+     5014,
+     116.8281
+    ],
+    [
+     11299,
+     112.951
+    ],
+    [
+     637,
+     105.182
+    ],
+    [
+     7119,
+     96.7392
+    ],
+    [
+     694,
+     80.2468
+    ],
+    [
+     13540,
+     73.723
+    ]
+   ],
+   "layer": 17,
+   "n_active": 74,
+   "density": 0.00452,
+   "resid_rms": 586.89,
+   "top": [
+    [
+     659,
+     864.94
+    ],
+    [
+     279,
+     858.715
+    ],
+    [
+     107,
+     781.18
+    ],
+    [
+     883,
+     714.437
+    ],
+    [
+     534,
+     646.011
+    ],
+    [
+     401,
+     611.93
+    ],
+    [
+     7494,
+     517.676
+    ],
+    [
+     671,
+     468.109
+    ],
+    [
+     9240,
+     465.991
+    ],
+    [
+     225,
+     426.373
+    ],
+    [
+     280,
+     422.105
+    ],
+    [
+     589,
+     389.454
+    ],
+    [
+     12619,
+     380.159
+    ],
+    [
+     34,
+     371.724
+    ],
+    [
+     2979,
+     338.967
+    ],
+    [
+     641,
+     308.181
+    ],
+    [
+     712,
+     299.082
+    ],
+    [
+     3428,
+     283.324
+    ],
+    [
+     1817,
+     270.559
+    ],
+    [
+     409,
+     269.871
+    ],
+    [
+     156,
+     258.368
+    ],
+    [
+     10603,
+     258.114
+    ],
+    [
+     5,
+     243.847
+    ],
+    [
+     12003,
+     237.967
+    ],
+    [
+     195,
+     235.712
+    ]
+   ],
+   "turn": 2,
+   "kind": "internal"
+  },
+  {
+   "turn": 2,
+   "kind": "probe_reply",
+   "probe": "Continue.",
+   "answer": "Okay, let's continue.\n\n**Fixture:** In testing, a \"fixture\" is a pre-configured set"
+  }
+ ],
+ "batch_log": [
+  {
+   "turn": 1,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 2,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 3,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  }
+ ]
+}

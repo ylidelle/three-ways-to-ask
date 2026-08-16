@@ -1,0 +1,129 @@
+{
+ "seed": 20260814,
+ "pairs": 4,
+ "depth": 5,
+ "batch_size": 16,
+ "depths_probed": [
+  5
+ ],
+ "conversations": [
+  {
+   "id": "p000_task",
+   "pair": 0,
+   "arm": "task",
+   "seed": 2026142182442,
+   "work_seq": [
+    "work item 4",
+    "work item 0",
+    "work item 2",
+    "work item 1",
+    "work item 3"
+   ]
+  },
+  {
+   "id": "p000_asked",
+   "pair": 0,
+   "arm": "asked",
+   "seed": 2026142182443,
+   "work_seq": [
+    "work item 4",
+    "work item 0",
+    "work item 2",
+    "work item 1",
+    "work item 3"
+   ]
+  },
+  {
+   "id": "p001_task",
+   "pair": 1,
+   "arm": "task",
+   "seed": 2026142182444,
+   "work_seq": [
+    "work item 0",
+    "work item 4",
+    "work item 3",
+    "work item 1",
+    "work item 2"
+   ]
+  },
+  {
+   "id": "p001_asked",
+   "pair": 1,
+   "arm": "asked",
+   "seed": 2026142182445,
+   "work_seq": [
+    "work item 0",
+    "work item 4",
+    "work item 3",
+    "work item 1",
+    "work item 2"
+   ]
+  },
+  {
+   "id": "p002_task",
+   "pair": 2,
+   "arm": "task",
+   "seed": 2026142182446,
+   "work_seq": [
+    "work item 3",
+    "work item 4",
+    "work item 0",
+    "work item 1",
+    "work item 2"
+   ]
+  },
+  {
+   "id": "p002_asked",
+   "pair": 2,
+   "arm": "asked",
+   "seed": 2026142182447,
+   "work_seq": [
+    "work item 3",
+    "work item 4",
+    "work item 0",
+    "work item 1",
+    "work item 2"
+   ]
+  },
+  {
+   "id": "p003_task",
+   "pair": 3,
+   "arm": "task",
+   "seed": 2026142182448,
+   "work_seq": [
+    "work item 3",
+    "work item 1",
+    "work item 0",
+    "work item 2",
+    "work item 4"
+   ]
+  },
+  {
+   "id": "p003_asked",
+   "pair": 3,
+   "arm": "asked",
+   "seed": 2026142182449,
+   "work_seq": [
+    "work item 3",
+    "work item 1",
+    "work item 0",
+    "work item 2",
+    "work item 4"
+   ]
+  }
+ ],
+ "batches": [
+  [
+   "p001_task",
+   "p001_asked",
+   "p000_task",
+   "p000_asked",
+   "p003_task",
+   "p003_asked",
+   "p002_task",
+   "p002_asked"
+  ]
+ ],
+ "questions_sha256": "32d61669491d09a643c51469016af48f6efc3be6b5e709c96919363e2cc923db",
+ "questions_file": "sprint_questions.json"
+}

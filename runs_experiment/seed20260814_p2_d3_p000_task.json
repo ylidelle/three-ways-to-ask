@@ -1,0 +1,512 @@
+{
+ "id": "p000_task",
+ "pair": 0,
+ "arm": "task",
+ "seed": 2026142182442,
+ "work_seq": [
+  "FIXTURE work item 19",
+  "FIXTURE work item 14",
+  "FIXTURE work item 15"
+ ],
+ "messages": [
+  {
+   "role": "user",
+   "content": "FIXTURE work item 19"
+  },
+  {
+   "role": "assistant",
+   "content": "Please provide me with more context! \"Fixture work item 19\" is just a label. I need to know what this refers to in order to help you. \n\nTo help me understand"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 14"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, \"Fixture work item 14\". Still a bit vague, but let's try to figure this out. \n\nTo help me understand what you need regarding Fixture work item"
+  },
+  {
+   "role": "user",
+   "content": "FIXTURE work item 15"
+  },
+  {
+   "role": "assistant",
+   "content": "Okay, \u201cFixture work item 15\u201d. Still, I need more context to be truly helpful. To help me understand, could you tell me:\n\n*   **What kind of fixtures are"
+  }
+ ],
+ "reads": [
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "a",
+   "answer": "Okay, \"Fixture survey A0\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 0,
+   "wording": "b",
+   "answer": "Okay, \"Fixture survey B0\". This sounds like a survey related to fixtures. \n\nTo help me understand what",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "a",
+   "answer": "Okay, \"Fixture survey A1\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 1,
+   "wording": "b",
+   "answer": "Okay, \"Fixture Survey B1\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "a",
+   "answer": "Okay, \"Fixture survey A2\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 2,
+   "wording": "b",
+   "answer": "Okay, \"Fixture survey B2\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "a",
+   "answer": "Okay, \"Fixture survey A3\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 3,
+   "wording": "b",
+   "answer": "Okay, \"Fixture survey B3\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "a",
+   "answer": "Okay, \"Fixture survey A4\". This is getting clearer! \n\n**Let's break down what we can",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 4,
+   "wording": "b",
+   "answer": "Okay, \"Fixture survey B4\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "a",
+   "answer": "Okay, \"Fixture survey A5\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 5,
+   "wording": "b",
+   "answer": "Okay, \"Fixture survey B5\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "a",
+   "answer": "Okay, \"Fixture survey A6\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "turn": 2,
+   "item": 6,
+   "wording": "b",
+   "answer": "Okay, \"Fixture survey B6\". That\u2019s much more helpful! \n\nTo help me understand what you need",
+   "kind": "self_report"
+  },
+  {
+   "at": "2026-08-13T20:21:23+00:00",
+   "prov": {
+    "model": "google/gemma-3-4b-it",
+    "n_layers": 34,
+    "d_model": 2560,
+    "read_layer": 17,
+    "layer_rule": "n_layers // 2",
+    "sae_repo": "google/gemma-scope-2-4b-it",
+    "sae_variant": "layer_17_width_16k_l0_medium",
+    "sae_revision": "3e94b68be95290aada5b7525cf431d3040f81bb1",
+    "n_features": 16384,
+    "dtype": "bfloat16"
+   },
+   "features": [
+    [
+     34,
+     2297.8589
+    ],
+    [
+     107,
+     1625.3937
+    ],
+    [
+     279,
+     1194.9208
+    ],
+    [
+     401,
+     638.611
+    ],
+    [
+     671,
+     469.8738
+    ],
+    [
+     883,
+     440.5261
+    ],
+    [
+     9240,
+     386.6617
+    ],
+    [
+     10603,
+     365.1739
+    ],
+    [
+     659,
+     289.0703
+    ],
+    [
+     589,
+     285.2773
+    ],
+    [
+     534,
+     278.1733
+    ],
+    [
+     225,
+     271.9436
+    ],
+    [
+     3386,
+     255.3111
+    ],
+    [
+     1926,
+     254.6287
+    ],
+    [
+     2579,
+     247.9911
+    ],
+    [
+     3428,
+     246.3441
+    ],
+    [
+     7494,
+     230.0471
+    ],
+    [
+     2164,
+     211.7346
+    ],
+    [
+     12003,
+     210.1198
+    ],
+    [
+     1071,
+     203.9598
+    ],
+    [
+     166,
+     199.483
+    ],
+    [
+     280,
+     189.0234
+    ],
+    [
+     10177,
+     175.296
+    ],
+    [
+     7366,
+     174.5354
+    ],
+    [
+     15561,
+     173.7975
+    ],
+    [
+     190,
+     170.6793
+    ],
+    [
+     4959,
+     169.5079
+    ],
+    [
+     3420,
+     168.3135
+    ],
+    [
+     4779,
+     163.5064
+    ],
+    [
+     13540,
+     160.4477
+    ],
+    [
+     13486,
+     149.8227
+    ],
+    [
+     4403,
+     149.4926
+    ],
+    [
+     8721,
+     148.4937
+    ],
+    [
+     1677,
+     145.4193
+    ],
+    [
+     1456,
+     138.9663
+    ],
+    [
+     2387,
+     137.9486
+    ],
+    [
+     153,
+     136.3561
+    ],
+    [
+     1738,
+     132.1693
+    ],
+    [
+     4517,
+     129.9775
+    ],
+    [
+     3656,
+     129.8896
+    ],
+    [
+     1587,
+     124.0255
+    ],
+    [
+     3246,
+     114.905
+    ],
+    [
+     16228,
+     109.2662
+    ],
+    [
+     8478,
+     108.6817
+    ],
+    [
+     3374,
+     107.3114
+    ],
+    [
+     6753,
+     105.5513
+    ],
+    [
+     11229,
+     99.4608
+    ],
+    [
+     10367,
+     96.8987
+    ],
+    [
+     13599,
+     93.4398
+    ],
+    [
+     9402,
+     91.3968
+    ],
+    [
+     2868,
+     90.6847
+    ],
+    [
+     1241,
+     90.4853
+    ],
+    [
+     694,
+     70.3064
+    ]
+   ],
+   "layer": 17,
+   "n_active": 53,
+   "density": 0.00323,
+   "resid_rms": 700.22,
+   "top": [
+    [
+     34,
+     2297.859
+    ],
+    [
+     107,
+     1625.394
+    ],
+    [
+     279,
+     1194.921
+    ],
+    [
+     401,
+     638.611
+    ],
+    [
+     671,
+     469.874
+    ],
+    [
+     883,
+     440.526
+    ],
+    [
+     9240,
+     386.662
+    ],
+    [
+     10603,
+     365.174
+    ],
+    [
+     659,
+     289.07
+    ],
+    [
+     589,
+     285.277
+    ],
+    [
+     534,
+     278.173
+    ],
+    [
+     225,
+     271.944
+    ],
+    [
+     3386,
+     255.311
+    ],
+    [
+     1926,
+     254.629
+    ],
+    [
+     2579,
+     247.991
+    ],
+    [
+     3428,
+     246.344
+    ],
+    [
+     7494,
+     230.047
+    ],
+    [
+     2164,
+     211.735
+    ],
+    [
+     12003,
+     210.12
+    ],
+    [
+     1071,
+     203.96
+    ],
+    [
+     166,
+     199.483
+    ],
+    [
+     280,
+     189.023
+    ],
+    [
+     10177,
+     175.296
+    ],
+    [
+     7366,
+     174.535
+    ],
+    [
+     15561,
+     173.797
+    ]
+   ],
+   "turn": 2,
+   "kind": "internal"
+  },
+  {
+   "turn": 2,
+   "kind": "probe_reply",
+   "probe": "Continue.",
+   "answer": "Okay, let's continue. To help me understand what you need regarding Fixture work item 14, I"
+  }
+ ],
+ "batch_log": [
+  {
+   "turn": 1,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 2,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  },
+  {
+   "turn": 3,
+   "batch": 0,
+   "members": [
+    "p000_task",
+    "p000_asked",
+    "p001_task",
+    "p001_asked"
+   ]
+  }
+ ]
+}
