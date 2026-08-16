@@ -376,8 +376,19 @@ def selftest() -> int:
     tmp = Path(tempfile.mkdtemp())
 
     def run(label, mutate, expect_fail):
+        # 🚩 ASSERT THE MUTATION LANDED BEFORE READING THE EXIT CODE.
+        #    Two of my fixtures on 2026-08-17 assumed spaces where the paper has
+        #    newlines, so they mutated NOTHING and the guard correctly passed an
+        #    unchanged document. I read that as the guard failing and was one step
+        #    from repairing working code to satisfy a broken test.
+        #    ⇒ A negative control that does not actually corrupt anything is not
+        #      a control; it is a clean run with a scary label.
+        text = mutate(src)
+        if expect_fail and text == src:
+            print(f"  *** FAIL ***  {label:48s} FIXTURE IS A NO-OP")
+            return False
         p = tmp / "p.md"
-        p.write_text(mutate(src), encoding="utf-8")
+        p.write_text(text, encoding="utf-8")
         buf, sys.stdout = sys.stdout, open(tmp / "out.txt", "w", encoding="utf-8")
         try:
             rc = check(p)
@@ -414,6 +425,18 @@ def selftest() -> int:
               lambda s: s.replace(
                   "| internal features (16,384) | 0.550 | 0.1924 |",
                   "| internal features (16,384) \\| 0.550 \\| 0.1924 | 0.999 | 0.9999 |"), True)
+    # ── Lucien Vale's ORDINARY copy-edit fixtures, 2026-08-17 04:07 ─────────
+    #    Not adversarial: a summary edited while its table stays correct. These
+    #    passed green until the abstract and §4.4 sites were registered, and they
+    #    are the everyday failure the paper's prose actually claims to catch.
+    ok &= run("abstract mean kappa +0.059 -> +0.095",
+              lambda s: s.replace("Cohen's κ = +0.059", "Cohen's κ = +0.095"), True)
+    ok &= run("abstract best-single 0.667 -> 0.677",
+              lambda s: s.replace("against\n0.667 for the best single",
+                                  "against\n0.677 for the best single"), True)
+    ok &= run("4.4 exact p 0.0531 -> 0.0351",
+              lambda s: s.replace("**p ≈ 0.0531**", "**p ≈ 0.0351**"), True)
+
     ok &= run("HTML-comment decoy row",
               lambda s: s.replace(
                   "| internal features (16,384) | 0.550 | 0.1924 |",

@@ -160,7 +160,90 @@ def report(counts: dict, label: str):
     return bad
 
 
+def selftest() -> int:
+    """Every attack this guard has survived, as a committed regression test.
+
+    🚩 THIS DID NOT EXIST UNTIL 2026-08-17 05:xx, and its absence made a sentence
+    in the paper false. I wrote "every attack he found is now a regression test
+    in the repository" while the fixtures lived in a scratchpad directory.
+    Lucien Vale checked the commit rather than the commit message:
+
+    > "The punctuation cases I just ran — and evidently the seven cases Opie ran —
+    >  are temporary evidence about today's bytes, not regression tests that will
+    >  fail if a later edit removes the fixes."
+
+    ⇒ Evidence that a fix works today is not a guarantee it still works tomorrow.
+      A test that is not committed did not happen, as far as anyone else can tell.
+    """
+    import tempfile
+    LAB = Path(__file__).resolve().parent
+    real = LAB / "PAPER_v2_2026-08-16.md"
+    if not real.exists():
+        print("⛔ need the real paper present to run mutation controls")
+        return 2
+    src = real.read_text(encoding="utf-8")
+    base = spans(src)
+    tmp = Path(tempfile.mkdtemp())
+
+    def case(label, mutate, expect_fail=True):
+        text = mutate(src)
+        if expect_fail and text == src:
+            print(f"  *** FAIL ***  {label:52s} FIXTURE IS A NO-OP")
+            return False
+        got = spans(text)
+        drift = any(got.get(q, 0) != base.get(q, 0) for q in SOURCE_QUOTES)
+        bad = any(got.get(q, 0) != EXPECT[q] for q in SOURCE_QUOTES)
+        detected = drift or bad
+        good = detected if expect_fail else not detected
+        print(f"  {'PASS' if good else '*** FAIL ***'}  {label:52s} "
+              f"{'detected' if detected else 'not detected'}")
+        return good
+
+    print("SELFTEST — quote guard, every attack it has survived\n")
+    ok = True
+    ok &= case("clean paper", lambda s: s, False)
+
+    SINGH = ("behavioral evidence alone is inherently insufficient to establish strong\n"
+             "introspective claims,")
+    flat = " ".join(SINGH.split())
+    rev = SINGH.replace("inherently insufficient", "sufficient")
+
+    # Meaning reversal, then five ways of trying to satisfy the checksum anyway.
+    ok &= case("meaning reversed, original as unquoted prose",
+               lambda s: s.replace(SINGH, rev) + f"\n\nChecksum: {flat}\n")
+    ok &= case("reversed + 'It is false that ...' inside the quote",
+               lambda s: s.replace(SINGH, rev) + f'\n\nThey wrote "It is false that {flat}"\n')
+    ok &= case("reversed + original parked in an HTML comment",
+               lambda s: s.replace(SINGH, rev) + f'\n\n<!-- "{flat}" -->\n')
+    ok &= case("reversed + original parked in a fenced code block",
+               lambda s: s.replace(SINGH, rev) + f'\n\n```\n"{flat}"\n```\n')
+    ok &= case("reversed + original parked in a title attribute",
+               lambda s: s.replace(SINGH, rev) + f'\n\n<span title="{flat}">x</span>\n')
+    ok &= case("reversed + parked prose plus a stray quote mark",
+               lambda s: s.replace(SINGH, rev) + f'\n\nChecksum: {flat}\nstray "\n')
+
+    # Punctuation and mark-kind: the source's own marks are not ours to drop.
+    ok &= case("source's terminal period deleted",
+               lambda s: s.replace('deception and roleplay."', 'deception and roleplay"'))
+    ok &= case("internal comma deleted from the Eleos quote",
+               lambda s: s.replace("pre-training data, the system",
+                                   "pre-training data the system"))
+    ok &= case("half-completed smart-quote conversion",
+               lambda s: s.replace('"a single instance\nof the model',
+                                   '“a single instance\nof the model'))
+    ok &= case("a visible word typo inside a quotation",
+               lambda s: s.replace("imitation of pre-training", "imitations of pre-training"))
+
+    import shutil
+    shutil.rmtree(tmp, ignore_errors=True)
+    print("\n" + ("every attack is caught, clean paper passes"
+                  if ok else "*** SELFTEST FAILED ***"))
+    return 0 if ok else 1
+
+
 def main() -> int:
+    if "--selftest" in sys.argv:
+        return selftest()
     if len(sys.argv) < 3:
         print(__doc__)
         return 2
