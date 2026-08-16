@@ -163,11 +163,26 @@ def length_baseline(lengths, y, groups, pairs, **kw):
     🚩 A large length effect does NOT sink the study. It sinks the SILENT
       version of it. Report both numbers side by side and say which is which.
     """
-    X = np.asarray(lengths, dtype=np.float64).reshape(-1, 1)
-    # z-score so the cosine centroid classifier sees a real 1-D contrast
-    sd = X.std()
-    X = (X - X.mean()) / (sd if sd > 0 else 1.0)
-    return report(X, y, groups, pairs, label="LENGTH-ONLY baseline (context tokens)", **kw)
+    # 🚩 THIS Z-SCORED OVER ALL ROWS BEFORE CROSS-VALIDATION until 2026-08-17.
+    #    Lucien Vale: "It is inert here — global and fold-local predictions are
+    #    identical on both real contrasts — but it is mechanically transductive."
+    #    He is right, and it is the THIRD instance of the same defect in this
+    #    project: the text baseline had it (fixed via `featurize=`), the survey
+    #    columns in sprint_converge had it, and this one survived both repairs
+    #    because each time I fixed the copy I was looking at.
+    #
+    # ⇒ Fitted inside each fold, on training rows only, through the same
+    #   train-only transform interface every other baseline already uses.
+    raw = np.asarray(lengths, dtype=np.float64).reshape(-1, 1)
+
+    def featurize(train_items):
+        tr = np.asarray(train_items, dtype=np.float64).reshape(-1, 1)
+        mu, sd = tr.mean(), tr.std()
+        sd = sd if sd > 0 else 1.0
+        return lambda items: (np.asarray(items, dtype=np.float64).reshape(-1, 1) - mu) / sd
+
+    return report(list(raw.ravel()), y, groups, pairs, featurize=featurize,
+                  label="LENGTH-ONLY baseline (context tokens)", **kw)
 
 
 def compare_to_length(feat_result, len_result) -> None:

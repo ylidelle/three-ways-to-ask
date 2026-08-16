@@ -97,14 +97,41 @@ def bind_identity(convs: list[dict], qfile: Path) -> dict:
     """
     qsha = hashlib.sha256(qfile.read_bytes()).hexdigest()
     fields = ("questions_sha256", "plan_sha256", "run_config_sha256", "model")
-    seen = {f: {(c.get(f) or "<absent>") for c in convs} for f in fields}
 
+    # 🚩 `(c.get(f) or "<absent>")` TURNED SHARED ABSENCE INTO AGREEMENT.
+    #    Lucien Vale, 2026-08-17: the gate "accepted plan missing, config empty,
+    #    model missing, and plan/config hashes `abc`/`def`. Only the questions
+    #    hash is checked against real bytes."
+    #    Every artefact lacking a field agreed with every other artefact lacking
+    #    it, and one shared "<absent>" passed as a single consistent identity.
+    #
+    # > ### A set of size one is not evidence of agreement when the members got
+    # > there by all being empty.
+    for f in fields:
+        missing = [c.get("id", "?") for c in convs
+                   if not str(c.get(f) or "").strip()]
+        if missing:
+            raise SystemExit(
+                f"⛔ {len(missing)} artefact(s) carry no `{f}`: {missing[:4]}"
+                f"{'...' if len(missing) > 4 else ''}\n"
+                "   An absent identity is not a matching identity. Refusing.")
+
+    seen = {f: {c[f] for c in convs} for f in fields}
     for f in fields:
         if len(seen[f]) != 1:
             raise SystemExit(
                 f"⛔ the selected artefacts disagree on `{f}`:\n"
                 + "".join(f"     {v}\n" for v in sorted(seen[f]))
                 + "   Refusing to score one spreadsheet from more than one experiment.")
+
+    # Hashes must LOOK like hashes. `abc` and `def` agreed with themselves.
+    for f in ("questions_sha256", "plan_sha256", "run_config_sha256"):
+        v = next(iter(seen[f]))
+        if not re.fullmatch(r"[0-9a-f]{64}", v):
+            raise SystemExit(
+                f"⛔ `{f}` is not a full sha256: {v!r}\n"
+                "   A 12-character prefix or a placeholder is not an identity.")
+
     claimed = next(iter(seen["questions_sha256"]))
     if claimed != qsha:
         raise SystemExit(
@@ -113,10 +140,66 @@ def bind_identity(convs: list[dict], qfile: Path) -> dict:
             f"     file on disk {qsha}\n"
             f"     ({qfile})\n"
             "   Scoring would obey an instrument the model never answered.")
+    # 🚩 COMPLETENESS, not just consistency. The gate previously accepted a
+    #    SINGLE artefact as a finished identity: one file agrees with itself.
+    #    If the plan is on disk, require exact equality between the selected
+    #    {id, pair, arm} triplets and the ones the plan says should exist.
+    # 🚩 FIND THE PLAN BY ITS CONTENT HASH, not by guessing its filename.
+    #    The first version built `plan_{hash[:12]}.json` and fell back to "the
+    #    only plan file". Neither worked: the real file is named
+    #    `plan_seed20260814_p20_d50_b3_07e6a0aa.json` and there are fourteen
+    #    plans in the directory. It then printed "no plan file found" and skipped
+    #    the completeness check entirely, on a run whose plan was sitting right
+    #    there. **A name derived from a hash is a claim about the filename.**
+    #    And the hash is NOT over the file bytes: `sprint_run.py:745-748` hashes
+    #    the canonical plan body with its own two hash fields removed, so the
+    #    identity survives re-serialisation. Comparing raw bytes matched nothing
+    #    and printed "no plan file found" on a run whose plan was on disk —
+    #    a null that was about my comparison, not about the world.
+    want_plan = next(iter(seen["plan_sha256"]))
+
+    def plan_identity(d: dict) -> str:
+        body = {k: v for k, v in d.items()
+                if k not in ("plan_sha256", "run_config_sha256")}
+        return hashlib.sha256(json.dumps(body, sort_keys=True,
+                                         ensure_ascii=False).encode("utf-8")).hexdigest()
+
+    plan_p, plan = None, None
+    for cand in sorted(RUNS.glob("plan_*.json")):
+        try:
+            d = json.loads(cand.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if plan_identity(d) == want_plan:
+            plan_p, plan = cand, d
+            break
+    if plan_p and plan:
+        want = set()
+        for key in ("conversations", "plan", "slots", "triplets"):
+            for c in (plan.get(key) or []):
+                if isinstance(c, dict) and "arm" in c:
+                    want.add((str(c.get("id")), int(c.get("pair", -1)), str(c.get("arm"))))
+            if want:
+                break
+        if want:
+            have = {(str(c.get("id")), int(c.get("pair", -1)), str(c.get("arm")))
+                    for c in convs}
+            if have != want:
+                only_p, only_h = sorted(want - have)[:3], sorted(have - want)[:3]
+                raise SystemExit(
+                    "⛔ the selected artefacts are not exactly the planned run.\n"
+                    f"     planned but absent: {only_p}\n"
+                    f"     present but unplanned: {only_h}\n"
+                    "   A partial run scored as a whole one is a silent exclusion.")
+    else:
+        print("   ⚠️ no plan file found; completeness against the plan was NOT checked. "
+              "Consistency and hash format were.")
+
     return {"questions_sha256": qsha,
             "plan_sha256": next(iter(seen["plan_sha256"])),
             "run_config_sha256": next(iter(seen["run_config_sha256"])),
-            "model": next(iter(seen["model"]))}
+            "model": next(iter(seen["model"])),
+            "n_artefacts": len(convs)}
 
 
 def load_run(prefix: str) -> list[dict]:
@@ -260,7 +343,8 @@ def selftest() -> int:
         for arm in ("task", "asked", "asked_other"):
             (RUNS / f"{pref}_p{p:03d}_{arm}.json").write_text(json.dumps({
                 "id": f"p{p:03d}_{arm}", "pair": p, "arm": arm, "model": "m",
-                "questions_sha256": QSHA, "plan_sha256": "PL", "run_config_sha256": "CF",
+                "questions_sha256": QSHA, "plan_sha256": "a" * 64,
+                "run_config_sha256": "b" * 64,
                 "messages": [], "reads": [
                     {"turn": 0, "kind": "internal", "n_ctx": 10, "features": [[1, 1.0]],
                      "prov": {"n_features": 16384, "read_layer": 24}, "pretreatment_null": True},
@@ -324,6 +408,37 @@ def selftest() -> int:
         c7 = True
     ok &= c7
     print(f"  swapped questions file -> REFUSED    : {'PASS' if c7 else '*** FAIL ***'}")
+
+    # ── LUCIEN VALE'S bind_identity BYPASSES, 2026-08-17 ────────────────────
+    # He got the gate to accept "plan missing, config empty, model missing" and
+    # placeholder hashes `abc`/`def`, because `(c.get(f) or "<absent>")` made
+    # every artefact lacking a field agree with every other artefact lacking it.
+    # Each of these must now REFUSE.
+    import copy as _copy
+    base = json.loads((RUNS / f"{pref}_p000_task.json").read_text(encoding="utf-8"))
+
+    def with_field(mutate, label):
+        stash = {}
+        for arm in ("task", "asked", "asked_other"):
+            f = RUNS / f"{pref}_p000_{arm}.json"
+            stash[f] = f.read_text(encoding="utf-8")
+            d = json.loads(stash[f])
+            mutate(d)
+            f.write_text(json.dumps(d), encoding="utf-8")
+        try:
+            export(pref, qf, tmp / "outX")
+            res = False
+        except SystemExit:
+            res = True
+        for f, txt in stash.items():
+            f.write_text(txt, encoding="utf-8")
+        print(f"  {label:38s} -> {'REFUSED  PASS' if res else '*** ACCEPTED — FAIL ***'}")
+        return res
+
+    ok &= with_field(lambda d: d.pop("plan_sha256", None), "plan hash missing entirely")
+    ok &= with_field(lambda d: d.update(run_config_sha256=""), "config hash empty string")
+    ok &= with_field(lambda d: d.pop("model", None), "model missing")
+    ok &= with_field(lambda d: d.update(plan_sha256="abc"), "placeholder hash 'abc'")
 
     # And artefacts from two different experiments must not share a workbook.
     mixed = RUNS / f"{pref}_p001_task.json"

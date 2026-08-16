@@ -62,10 +62,53 @@ SOURCE_QUOTES = [
 ]
 
 
-def spans(text: str) -> list[str]:
-    """Which named source quotes are present, whitespace-normalised."""
-    flat = " ".join(text.split())
-    return [q for q in SOURCE_QUOTES if " ".join(q.split()) in flat]
+#: How many times each quote is expected, and the section its attribution lives
+#: in. Presence alone is not fidelity: a quote can be present, mangled, and
+#: "repaired" by pasting the original elsewhere as unquoted prose.
+EXPECT = {q: 1 for q in SOURCE_QUOTES}
+
+# Straight and curly double quotes. A source quote must sit INSIDE these.
+QUOTED = re.compile(r'"([^"]{10,}?)"|[""]([^""]{10,}?)[""]', re.S)
+
+
+def quoted_regions(text: str) -> str:
+    """Only the text that is actually inside quotation marks."""
+    out = []
+    for m in QUOTED.finditer(text):
+        s = m.group(1) if m.group(1) is not None else m.group(2)
+        out.append(" ".join(s.split()))
+    return "\n".join(out)
+
+
+def spans(text: str) -> dict:
+    """Occurrence counts of each named source quote, INSIDE QUOTATION MARKS.
+
+    🚩 THE FIRST VERSION RECORDED PRESENCE ANYWHERE IN THE FLATTENED DOCUMENT and
+    Lucien Vale walked straight through it (2026-08-17 01:23): he changed the live
+    Singh quote from "inherently insufficient" to "sufficient" — reversing its
+    meaning — and appended the original wording elsewhere as unquoted prose.
+    Verify returned all 8 OK, exit 0.
+
+    > ### A checksum that can be satisfied by text sitting anywhere in the file is
+    > not guarding a quotation; it is guarding a word count.
+
+    So: scan only the regions actually enclosed in quotation marks, and count
+    occurrences rather than recording a boolean. A quote that has been moved out
+    of quotation marks now reads as ABSENT, which is what it is.
+    """
+    inside = quoted_regions(text)
+    return {q: inside.count(" ".join(q.split())) for q in SOURCE_QUOTES}
+
+
+def report(counts: dict, label: str):
+    bad = []
+    for q, want in EXPECT.items():
+        got = counts.get(q, 0)
+        mark = "OK  " if got == want else "FAIL"
+        if got != want:
+            bad.append((q, want, got))
+        print(f"  {mark}  x{got}  {q[:68]}")
+    return bad
 
 
 def main() -> int:
@@ -75,20 +118,26 @@ def main() -> int:
     mode, path = sys.argv[1], Path(sys.argv[2])
     if not path.is_absolute():
         path = Path(__file__).resolve().parent / path
-    found = spans(path.read_text(encoding="utf-8"))
+    counts = spans(path.read_text(encoding="utf-8"))
 
     if mode == "snapshot":
-        SNAP.write_text(json.dumps(found, indent=1, ensure_ascii=False), encoding="utf-8")
-        print(f"{len(found)} of {len(SOURCE_QUOTES)} named source quotes present "
-              f"in {path.name}")
-        for q in found:
-            print(f"   · {q[:76]}")
-        absent = [q for q in SOURCE_QUOTES if q not in found]
-        if absent:
-            print("\n   ⚠️ named quotes NOT found in this document "
-                  "(fine if unused here, but check the spelling of the constant):")
-            for q in absent:
-                print(f"     ? {q[:74]}")
+        # 🚩 A DAMAGED BASELINE USED TO WARN AND EXIT 0, and verify then blessed
+        #    whatever survived. Lucien Vale broke a quote BEFORE snapshotting:
+        #    "snapshot warned 7/8 but exited 0, and verify blessed the seven."
+        #    A guard whose baseline can be born corrupt guards nothing, so a
+        #    snapshot that does not find every expected quote is now FATAL.
+        print(f"Snapshotting {path.name}\n")
+        bad = report(counts, "snapshot")
+        SNAP.write_text(json.dumps(counts, indent=1, ensure_ascii=False), encoding="utf-8")
+        print()
+        if bad:
+            print(f"⛔ {len(bad)} expected quote(s) not found at the expected count "
+                  "INSIDE quotation marks:")
+            for q, want, got in bad:
+                print(f"   · want x{want}, found x{got}: {q[:66]}")
+            print("   Refusing to certify a baseline that is already wrong.")
+            return 1
+        print(f"✅ baseline: {len(EXPECT)} source quotes, each present exactly as expected.")
         return 0
 
     if mode != "verify":
@@ -97,29 +146,28 @@ def main() -> int:
         print("⛔ no snapshot. Run `snapshot` on the ORIGINAL before editing."); return 2
 
     before = json.loads(SNAP.read_text(encoding="utf-8"))
-    after = set(found)
-    missing = [q for q in before if q not in after]
-    added = [q for q in found if q not in set(before)]
-
-    print(f"quoted spans: {len(before)} before · {len(found)} after\n")
-    for q in before:
-        print(f"  {'OK  ' if q in after else 'GONE'}  {q[:74]}")
-    if added:
-        print("\n  new quoted spans (not in the snapshot):")
-        for q in added:
-            print(f"    +   {q[:74]}")
+    print(f"Verifying {path.name} against the baseline\n")
+    bad = report(counts, "verify")
+    drift = [(q, before.get(q, 0), counts.get(q, 0))
+             for q in SOURCE_QUOTES if before.get(q, 0) != counts.get(q, 0)]
 
     print()
-    if missing:
-        print(f"🚨 {len(missing)} quoted span(s) CHANGED OR DISAPPEARED.")
-        print("   A style pass has no jurisdiction over a quotation. Restore them:")
-        for q in missing:
-            print(f"     · {q}")
+    if bad or drift:
+        if bad:
+            print(f"🚨 {len(bad)} quote(s) not at the expected count inside quotation marks:")
+            for q, want, got in bad:
+                print(f"   · want x{want}, found x{got}: {q}")
+        if drift:
+            print(f"🚨 {len(drift)} quote(s) changed since the baseline:")
+            for q, b, a in drift:
+                print(f"   · was x{b}, now x{a}: {q[:64]}")
+        print("\n   A style pass has no jurisdiction over a quotation. Restore them.")
+        print("   ⚠️ Note: a quote moved OUT of quotation marks counts as absent,")
+        print("      because unquoted prose that happens to match is not a citation.")
         return 1
-    print("✅ every quoted span survives byte-for-byte (whitespace-normalised).")
-    if added:
-        print("   ⚠️ New quoted spans appeared. Not automatically wrong (a rewrite can")
-        print("      introduce scare-quotes), but each needs a human look.")
+    print("✅ every source quote present, inside quotation marks, at its expected count.")
+    print("\n📌 NOT proven: attribution. This checks the WORDS, not whose they are,")
+    print("   nor whether the surrounding sentence characterises them fairly.")
     return 0
 
 
