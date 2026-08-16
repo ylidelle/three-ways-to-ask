@@ -56,7 +56,47 @@ RES = LAB / "results"
 CONC = LAB / "runs_conceal"
 PREF = "google-gemma-3-12b-it_seed20260814_p20_d50_07e6a0aa"
 
-NUM = re.compile(r"[-+]?\d+(?:,\d{3})*(?:\.\d+)?")
+# 🚩 A WHOLE-CELL GRAMMAR, not a scanner that finds digits inside anything.
+#    Lucien Vale, 2026-08-17 03:08, defeated the scanning version four ways:
+#      · `−0.036` with U+2212 MINUS read as positive 0.036 (regex knew only ASCII)
+#      · `0.1924%` certified a value 100x smaller, because `%` was ignored
+#      · `\|` escaped pipes split as real delimiters, so raw columns != rendered
+#      · an HTML-comment decoy row became the unique raw match
+#    The first two are the same disease: extracting digits OUT of a cell instead
+#    of requiring the cell to BE a number. The whole cell must now match.
+CELL_NUM = re.compile(r"^[-+−]?\d+(?:,\d{3})*(?:\.\d+)?$")
+UNICODE_MINUS = "−"
+HTML_COMMENT = re.compile(r"<!--.*?-->", re.S)
+
+
+def strip_nonprose(text: str) -> str:
+    """Remove HTML comments and fenced code before any parsing.
+
+    A comment is invisible to a reader and visible to a naive parser, which is
+    exactly the gap a decoy row lives in."""
+    text = HTML_COMMENT.sub("", text)
+    out, fence = [], False
+    for line in text.splitlines():
+        if line.lstrip().startswith("```"):
+            fence = not fence
+            continue
+        if not fence:
+            out.append(line)
+    return "\n".join(out)
+
+
+def split_row(line: str) -> list:
+    """Markdown cells, respecting backslash-escaped pipes as literal content."""
+    parts, buf, i = [], [], 0
+    while i < len(line):
+        c = line[i]
+        if c == "\\" and i + 1 < len(line) and line[i + 1] == "|":
+            buf.append("|"); i += 2; continue
+        if c == "|":
+            parts.append("".join(buf)); buf = []; i += 1; continue
+        buf.append(c); i += 1
+    parts.append("".join(buf))
+    return [p.strip() for p in parts]
 
 
 class Fail(Exception):
@@ -113,22 +153,29 @@ def find_section(secs: dict, needle: str):
 
 
 def cell(secs, section, row_label, col):
-    """The `col`-th numeric token of the unique table row whose first cell
-    contains `row_label`. Zero or several matching rows is a failure."""
+    """The `col`-th cell of the unique table row whose first cell names `row_label`.
+
+    The cell must BE a number after markdown emphasis is stripped: no units, no
+    suffixes, no prose around it. Zero or several matching rows is a failure, and
+    so is a cell that merely contains a number.
+    """
     _, body = find_section(secs, section)
     rows = [l for l in body if l.strip().startswith("|")]
-    hit = [l for l in rows
-           if row_label.lower() in l.split("|")[1].lower()] if rows else []
+    hit = []
+    for line in rows:
+        cells = split_row(line.strip().strip("|"))
+        if cells and row_label.lower() in cells[0].lower():
+            hit.append(cells)
     if len(hit) != 1:
         raise Fail(f"table row '{row_label}' in «{section}»: found {len(hit)}, need 1")
-    cells = [c.strip() for c in hit[0].strip().strip("|").split("|")]
+    cells = hit[0]
     if col >= len(cells):
         raise Fail(f"row '{row_label}' has {len(cells)} cells, wanted column {col}")
-    toks = NUM.findall(cells[col].replace("*", "").replace("`", ""))
-    if len(toks) != 1:
-        raise Fail(f"cell '{row_label}'[{col}] holds {len(toks)} numbers, need exactly 1: "
-                   f"{cells[col]!r}")
-    return toks[0]
+    raw = cells[col].replace("*", "").replace("`", "").replace("~", "").strip()
+    if not CELL_NUM.fullmatch(raw):
+        raise Fail(f"cell '{row_label}'[{col}] is not a bare number: {cells[col]!r} "
+                   "(units, suffixes and surrounding prose are rejected)")
+    return raw.replace(UNICODE_MINUS, "-")
 
 
 def anchored(secs, section, pattern):
@@ -248,7 +295,7 @@ def build(errs):
 
 def check(paper: Path) -> int:
     errs: list = []                       # reset per run, never module state
-    text = paper.read_text(encoding="utf-8")
+    text = strip_nonprose(paper.read_text(encoding="utf-8"))
     secs = sections(text)
     claims = build(errs)
 
@@ -331,6 +378,21 @@ def selftest() -> int:
               lambda s: s.replace("n = 38", "n = 338"), True)
     ok &= run("row deleted entirely",
               lambda s: s.replace("| length only | 0.492 | 1.0000 |", ""), True)
+
+    # ── Lucien Vale's four bypasses of the v3 scanner, 2026-08-17 03:08 ──────
+    ok &= run("unicode minus U+2212 read as positive",
+              lambda s: s.replace("**+0.036**", "**−0.036**"), True)
+    ok &= run("unit suffix: 0.1924 -> 0.1924%",
+              lambda s: s.replace("| 0.1924 |", "| 0.1924% |"), True)
+    ok &= run("escaped pipes desynchronise columns",
+              lambda s: s.replace(
+                  "| internal features (16,384) | 0.550 | 0.1924 |",
+                  "| internal features (16,384) \\| 0.550 \\| 0.1924 | 0.999 | 0.9999 |"), True)
+    ok &= run("HTML-comment decoy row",
+              lambda s: s.replace(
+                  "| internal features (16,384) | 0.550 | 0.1924 |",
+                  "| internal fea<!-- -->tures (16,384) | 0.999 | 0.9999 |\n"
+                  "<!-- | internal features (16,384) | 0.550 | 0.1924 | -->"), True)
 
     shutil.rmtree(tmp, ignore_errors=True)
     print("\n" + ("all mutation controls behaved correctly"

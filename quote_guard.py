@@ -62,42 +62,83 @@ SOURCE_QUOTES = [
 ]
 
 
-#: How many times each quote is expected, and the section its attribution lives
-#: in. Presence alone is not fidelity: a quote can be present, mangled, and
-#: "repaired" by pasting the original elsewhere as unquoted prose.
 EXPECT = {q: 1 for q in SOURCE_QUOTES}
 
-# Straight and curly double quotes. A source quote must sit INSIDE these.
-QUOTED = re.compile(r'"([^"]{10,}?)"|[""]([^""]{10,}?)[""]', re.S)
+OPEN = ['"', "“"]          # ASCII, LEFT DOUBLE QUOTATION MARK
+CLOSE = ['"', "”"]         # ASCII, RIGHT DOUBLE QUOTATION MARK
+HTML_COMMENT = re.compile(r"<!--.*?-->", re.S)
+HTML_TAG = re.compile(r"<[^>\n]{1,400}>")
 
 
-def quoted_regions(text: str) -> str:
-    """Only the text that is actually inside quotation marks."""
-    out = []
-    for m in QUOTED.finditer(text):
-        s = m.group(1) if m.group(1) is not None else m.group(2)
-        out.append(" ".join(s.split()))
-    return "\n".join(out)
+def prose_only(text: str) -> str:
+    """Drop everything a reader does not read: comments, fenced code, HTML tags.
+
+    🚩 Lucien Vale parked an original quotation in an HTML comment, in a fenced
+    code block, and in a `title="..."` attribute — three separate ways to satisfy
+    a checksum with text nobody sees. Non-prose nodes are removed before any
+    quotation is looked for.
+    """
+    text = HTML_COMMENT.sub(" ", text)
+    out, fence = [], False
+    for line in text.splitlines():
+        if line.lstrip().startswith("```"):
+            fence = not fence
+            continue
+        if not fence:
+            out.append(line)
+    return HTML_TAG.sub(" ", "\n".join(out))
 
 
 def spans(text: str) -> dict:
-    """Occurrence counts of each named source quote, INSIDE QUOTATION MARKS.
+    """How many times each named source quote appears as a COMPLETE quoted span.
 
-    🚩 THE FIRST VERSION RECORDED PRESENCE ANYWHERE IN THE FLATTENED DOCUMENT and
-    Lucien Vale walked straight through it (2026-08-17 01:23): he changed the live
-    Singh quote from "inherently insufficient" to "sufficient" — reversing its
-    meaning — and appended the original wording elsewhere as unquoted prose.
-    Verify returned all 8 OK, exit 0.
+    ═══════════════════════════════════════════════════════════════════════════
+    🚩 TWO EARLIER DESIGNS FAILED, AND THE SECOND FAILED INTERESTINGLY.
 
-    > ### A checksum that can be satisfied by text sitting anywhere in the file is
-    > not guarding a quotation; it is guarding a word count.
+    **v1** recorded presence anywhere in the flattened document. Lucien Vale
+    reversed the Singh quote's meaning and pasted the original elsewhere as
+    unquoted prose: 8/8 OK.
 
-    So: scan only the regions actually enclosed in quotation marks, and count
-    occurrences rather than recording a boolean. A quote that has been moved out
-    of quotation marks now reads as ABSENT, which is what it is.
+    **v2** scanned "quotation regions" found by globally pairing quote
+    characters, and he defeated it five ways (2026-08-17 03:08). The root causes
+    were both structural:
+
+      · the same ASCII character opens and closes, so a short quote such as
+        `"Detected"` desynchronises the pairing parity, and on the clean paper
+        the regex was already inventing spans of 2,588 and 1,334 characters
+        across many paragraphs;
+      · `inside.count(q)` tested a SUBSTRING of a region, so writing
+        `"It is false that <protected quote>"` certified a fabricated reversal.
+
+      🩻 And the character classes read `[""]` — the ASCII quote twice. **Curly
+        quotation marks were never supported, while the comment said they were.**
+        A false claim in the code about the code.
+
+    ⇒ v3 stops trying to discover quotations at all. For each of the eight named
+    quotes it searches for that quote **bounded by quotation marks on both
+    sides**, in prose only. No global pairing, so no parity to desynchronise; the
+    bounding marks enforce completeness, so a prefix like "It is false that"
+    breaks the match rather than riding along inside it.
+    ═══════════════════════════════════════════════════════════════════════════
     """
-    inside = quoted_regions(text)
-    return {q: inside.count(" ".join(q.split())) for q in SOURCE_QUOTES}
+    flat = " ".join(prose_only(text).split())
+    counts = {}
+    for q in SOURCE_QUOTES:
+        norm = " ".join(q.split()).rstrip(",.;:")
+        n = 0
+        for o in OPEN:
+            for c in CLOSE:
+                # ⚠️ American-style punctuation places the SENTENCE's comma or
+                #    period inside the closing mark, so `…claims,"` is the same
+                #    quotation as `…claims"`. That trailing mark belongs to my
+                #    sentence, not to the source, which is why it is optional
+                #    here and absent from SOURCE_QUOTES. Nothing longer than one
+                #    punctuation character is tolerated: this permits typesetting,
+                #    not appended words.
+                for tail in ("", ",", ".", ";", ":"):
+                    n += flat.count(f"{o}{norm}{tail}{c}")
+        counts[q] = n
+    return counts
 
 
 def report(counts: dict, label: str):
