@@ -124,19 +124,27 @@ def spans(text: str) -> dict:
     flat = " ".join(prose_only(text).split())
     counts = {}
     for q in SOURCE_QUOTES:
-        norm = " ".join(q.split()).rstrip(",.;:")
+        norm = " ".join(q.split())
         n = 0
-        for o in OPEN:
-            for c in CLOSE:
-                # ⚠️ American-style punctuation places the SENTENCE's comma or
-                #    period inside the closing mark, so `…claims,"` is the same
-                #    quotation as `…claims"`. That trailing mark belongs to my
-                #    sentence, not to the source, which is why it is optional
-                #    here and absent from SOURCE_QUOTES. Nothing longer than one
-                #    punctuation character is tolerated: this permits typesetting,
-                #    not appended words.
-                for tail in ("", ",", ".", ";", ":"):
-                    n += flat.count(f"{o}{norm}{tail}{c}")
+        # 🚩 `rstrip(",.;:")` USED TO RUN HERE, ON EVERY CONSTANT, and Lucien Vale
+        #    showed what that costs (2026-08-17 04:07): deleting the period from
+        #    `…deception and roleplay."` returned exit 0, because the guard had
+        #    already thrown that period away before comparing.
+        #    ⇒ It protected the eight quotations' WORDS, not their punctuation.
+        #
+        #    The stored constant now carries each source's own terminal mark and
+        #    is matched EXACTLY. The single permitted variation is an ADDED comma
+        #    before the closing mark, because American style puts the sentence's
+        #    comma inside the quotation — that comma is ours, not the source's.
+        #    Nothing may be REMOVED, which is the direction that changes a
+        #    citation.
+        variants = [norm] + ([norm + ","] if not norm.endswith(",") else [])
+        # And the marks must match in kind. A half-completed smart-quote
+        # conversion left `"…”`, which the any-open-with-any-close version
+        # accepted; a mismatched pair is a typesetting error worth seeing.
+        for o, c in zip(OPEN, CLOSE):
+            for v in variants:
+                n += flat.count(f"{o}{v}{c}")
         counts[q] = n
     return counts
 

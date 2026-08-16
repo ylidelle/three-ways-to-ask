@@ -258,6 +258,14 @@ def build(errs):
             mk = sum(v["kappa"] for v in ag.values()) / len(ag)
             C.append(("mean kappa", mk, 3,
                       ("anchor", "barely agree", r"Mean κ = ([-+]\d+\.\d+)")))
+            # 🚩 THE ABSTRACT WAS NOT REGISTERED. Lucien Vale, 2026-08-17 04:07:
+            #    changing the abstract's mean κ from +0.059 to +0.095 while the
+            #    §4.3 table stayed correct returned a full green verdict. The
+            #    checker protected ONE occurrence per manifest entry, which is
+            #    precisely the ordinary copy-edit failure the prose claimed to
+            #    catch: a summary edited while the table stays right.
+            C.append(("mean kappa (abstract)", mk, 3,
+                      ("anchor", "Abstract", r"Cohen's κ = ([-+]\d+\.\d+)")))
         u = dig(con, "unanimity", "convergence", errs)
         if u:
             S44 = "agreement is itself informative"
@@ -267,6 +275,11 @@ def build(errs):
                       ("cell", S44, "best single method", 1)))
             C.append(("n unanimous", u["n_unanimous"], 0,
                       ("anchor", S44, r"n = (\d+)")))
+            # The abstract restates both accuracies; register those sites too.
+            C.append(("unanimous acc (abstract)", u["acc_unanimous"], 3,
+                      ("anchor", "Abstract", r"accuracy is (\d+\.\d+) against")))
+            C.append(("best single (abstract)", u["best_single"], 3,
+                      ("anchor", "Abstract", r"against\s+(\d+\.\d+) for the best single")))
             if not u.get("refit_null"):
                 errs.append("convergence unanimity not from a refitting null")
     if exa:
@@ -275,6 +288,19 @@ def build(errs):
                   ("cell", S44, "threshold at p", 1)))
         C.append(("orbit size", exa["orbit_size"], 0,
                   ("anchor", S44, r"2²⁰ = ([\d,]+) assignments")))
+        # 🚩 THE HEADLINE p WAS IN NO MANIFEST ENTRY AT ALL. Editing §4.4's
+        #    `p ≈ 0.0531` to `0.0351` passed green. Both manuscript occurrences
+        #    are now registered against the artefact.
+        C.append(("exact p (4.4 table)", exa["p_enumerated"], 4,
+                  ("anchor", S44, r"gap \| \+0\.070, \*\*p ≈ ([\d.]+)\*\*")))
+        C.append(("exact p (4.4 prose)", exa["p_enumerated"], 4,
+                  ("anchor", S44, r"exact tail is\s*>?\s*(\d+\.\d+)")))
+        # ⚠️ `tail_count` is deliberately NOT registered. The paper states a RANGE
+        #    (55,657 to 55,660) because the count is host-dependent at the
+        #    few-assignment level, and registering a single artefact integer
+        #    against that cell would contradict the paper's own correct refusal
+        #    to certify one. The strict cell grammar caught the attempt, which is
+        #    the check enforcing an honesty decision rather than a transcription.
         if exa.get("count_certified") is not False:
             errs.append("exact artefact claims a certified count; the paper does not")
     if gnd:
