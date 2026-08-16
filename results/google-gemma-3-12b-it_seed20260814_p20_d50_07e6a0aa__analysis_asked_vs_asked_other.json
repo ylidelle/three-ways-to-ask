@@ -24,7 +24,7 @@
  },
  "length_baseline": {
   "observed": 0.4916666666666666,
-  "null_mean": 0.49998333333333317,
+  "null_mean": 0.49998749999999986,
   "mde": 0.5083333333333333,
   "p": 1.0,
   "separates": false
