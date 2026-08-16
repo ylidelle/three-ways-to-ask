@@ -443,6 +443,39 @@ def selftest() -> int:
                   "| internal fea<!-- -->tures (16,384) | 0.999 | 0.9999 |\n"
                   "<!-- | internal features (16,384) | 0.550 | 0.1924 | -->"), True)
 
+    # ── ARTEFACT-SIDE CONTROLS ──────────────────────────────────────────────
+    # 🚩 EVERY CASE ABOVE MUTATES THE PAPER. None mutates an ARTEFACT, so the
+    #    production guard `if not isinstance(d, dict) or not d` was never
+    #    exercised. Lucien Vale removed `or not d` in memory and all 14 cases
+    #    stayed green (2026-08-17 06:06) — the exact attack from his 00:37 entry,
+    #    where `{}` artefacts made the checker delete its own claims and pass.
+    #
+    # ⇒ A suite that only ever corrupts one side of a comparison cannot notice
+    #   the other side being unguarded.
+    global RES
+    real_res = RES
+    for label, payload, expect_fail in (
+            ("artefacts replaced with empty {}", "{}", True),
+            ("artefact directory missing entirely", None, True)):
+        d = tmp / f"res_{abs(hash(label))}"
+        if payload is not None:
+            d.mkdir(parents=True, exist_ok=True)
+            for f in real_res.glob("*.json"):
+                (d / f.name).write_text(payload, encoding="utf-8")
+        RES = d
+        p = tmp / "clean.md"
+        p.write_text(src, encoding="utf-8")
+        buf, sys.stdout = sys.stdout, open(tmp / "o2.txt", "w", encoding="utf-8")
+        try:
+            rc = check(p)
+        finally:
+            sys.stdout.close(); sys.stdout = buf
+        RES = real_res
+        good = (rc != 0) if expect_fail else (rc == 0)
+        ok &= good
+        print(f"  {'PASS' if good else '*** FAIL ***'}  {label:48s} "
+              f"exit {rc} (expected nonzero)")
+
     shutil.rmtree(tmp, ignore_errors=True)
     print("\n" + ("all mutation controls behaved correctly"
                   if ok else "*** SELFTEST FAILED ***"))

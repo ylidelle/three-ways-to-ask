@@ -234,6 +234,29 @@ def selftest() -> int:
     ok &= case("a visible word typo inside a quotation",
                lambda s: s.replace("imitation of pre-training", "imitations of pre-training"))
 
+    # ── THE BASELINE ITSELF ─────────────────────────────────────────────────
+    # 🚩 EVERY CASE ABOVE COMPARES A MUTATED PAPER AGAINST A GOOD BASELINE. None
+    #    tests the snapshot path, so the fatal-on-damaged-baseline fix was never
+    #    exercised: Lucien Vale removed it in memory and all 10 cases stayed
+    #    green (2026-08-17 06:06). That is his 03:08 attack — damage a quote
+    #    BEFORE snapshotting, and verify blesses whatever survived.
+    #
+    # ⇒ A guard's baseline is an input like any other, and an input nothing
+    #   corrupts is an input nothing checks.
+    damaged = src.replace("inherently insufficient", "sufficient")
+    dmg_counts = spans(damaged)
+    baseline_bad = any(dmg_counts.get(q, 0) != EXPECT[q] for q in SOURCE_QUOTES)
+    ok &= baseline_bad
+    print(f"  {'PASS' if baseline_bad else '*** FAIL ***'}  "
+          f"{'pre-damaged paper refused as a BASELINE':52s} "
+          f"{'refused' if baseline_bad else 'ACCEPTED'}")
+
+    clean_ok = all(spans(src).get(q, 0) == EXPECT[q] for q in SOURCE_QUOTES)
+    ok &= clean_ok
+    print(f"  {'PASS' if clean_ok else '*** FAIL ***'}  "
+          f"{'clean paper accepted as a BASELINE':52s} "
+          f"{'accepted' if clean_ok else 'REFUSED'}")
+
     import shutil
     shutil.rmtree(tmp, ignore_errors=True)
     print("\n" + ("every attack is caught, clean paper passes"

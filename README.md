@@ -49,19 +49,35 @@ artefacts in `runs_experiment/`.
 
 ## Two conventions worth knowing before reading the code
 
-**Every script has `--selftest`, and every selftest runs both directions.**
-A check that cannot fail is not a check, so each one is validated by an input it
-is supposed to reject as well as one it should accept. The plan auditor is tested
-against deliberately broken plans; the exporter against a swapped instrument
-file; the convergence null against a dataset where the defect it now catches
-would previously have gone unseen.
+**The analysis scripts carry `--selftest`, and each runs both directions.**
+`sprint_analyse`, `sprint_converge`, `sprint_grounding`, `sprint_export`,
+`exact_unanimity`, `check_paper_numbers` and `quote_guard` each have one;
+`sprint_run.py` has `--audit-selftest`. **Other released scripts, including the
+exploratory work this study grew from, have none.** A check that cannot fail is
+not a check, so each suite is validated by inputs it must reject as well as one
+it must accept: the plan auditor against deliberately broken plans, the exporter
+against a swapped instrument file and four malformed identities, the convergence
+null against data where the defect it now catches would previously have gone
+unseen.
 
-**Numbers in the paper are verified against results files by a script, not by
-hand.** `check_paper_numbers.py` re-reads every inferential figure from the
-artefact that produced it and requires it to appear *in the section that claims
-it*. It exits non-zero on any mismatch or missing artefact. It also prints what
-it cannot do, because an earlier version printed a green tick while checking
-almost nothing.
+*(This section previously read "Every script has `--selftest`". That was false
+when written, and it stayed false here for hours after the same sentence was
+corrected in the paper — fixing the copy you happen to be looking at is the most
+persistent bug in this repository.)*
+
+**Numbers in the paper are checked against results files by a script, not by
+hand — within a stated scope.** `check_paper_numbers.py` re-reads **41 registered
+numeric occurrences** from the artefacts that produce them and requires each at
+one named site; `quote_guard.py` checks the words and terminal punctuation of
+**eight named source quotations**. Not every number in the manuscript, and not
+every property of a quotation. Both exit non-zero on mismatch, missing artefact,
+or an artefact that is empty rather than absent.
+
+**Their own attack history is committed.** Our external reviewer defeated four
+successive versions of each; `check_paper_numbers.py --selftest` runs **16**
+cases and `quote_guard.py --selftest` runs **13**, including a control that
+fails any negative fixture which mutates nothing. **They are evidence of care,
+not clearance** — neither is proof against a document edited to deceive it.
 
 ## Layout
 
