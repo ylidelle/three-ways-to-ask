@@ -18,6 +18,8 @@ import json
 import sys
 from pathlib import Path
 
+import numpy as np
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -85,18 +87,40 @@ pretty = {"internal|self_report": "internal\nvs self-report",
           "internal|behaviour": "internal\nvs behaviour",
           "self_report|behaviour": "self-report\nvs behaviour"}
 ks = [(pretty.get(k, k), v["kappa"]) for k, v in ag.items()]
+
+# 🚩 THESE BARS WERE DRAWN BARE. Alexander Bennett, 2026-08-17: the paper's whole
+#    thesis is that a single method cannot supply its own error bar, and the
+#    statistic carrying that thesis had none — in the prose or here, where the
+#    omission is even plainer once someone points at it.
+if not all("ci_lo" in v for v in ag.values()):
+    sys.exit("⛔ the convergence artefact carries no kappa CIs. Re-run "
+             "sprint_converge.py. Refusing to draw a bare bar for the paper's "
+             "headline statistic.")
+err = np.array([[v["kappa"] - v["ci_lo"] for v in ag.values()],
+                [v["ci_hi"] - v["kappa"] for v in ag.values()]])
+
 b2 = ax[1].bar([k for k, _ in ks], [v for _, v in ks],
-               color="#b7791f", edgecolor="black")
+               color="#b7791f", edgecolor="black",
+               yerr=err, capsize=5, error_kw=dict(ecolor="#333", lw=1.4))
 ax[1].axhline(0, c="black", lw=1.2)
 for b, (_, v) in zip(b2, ks):
-    ax[1].text(b.get_x() + b.get_width() / 2, v + 0.012, f"{v:+.3f}",
-               ha="center", fontweight="bold")
-ax[1].set_ylim(-0.05, 0.55)
-ax[1].set_ylabel("Cohen's κ")
-ax[1].axhspan(-0.05, 0.20, color="#eeeeee", zorder=0)
-ax[1].text(2.45, 0.23, "κ > 0.2 would mean\nredundant methods",
-           ha="right", fontsize=10)
-ax[1].set_title("B  They barely agree with each other\nnear-independent instruments")
+    ax[1].text(b.get_x() + b.get_width() / 2, -0.31, f"{v:+.3f}",
+               ha="center", fontweight="bold", fontsize=10)
+ax[1].set_ylim(-0.36, 0.55)
+ax[1].set_ylabel("Cohen's κ  (95% CI)")
+# 🚩 THE FIRST VERSION OF THIS LABEL SAID "no interval reaches it" — and all
+#    three individual intervals do (+0.204, +0.233, +0.297). Only the MEAN's
+#    interval, +0.175, stays below. A new overclaim written into the fix for an
+#    overclaim, in the same hour. The mean's bound is drawn explicitly so the
+#    distinction is visible rather than asserted.
+ax[1].axhspan(0.20, 0.55, color="#f6e6e6", zorder=0)
+mean_hi = conv["kappa_ci"]["mean"]["hi"]
+ax[1].axhline(mean_hi, ls="--", c="#2b6cb0", lw=1.3)
+ax[1].text(2.45, 0.46, "κ ≥ 0.20 = 'fair' agreement", ha="right", fontsize=9)
+ax[1].text(2.45, mean_hi + 0.02, f"mean κ upper bound {mean_hi:+.3f}",
+           ha="right", fontsize=8.5, color="#2b6cb0")
+ax[1].set_title("B  They barely agree with each other\n"
+                "the MEAN excludes fair agreement; single pairs do not")
 
 # ── C: the calibration ───────────────────────────────────────────────────────
 usable = [r for r in conc["results"] if r.get("n_target_features")]
@@ -109,7 +133,7 @@ for b, f, h in zip(b3, fired, hits):
                f"{f}/{len(usable)}\n({h} hits)", ha="center", fontweight="bold", fontsize=11)
 ax[2].set_ylim(0, 9.6)
 ax[2].set_ylabel(f"targets detected (of {len(usable)})")
-ax[2].set_title("C  Calibration: a withheld concept\nNULL silent — the floor is real but low")
+ax[2].set_title("C  Calibration: a withheld concept\nNULL silent, so the floor is real but low")
 
 for a in ax:
     a.spines[["top", "right"]].set_visible(False)

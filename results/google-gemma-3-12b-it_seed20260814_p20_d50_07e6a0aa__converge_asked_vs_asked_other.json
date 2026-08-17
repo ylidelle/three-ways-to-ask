@@ -10,15 +10,21 @@
  "agreement": {
   "internal|self_report": {
    "agree": 0.55,
-   "kappa": 0.03571428571428582
+   "kappa": 0.03571428571428582,
+   "ci_lo": -0.13304836817241497,
+   "ci_hi": 0.20353982300884954
   },
   "internal|behaviour": {
    "agree": 0.525,
-   "kappa": 0.03389830508474587
+   "kappa": 0.03389830508474587,
+   "ci_lo": -0.1436464088397788,
+   "ci_hi": 0.23296401515151507
   },
   "self_report|behaviour": {
    "agree": 0.5583333333333333,
-   "kappa": 0.10774410774410777
+   "kappa": 0.10774410774410777,
+   "ci_lo": -0.09092412548862372,
+   "ci_hi": 0.297071129707113
   }
  },
  "accuracy_p": {
@@ -41,16 +47,43 @@
    "at_p_floor": false
   }
  },
+ "kappa_ci": {
+  "internal|self_report": {
+   "lo": -0.13304836817241497,
+   "hi": 0.20353982300884954,
+   "boot_mean": 0.03412697497112649
+  },
+  "internal|behaviour": {
+   "lo": -0.1436464088397788,
+   "hi": 0.23296401515151507,
+   "boot_mean": 0.041937707661765
+  },
+  "self_report|behaviour": {
+   "lo": -0.09092412548862372,
+   "hi": 0.297071129707113,
+   "boot_mean": 0.10474748101011669
+  },
+  "mean": {
+   "lo": -0.04854226694050532,
+   "hi": 0.17504338709952746,
+   "boot_mean": 0.06027072121433606
+  },
+  "n_boot": 10000,
+  "resampling_unit": "matched pair",
+  "excludes": "classifier refitting; predictions held fixed"
+ },
+ "mean_kappa": 0.05911889951437982,
  "unanimity": {
   "n_unanimous": 38,
   "frac": 0.31666666666666665,
   "acc_unanimous": 0.7368421052631579,
   "best_single": 0.6666666666666666,
   "gap": 0.07017543859649122,
-  "p": 0.049475262368815595,
+  "p_monte_carlo": 0.049475262368815595,
   "null_mean": -0.039564414992994436,
   "n_null_draws": 2000,
+  "n_skipped_empty": 0,
   "refit_null": true,
-  "exact_p_all_2pow20_by_lucien": 0.0530815125
+  "method": "monte_carlo"
  }
 }

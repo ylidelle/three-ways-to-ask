@@ -165,6 +165,63 @@ def held_out_predictions(rows, n_feat, y_override=None):
     return P, y, g
 
 
+def kappa_intervals(P, y, g, n_boot=10000, seed=0):
+    """Cluster bootstrap CIs for each pairwise κ and their mean.
+
+    🚩 WHY THIS EXISTS. Alexander Bennett, 2026-08-17: *"Your headline number has
+    no error bar. You have written an entire paper whose thesis is 'a single
+    method cannot supply its own error bar,' and the statistic carrying that
+    thesis is printed bare. It's the one place the paper does the thing it warns
+    about."*
+
+    He is right, and it is the sharpest criticism this paper has had. `κ = +0.059`
+    was the headline and it had no interval anywhere in the manuscript.
+
+    **The resampling unit is the matched PAIR, not the row.** Rows within a pair
+    share a work sequence and a held-out fold, so resampling rows would treat
+    120 correlated observations as 120 independent ones and produce an interval
+    far too narrow. Twenty pairs are drawn with replacement and κ is recomputed
+    on the rows they carry.
+
+    ⚠️ WHAT THIS INTERVAL DOES NOT INCLUDE, stated because an unqualified CI is
+    the same overclaim in a new costume: it propagates the sampling of pairs,
+    holding the fitted predictions fixed. It does **not** propagate refitting the
+    three classifiers on each resample. So it answers *"how precisely do we know
+    the agreement between these prediction vectors"*, not *"how would κ vary if
+    the whole pipeline were rerun on a fresh sample of pairs"*. The second is
+    wider.
+    """
+    rng = np.random.default_rng(seed)
+    pairs = np.unique(g)
+    idx_of = {p: np.flatnonzero(g == p) for p in pairs}
+    combos = list(itertools.combinations(P, 2))
+
+    draws = {f"{a}|{b}": [] for a, b in combos}
+    draws["mean"] = []
+    for _ in range(n_boot):
+        pick = rng.choice(pairs, size=len(pairs), replace=True)
+        idx = np.concatenate([idx_of[p] for p in pick])
+        ks = []
+        for a, b in combos:
+            k = kappa(P[a][idx], P[b][idx])
+            if not np.isfinite(k):
+                k = 0.0            # a resample with one predicted class everywhere
+            draws[f"{a}|{b}"].append(k)
+            ks.append(k)
+        draws["mean"].append(float(np.mean(ks)))
+
+    out = {}
+    for key, v in draws.items():
+        v = np.asarray(v)
+        out[key] = {"lo": float(np.percentile(v, 2.5)),
+                    "hi": float(np.percentile(v, 97.5)),
+                    "boot_mean": float(v.mean())}
+    out["n_boot"] = n_boot
+    out["resampling_unit"] = "matched pair"
+    out["excludes"] = "classifier refitting; predictions held fixed"
+    return out
+
+
 def per_method_p(rows, n_feat, P, y, g, n_perm, rng):
     """Permutation p for EACH method's accuracy, refitting the whole pipeline.
 
@@ -320,14 +377,31 @@ def run(prefix, pos, neg, n_perm, seed):
     print("  value, never rounded up, and never as a smaller number.")
 
     print("\n═══ DIVERGENCE — do the methods agree with EACH OTHER? ═══")
+    ci = kappa_intervals(P, y, g, n_boot=10000, seed=seed)
+    out["kappa_ci"] = ci
     for a, b in itertools.combinations(P, 2):
+        key = f"{a}|{b}"
         ag = float((P[a] == P[b]).mean())
         kp = float(kappa(P[a], P[b]))
-        out["agreement"][f"{a}|{b}"] = {"agree": ag, "kappa": kp}
-        print(f"  {a:12s} vs {b:12s}  agree {ag:.3f}   kappa {kp:+.3f}")
+        out["agreement"][key] = {"agree": ag, "kappa": kp,
+                                 "ci_lo": ci[key]["lo"], "ci_hi": ci[key]["hi"]}
+        print(f"  {a:12s} vs {b:12s}  agree {ag:.3f}   kappa {kp:+.3f}"
+              f"   95% CI [{ci[key]['lo']:+.3f}, {ci[key]['hi']:+.3f}]")
     ks = [v["kappa"] for v in out["agreement"].values()]
-    print(f"\n  mean kappa {np.mean(ks):+.3f} — near zero means the methods are")
-    print("  near-INDEPENDENT instruments, not redundant views of one signal.")
+    mk = float(np.mean(ks))
+    out["mean_kappa"] = mk
+    print(f"\n  mean kappa {mk:+.3f}   95% CI "
+          f"[{ci['mean']['lo']:+.3f}, {ci['mean']['hi']:+.3f}]")
+    print(f"  ({ci['n_boot']:,} cluster bootstrap resamples; the unit is the "
+          f"matched PAIR, not the row)")
+    # 🔑 The claim is NOT that kappa equals 0.059. It is that the methods are not
+    #    redundant. Landmarks make that testable rather than rhetorical.
+    print(f"  ⇒ the interval excludes 'moderate agreement' (κ ≥ 0.40): "
+          f"{'YES' if ci['mean']['hi'] < 0.40 else 'NO'}")
+    print(f"     and excludes 'fair agreement'    (κ ≥ 0.20): "
+          f"{'YES' if ci['mean']['hi'] < 0.20 else 'NO'}")
+    print("  ⚠️ The interval propagates resampling of pairs, holding the fitted")
+    print("     predictions fixed. It does NOT include classifier refitting.")
 
     print("\n═══ CONVERGENCE SCORE — is agreement itself informative? ═══")
     t = unanimity_test(rows, n_feat, P, y, g, n_perm, rng)

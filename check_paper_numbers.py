@@ -198,7 +198,9 @@ def same(tok: str, val: float, min_dp: int) -> bool:
     a vague `0.19` cannot stand in for `0.1924`. Sign is significant: `-0.036`
     and `+0.036` differ at every precision.
     """
-    t = tok.replace(",", "")
+    # The paper typesets negative numbers with U+2212 MINUS in some places;
+    # normalise before parsing rather than silently failing to read them.
+    t = tok.replace(",", "").replace(UNICODE_MINUS, "-")
     try:
         got = float(t)
     except ValueError:
@@ -254,6 +256,23 @@ def build(errs):
                       ("cell", "barely agree", pretty.get(k, k), 2)))
             C.append((f"agree {k}", v["agree"], 3,
                       ("cell", "barely agree", pretty.get(k, k), 1)))
+            # 🚩 The CIs were added after Alexander Bennett pointed out that the
+            #    paper's headline statistic was printed bare. An interval that is
+            #    quoted but unchecked is the same defect one layer along, so both
+            #    bounds are registered against the artefact.
+            if "ci_lo" in v:
+                C.append((f"kappa {k} CI lo", v["ci_lo"], 3,
+                          ("anchor", "barely agree",
+                           rf"{re.escape(pretty.get(k, k))} \| [\d.]+ \| \*\*[-+][\d.]+\*\* \| \[([-+−][\d.]+),")))
+                C.append((f"kappa {k} CI hi", v["ci_hi"], 3,
+                          ("anchor", "barely agree",
+                           rf"{re.escape(pretty.get(k, k))} \| [\d.]+ \| \*\*[-+][\d.]+\*\* \| \[[-+−][\d.]+, ([-+−][\d.]+)\]")))
+        mci = dig(con, "kappa_ci.mean", "convergence", errs)
+        if mci:
+            C.append(("mean kappa CI lo", mci["lo"], 3,
+                      ("anchor", "barely agree", r"\*\*\[([-+−][\d.]+), [-+−][\d.]+\]\*\*")))
+            C.append(("mean kappa CI hi", mci["hi"], 3,
+                      ("anchor", "barely agree", r"\*\*\[[-+−][\d.]+, ([-+−][\d.]+)\]\*\*")))
         if ag:
             mk = sum(v["kappa"] for v in ag.values()) / len(ag)
             C.append(("mean kappa", mk, 3,
@@ -277,7 +296,7 @@ def build(errs):
                       ("anchor", S44, r"n = (\d+)")))
             # The abstract restates both accuracies; register those sites too.
             C.append(("unanimous acc (abstract)", u["acc_unanimous"], 3,
-                      ("anchor", "Abstract", r"accuracy is (\d+\.\d+) against")))
+                      ("anchor", "Abstract", r"accuracy is\s+(\d+\.\d+) against")))
             C.append(("best single (abstract)", u["best_single"], 3,
                       ("anchor", "Abstract", r"against\s+(\d+\.\d+) for the best single")))
             if not u.get("refit_null"):
