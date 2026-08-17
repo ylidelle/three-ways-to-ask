@@ -27,7 +27,17 @@ if not p.is_absolute():
     p = LAB / p
 
 doc = pymupdf.open(p)
-pages = [doc[i].get_text() for i in range(len(doc))]
+# 🚩 FLATTEN WHITESPACE AND NORMALISE THE MINUS SIGN before searching. Probes
+#    against raw extracted text reported MISS for strings that were plainly in
+#    the document, twice: once because a phrase line-wrapped, once because the
+#    PDF typesets U+2212 where the probe used an ASCII hyphen. Both were the
+#    probe being blind, not the artefact being wrong — and a checker that cries
+#    absence is one whose alarms get discounted.
+def _norm(s):
+    return " ".join(s.replace("−", "-").split())
+
+
+pages = [_norm(doc[i].get_text()) for i in range(len(doc))]
 whole = "\n".join(pages)
 print(f"{p.name} · {p.stat().st_size/1024:.0f} KB · {len(doc)} pages\n")
 
