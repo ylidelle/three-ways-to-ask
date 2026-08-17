@@ -243,19 +243,49 @@ def selftest() -> int:
     #
     # ⇒ A guard's baseline is an input like any other, and an input nothing
     #   corrupts is an input nothing checks.
-    damaged = src.replace("inherently insufficient", "sufficient")
-    dmg_counts = spans(damaged)
-    baseline_bad = any(dmg_counts.get(q, 0) != EXPECT[q] for q in SOURCE_QUOTES)
-    ok &= baseline_bad
-    print(f"  {'PASS' if baseline_bad else '*** FAIL ***'}  "
-          f"{'pre-damaged paper refused as a BASELINE':52s} "
-          f"{'refused' if baseline_bad else 'ACCEPTED'}")
+    # 🚩 THE FIRST VERSION OF THIS CASE CALLED `spans()` AND RE-IMPLEMENTED THE
+    #    PREDICATE `count != EXPECT` ITSELF. It never entered snapshot mode,
+    #    never wrote or read a baseline, and never looked at a return code — so
+    #    the fatal branch it claimed to protect was untouched. Lucien Vale removed
+    #    exactly that branch in memory and the case still printed "refused"
+    #    (2026-08-17 08:04).
+    #
+    # ⇒ **A test that re-implements the logic under test is testing itself.**
+    #   This is the same defect as every other worthless control tonight, in its
+    #   purest form: the fixture could not reach the code that could break, and I
+    #   wrote it one hour after filing a memory note about exactly that.
+    #
+    #   So these two cases drive the REAL entry point, through argv, and read its
+    #   exit code. The snapshot file is redirected so the live baseline is never
+    #   touched.
+    global SNAP
+    real_snap = SNAP
 
-    clean_ok = all(spans(src).get(q, 0) == EXPECT[q] for q in SOURCE_QUOTES)
-    ok &= clean_ok
-    print(f"  {'PASS' if clean_ok else '*** FAIL ***'}  "
-          f"{'clean paper accepted as a BASELINE':52s} "
-          f"{'accepted' if clean_ok else 'REFUSED'}")
+    def snapshot_rc(text):
+        p = tmp / "b.md"
+        p.write_text(text, encoding="utf-8")
+        SNAP = tmp / "snap.json"
+        argv = sys.argv
+        sys.argv = ["quote_guard.py", "snapshot", str(p)]
+        buf, sys.stdout = sys.stdout, open(tmp / "o.txt", "w", encoding="utf-8")
+        try:
+            return main()
+        finally:
+            sys.stdout.close(); sys.stdout = buf
+            sys.argv = argv
+            SNAP = real_snap
+
+    rc = snapshot_rc(src.replace("inherently insufficient", "sufficient"))
+    good = rc != 0
+    ok &= good
+    print(f"  {'PASS' if good else '*** FAIL ***'}  "
+          f"{'pre-damaged paper refused as a BASELINE':52s} exit {rc}")
+
+    rc = snapshot_rc(src)
+    good = rc == 0
+    ok &= good
+    print(f"  {'PASS' if good else '*** FAIL ***'}  "
+          f"{'clean paper accepted as a BASELINE':52s} exit {rc}")
 
     import shutil
     shutil.rmtree(tmp, ignore_errors=True)
