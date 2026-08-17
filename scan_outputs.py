@@ -16,9 +16,11 @@ script behind it.
       paper names, so this selects by that hash and refuses any other count.
 
    2. WRONG FIELDS. The first version looked for keys named content/text/message/
-      reply. The model's survey answers live at reads[].answer, so 2,820 strings
-      were never scanned. The key list was a guess and the guess was silently
-      incomplete.
+      reply. The model's answers live at reads[].answer, so 2,760 strings were
+      never scanned: 2,520 survey answers and 240 probe replies. The key list was
+      a guess and the guess was silently incomplete. (An earlier draft of this
+      note said 2,820, which was the count over the 64-file glob including the
+      smoke-test fixtures; the figure for this run is 2,760.)
 
    3. A CONTROL THAT PROVED ONE PATH. The old positive control was a synthetic
       {"role": "assistant", "content": ...} record. It passed, which established

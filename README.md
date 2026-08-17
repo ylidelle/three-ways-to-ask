@@ -93,7 +93,7 @@ corrected in the paper — fixing the copy you happen to be looking at is the mo
 persistent bug in this repository.)*
 
 **Numbers in the paper are checked against results files by a script, not by
-hand — within a stated scope.** `check_paper_numbers.py` re-reads **52 registered
+hand — within a stated scope.** `check_paper_numbers.py` re-reads **54 registered
 numeric occurrences** from the artefacts that produce them and requires each at
 one named site; `quote_guard.py` checks the words and terminal punctuation of
 **eight named source quotations**. Not every number in the manuscript, and not

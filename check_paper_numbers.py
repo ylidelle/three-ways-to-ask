@@ -237,6 +237,18 @@ def build(errs):
                   ("anchor", SETH, r"\(([\d,]+) strings")))
         C.append(("scan chars", scn["n_chars"], 0,
                   ("anchor", SETH, r"and ([\d,]+) characters")))
+        # 🚩 The counts above are the scan's SCOPE. These two are its RESULT, and
+        #    until 2026-08-17 nothing checked them. Lucien demonstrated it in both
+        #    directions through the real checker: an artefact reading 7 distress
+        #    and 9 canned still exited 0 against a paper claiming none, and a
+        #    paper with both claims deleted also exited 0. I had registered the
+        #    decoration and left the conclusion unguarded.
+        #    Printing them as numerals rather than as the word "no" is what makes
+        #    them ordinary numeric claims instead of a special case.
+        C.append(("scan distress files", scn["distress_files"], 0,
+                  ("anchor", SETH, r"returned \*\*(\d+) files with a distress marker")))
+        C.append(("scan canned files", scn["canned_files"], 0,
+                  ("anchor", SETH, r"and (\d+) with a canned-refusal marker")))
     S42 = "input-only ceiling"
     if ana:
         rowmap = {"internal features": "primary_internal",
@@ -488,6 +500,11 @@ def selftest() -> int:
                   "| internal features (16,384) | 0.550 | 0.1924 |",
                   "| internal fea<!-- -->tures (16,384) | 0.999 | 0.9999 |\n"
                   "<!-- | internal features (16,384) | 0.550 | 0.1924 | -->"), True)
+    # The ethical-output scan's RESULT, from the paper side. \s+ rather than a
+    # literal space, because this sentence has already been reflowed twice.
+    ok &= run("§5 scan result 0 distress -> 3",
+              lambda s: re.sub(r"(returned \*\*)0( files with a distress marker)",
+                               r"\g<1>3\g<2>", s), True)
 
     # ── ARTEFACT-SIDE CONTROLS ──────────────────────────────────────────────
     # 🚩 EVERY CASE ABOVE MUTATES THE PAPER. None mutates an ARTEFACT, so the
@@ -521,6 +538,37 @@ def selftest() -> int:
         ok &= good
         print(f"  {'PASS' if good else '*** FAIL ***'}  {label:48s} "
               f"exit {rc} (expected nonzero)")
+
+    # 🚩 A TARGETED artefact mutation, not a blanket {}. Lucien showed that an
+    #    artefact reporting 7 distress and 9 canned files still exited 0 against
+    #    a paper claiming none, because the scan's RESULT was unregistered while
+    #    its scope counts were. Blanket-{} controls cannot catch that: they break
+    #    every claim at once, so they pass for the wrong reason.
+    d = tmp / "res_scan_nonzero"
+    d.mkdir(parents=True, exist_ok=True)
+    for f in real_res.glob("*.json"):
+        shutil.copy2(f, d / f.name)
+    scan_file = d / "scan_outputs.json"
+    if scan_file.exists():
+        payload = json.loads(scan_file.read_text(encoding="utf-8"))
+        payload["distress_files"], payload["canned_files"] = 7, 9
+        scan_file.write_text(json.dumps(payload, indent=1), encoding="utf-8")
+        RES = d
+        p = tmp / "clean2.md"
+        p.write_text(src, encoding="utf-8")
+        buf, sys.stdout = sys.stdout, open(tmp / "o3.txt", "w", encoding="utf-8")
+        try:
+            rc = check(p)
+        finally:
+            sys.stdout.close(); sys.stdout = buf
+        RES = real_res
+        good = rc != 0
+        ok &= good
+        print(f"  {'PASS' if good else '*** FAIL ***'}  "
+              f"{'artefact says 7 distress / 9 canned':48s} exit {rc} (expected nonzero)")
+    else:
+        ok = False
+        print("  *** FAIL ***  scan_outputs.json absent; run scan_outputs.py first")
 
     shutil.rmtree(tmp, ignore_errors=True)
     print("\n" + ("all mutation controls behaved correctly"
