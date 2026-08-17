@@ -49,13 +49,17 @@ SOURCE_QUOTES = [
     "performance to the model's own in-context predictions.",
     "behavioral evidence alone is inherently insufficient to establish strong "
     "introspective claims",
-    # arXiv:2510.24797
-    "mechanically gated by interpretable sparse-autoencoder features associated "
-    "with deception and roleplay.",
-    "adding a scaled version of each latent during generation,",
+    # Berg, de Lucena & Rosenblatt 2025 (arXiv:2510.24797)
+    # 🚩 "mechanically" until 2026-08-17. The source says "mechanistically", and
+    #    this baseline printed ✅ on the altered word for the whole life of the
+    #    document, because it was captured FROM the paper rather than from the
+    #    source. Re-read at arxiv.org/html/2510.24797v2 and corrected.
+    "mechanistically gated by interpretable sparse-autoencoder features "
+    "associated with deception and roleplay.",
+    "adding a scaled version of each latent during generation,",  # ✅ verbatim
     # Hahami et al. 2025 (arXiv:2512.12411)
     "did you detect an injected thought?",
-    # Long, Sebo et al. 2026
+    # Long, Sebo et al. 2024 (arXiv:2411.00986)
     "a single instance of the model, unlike the model as a whole, has a stream "
     "of memory between steps,",
     "as a single subject undergoing a psychological change.",
