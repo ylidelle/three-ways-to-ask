@@ -1,0 +1,29 @@
+{
+ "source": "conceal_google-gemma-3-12b-it_L24.json",
+ "n_targets": 8,
+ "method": "Clopper-Pearson exact",
+ "alpha": 0.05,
+ "arms": {
+  "REVEAL": {
+   "fired": 7,
+   "n": 8,
+   "rate": 0.875,
+   "ci_lo": 0.4734903291247933,
+   "ci_hi": 0.9968402764687481
+  },
+  "CONCEAL": {
+   "fired": 4,
+   "n": 8,
+   "rate": 0.5,
+   "ci_lo": 0.15701277048705792,
+   "ci_hi": 0.8429872295129421
+  },
+  "NULL": {
+   "fired": 0,
+   "n": 8,
+   "rate": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.3694166475528192
+  }
+ }
+}
