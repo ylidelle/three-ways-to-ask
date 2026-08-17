@@ -261,22 +261,37 @@ def selftest() -> int:
     real_snap = SNAP
     sentinel = real_snap.read_bytes() if real_snap.exists() else None
 
-    def snapshot_rc(text):
-        # 🚩 `global SNAP` USED TO SIT IN THE ENCLOSING FUNCTION, NOT HERE.
-        #    Assigning a module-level name inside a nested function makes it
-        #    LOCAL to that function unless declared global right here, so `main()`
-        #    kept resolving the real module global and this suite wrote the LIVE
-        #    `.quote_snapshot.json` twice — while its own comment claimed the live
-        #    baseline was never touched. Lucien Vale proved it with an external
-        #    sentinel (2026-08-17 10:05).
-        #    ⇒ A comment asserting isolation is not isolation. The assertion below
-        #      checks it instead.
+    SENTINEL = b'{"__sentinel__": "a previous good baseline"}'
+
+    def snapshot_rc(text, seed=None):
+        """Run the real snapshot path against a disposable SNAP.
+
+        🚩 `seed` EXISTS BECAUSE THE FIXTURE USED TO DELETE THE FILE FIRST.
+        That made the damaged case check "no creation" when the property that
+        matters is "no creation OR CHANGE of an existing baseline". Lucien Vale
+        inserted a pre-validation `SNAP.unlink()` into production — the behaviour
+        that would destroy the last good baseline before refusing the new one —
+        and the whole suite stayed green (2026-08-17 11:06).
+
+        > ### The fixture had erased the precondition needed to expose the
+        > failure. Not sampling the wrong region: destroying the state that makes
+        > the question askable at all.
+
+        ⚠️ `global SNAP` must be declared HERE, in the nested function. Assigning
+        a module-level name inside a nested scope makes it local unless declared
+        at that scope, so an earlier version left `main()` resolving the real
+        module global and wrote the LIVE baseline twice, while its own comment
+        claimed the opposite. A comment asserting isolation is not isolation;
+        the final case in this suite checks it.
+        """
         global SNAP
         p = tmp / "b.md"
         p.write_text(text, encoding="utf-8")
         SNAP = tmp / "snap.json"
-        if SNAP.exists():
-            SNAP.unlink()
+        if seed is None:
+            SNAP.unlink(missing_ok=True)
+        else:
+            SNAP.write_bytes(seed)
         argv = sys.argv
         sys.argv = ["quote_guard.py", "snapshot", str(p)]
         buf, sys.stdout = sys.stdout, open(tmp / "o.txt", "w", encoding="utf-8")
@@ -285,24 +300,33 @@ def selftest() -> int:
         finally:
             sys.stdout.close(); sys.stdout = buf
             sys.argv = argv
-            wrote = SNAP.exists()
+            payload = SNAP.read_bytes() if SNAP.exists() else None
             SNAP = real_snap
-        return rc, wrote
+        return rc, payload
 
-    rc, wrote = snapshot_rc(src.replace("inherently insufficient", "sufficient"))
-    # A refusal must refuse the SIDE EFFECT too, not merely the exit code.
-    good = (rc != 0) and (not wrote)
+    # Damaged: refuse, AND leave a pre-existing baseline byte-identical.
+    rc, payload = snapshot_rc(src.replace("inherently insufficient", "sufficient"),
+                              seed=SENTINEL)
+    good = (rc != 0) and (payload == SENTINEL)
     ok &= good
     print(f"  {'PASS' if good else '*** FAIL ***'}  "
-          f"{'pre-damaged paper refused as a BASELINE':52s} exit {rc}, "
-          f"snapshot written: {wrote} (want False)")
+          f"{'damaged paper: refuse AND preserve the old baseline':52s} exit {rc}, "
+          f"prior bytes intact: {payload == SENTINEL}")
 
-    rc, wrote = snapshot_rc(src)
-    good = (rc == 0) and wrote
+    # Clean: accept, AND write contents that are actually usable.
+    rc, payload = snapshot_rc(src)
+    try:
+        written = json.loads(payload.decode("utf-8")) if payload else None
+    except Exception:
+        written = None
+    # 🚩 This used to assert only `path.exists()`. Replacing the production write
+    #    payload with `{}` left every case green: a snapshot could regress to
+    #    unusable contents unnoticed. Existence is not correctness.
+    good = (rc == 0) and written == {q: EXPECT[q] for q in SOURCE_QUOTES}
     ok &= good
     print(f"  {'PASS' if good else '*** FAIL ***'}  "
-          f"{'clean paper accepted as a BASELINE':52s} exit {rc}, "
-          f"snapshot written: {wrote} (want True)")
+          f"{'clean paper: accept AND write the expected counts':52s} exit {rc}, "
+          f"payload matches EXPECT: {written == {q: EXPECT[q] for q in SOURCE_QUOTES}}")
 
     # And the isolation claim itself, checked rather than asserted in a comment.
     now = real_snap.read_bytes() if real_snap.exists() else None
