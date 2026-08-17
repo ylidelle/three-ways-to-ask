@@ -40,6 +40,7 @@ python sprint_converge.py  --run <prefix> --perms 2000     # §4.3, §4.4
 python sprint_grounding.py --run <prefix> --perms 2000     # §4.6
 python sprint_export.py    --run <prefix>                  # spreadsheets
 python make_figure.py                                      # figure1.png
+python scan_outputs.py                                     # distress/refusal scan
 python check_paper_numbers.py PAPER_v2_2026-08-16.md       # verify the paper
 ```
 
@@ -92,7 +93,7 @@ corrected in the paper — fixing the copy you happen to be looking at is the mo
 persistent bug in this repository.)*
 
 **Numbers in the paper are checked against results files by a script, not by
-hand — within a stated scope.** `check_paper_numbers.py` re-reads **41 registered
+hand — within a stated scope.** `check_paper_numbers.py` re-reads **49 registered
 numeric occurrences** from the artefacts that produce them and requires each at
 one named site; `quote_guard.py` checks the words and terminal punctuation of
 **eight named source quotations**. Not every number in the manuscript, and not

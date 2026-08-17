@@ -284,7 +284,12 @@ def build(errs):
             #    precisely the ordinary copy-edit failure the prose claimed to
             #    catch: a summary edited while the table stays right.
             C.append(("mean kappa (abstract)", mk, 3,
-                      ("anchor", "Abstract", r"Cohen's κ = ([-+]\d+\.\d+)")))
+                      # \s+ rather than a literal space: the abstract was reflowed to
+              # meet the 150-word limit, the break landed between "Cohen's" and
+              # "κ", and this anchor matched nothing. Its sibling anchors below
+              # already tolerate whitespace. An anchor pinned to a line break
+              # tests the typesetting instead of the claim.
+              ("anchor", "Abstract", r"Cohen's\s+κ\s*=\s*([-+]\d+\.\d+)")))
         u = dig(con, "unanimity", "convergence", errs)
         if u:
             S44 = "agreement is itself informative"
@@ -449,10 +454,17 @@ def selftest() -> int:
     #    passed green until the abstract and §4.4 sites were registered, and they
     #    are the everyday failure the paper's prose actually claims to catch.
     ok &= run("abstract mean kappa +0.059 -> +0.095",
-              lambda s: s.replace("Cohen's κ = +0.059", "Cohen's κ = +0.095"), True)
+              lambda s: re.sub(r"(Cohen's\s+κ\s*=\s*)\+0\.059", r"\g<1>+0.095", s),
+              True)
+    # 🚩 This fixture hard-coded "against\n0.667 for the best single". The line
+    #    break moved during a style pass, so it matched nothing, mutated nothing,
+    #    and the no-op guard correctly refused to score it. A fixture pinned to
+    #    whitespace tests the line wrapping, not the claim. It now mutates on the
+    #    same \s+ pattern the checker anchors with, so reflowing the abstract can
+    #    never silently disarm it again.
     ok &= run("abstract best-single 0.667 -> 0.677",
-              lambda s: s.replace("against\n0.667 for the best single",
-                                  "against\n0.677 for the best single"), True)
+              lambda s: re.sub(r"(against\s+)0\.667( for the best single)",
+                               r"\g<1>0.677\g<2>", s), True)
     ok &= run("4.4 exact p 0.0531 -> 0.0351",
               lambda s: s.replace("**p ≈ 0.0531**", "**p ≈ 0.0351**"), True)
 
