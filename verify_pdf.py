@@ -64,6 +64,25 @@ else:
     else:
         print(f"  OK    source hash matches the live manuscript "
               f"({live[:16]}…)\n")
+
+# 🚩 AND THE HALF THAT WAS STILL MISSING, found 2026-08-17 while applying two of
+#    Alexander's notes. The stamp above is written by make_pdf.py, which produces
+#    only the HTML; the PDF comes from a separate `node html_to_pdf.mjs` step. I
+#    ran make_pdf.py, skipped the node step, and every check in this file passed
+#    on a PDF that still held the OLD sentences, because the stamp had just been
+#    refreshed underneath it.
+#    ⇒ The hash proves the HTML was built from the live manuscript. It says
+#      nothing about whether the PDF was built from that HTML. Only the mtime
+#      ordering can say that.
+HTML = LAB / "paper_print.html"
+if not HTML.exists():
+    stale.append("paper_print.html is missing: re-run make_pdf.py")
+elif p.stat().st_mtime < HTML.stat().st_mtime:
+    stale.append("THE PDF IS OLDER THAN paper_print.html, so the node render "
+                 "step was skipped. Re-run html_to_pdf.mjs.")
+else:
+    print("  OK    the PDF is newer than the HTML it was rendered from\n")
+
 if stale:
     for s in stale:
         print(f"  ⛔ {s}")

@@ -47,6 +47,32 @@ python check_paper_numbers.py PAPER_v2_2026-08-16.md       # verify the paper
 `sprint_conceal.py` (§4.5) needs a GPU; everything else runs on the stored
 artefacts in `runs_experiment/`.
 
+### Rendering the PDF
+
+Three steps, and **the middle one is easy to skip**, which is why it is written
+down here rather than remembered. `make_pdf.py` produces only the HTML; the PDF
+comes from Chromium via `node`.
+
+```bash
+python make_pdf.py PAPER_v2_2026-08-16.md --tight
+node html_to_pdf.mjs paper_print.html <out>.pdf --top 20.0mm --bottom 30.0mm --side 20.0mm
+python verify_pdf.py
+```
+
+- The `--tight` preset (10pt/1.25, 20mm) is the submitted layout, at 8 pages.
+  Omitting it silently renders 9. **The preset is a free parameter that decides a
+  page count, so it belongs in a runbook and not in anyone's memory.**
+- The margin flags must match what `make_pdf.py` prints, or the page-one footnote
+  lands outside the bottom margin band.
+- `--tight` must come *after* the filename: `argv[1]` is read as the source path.
+- `html_to_pdf.mjs` needs `playwright` on the module path, which ES modules
+  resolve from the script's own directory. Copy it into a tree that has
+  playwright installed and run it there.
+
+`verify_pdf.py` refuses to report unless the manuscript hash matches the stamp
+**and** the PDF is newer than the HTML. The second condition exists because the
+first one passed, in full, on a PDF rendered before the last two edits.
+
 ## Two conventions worth knowing before reading the code
 
 **The analysis scripts carry `--selftest`, and each runs both directions.**
