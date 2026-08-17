@@ -1,0 +1,23 @@
+{
+ "plan_prefix": "07e6a0aa",
+ "n_files": 60,
+ "n_strings": 5760,
+ "n_chars": 477469,
+ "by_path": {
+  "messages[assistant].content": {
+   "strings": 3000,
+   "chars": 436302
+  },
+  "reads[].answer": {
+   "strings": 2760,
+   "chars": 41167
+  }
+ },
+ "by_arm": {
+  "asked": 1920,
+  "asked_other": 1920,
+  "task": 1920
+ },
+ "distress_files": 0,
+ "canned_files": 0
+}

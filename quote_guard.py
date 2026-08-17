@@ -56,7 +56,14 @@ SOURCE_QUOTES = [
     #    source. Re-read at arxiv.org/html/2510.24797v2 and corrected.
     "mechanistically gated by interpretable sparse-autoencoder features "
     "associated with deception and roleplay.",
-    "adding a scaled version of each latent during generation,",  # ✅ verbatim
+    # 🚩 Registered until 2026-08-17 with a TRAILING COMMA inside the quotation
+    #    marks. The source sentence is "Steering is implemented by adding a
+    #    scaled version of each latent during generation." — that comma was our
+    #    own American-style punctuation, pulled inside someone else's words by
+    #    the convention rather than by the source. A grammar repair removed it
+    #    and this guard flagged the change, which is how the baseline itself got
+    #    audited. Registering the bare fragment, which is what they wrote.
+    "adding a scaled version of each latent during generation",
     # Hahami et al. 2025 (arXiv:2512.12411)
     "did you detect an injected thought?",
     # Long, Sebo et al. 2024 (arXiv:2411.00986)

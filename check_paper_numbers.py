@@ -222,6 +222,21 @@ def build(errs):
     cps = sorted(CONC.glob("conceal_*.json"))
     cnc = load(cps[0], "concealment", errs) if cps else load(CONC / "conceal.json",
                                                              "concealment", errs)
+    scn = load(RES / "scan_outputs.json", "distress scan", errs)
+
+    # §5 quotes the ethical-output scan. Those numbers were prose-only until
+    # 2026-08-17, when an external review found the scan had read one of its two
+    # storage paths and reported a confident zero over the wrong file set. A
+    # number the paper states and no tool re-reads is exactly the gap these
+    # tools exist to close.
+    SETH = "Dual-Use"          # the H2; the subsections are bold run-ins
+    if scn:
+        C.append(("scan files", scn["n_files"], 0,
+                  ("anchor", SETH, r"the (\d+)\s*\n?\s*conversation files")))
+        C.append(("scan strings", scn["n_strings"], 0,
+                  ("anchor", SETH, r"\(([\d,]+) strings")))
+        C.append(("scan chars", scn["n_chars"], 0,
+                  ("anchor", SETH, r"and ([\d,]+) characters")))
     S42 = "input-only ceiling"
     if ana:
         rowmap = {"internal features": "primary_internal",
