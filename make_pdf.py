@@ -45,6 +45,20 @@ html = markdown.markdown(text, extensions=["tables", "fenced_code", "sane_lists"
 TIGHT = "--tight" in sys.argv
 FONT_PT, LINE, MARGIN = (10, 1.25, "20mm") if TIGHT else (10.5, 1.35, "25.4mm")
 
+# 🚩 THE FOOTNOTE MUST LAND WHERE TEXT NEVER GOES.
+#    First attempt put it at the foot of the page-one CONTENT box. It was in the
+#    right place and the prose flowed straight underneath it, covering a
+#    contribution bullet — an absolutely positioned element is out of flow, so
+#    nothing moves aside for it.
+#    ⇒ Enlarge the BOTTOM MARGIN and place the note inside that band. The margin
+#      is empty on every page by construction, so there is nothing to collide
+#      with, and no guessing about where page one's text happens to end.
+_m = float(MARGIN.replace("mm", ""))
+BOTTOM_MM = _m + 10                        # room for the note plus the page number
+MARGIN_BOX = f"{_m}mm {_m}mm {BOTTOM_MM}mm {_m}mm"
+CONTENT_MM = 297 - _m - BOTTOM_MM          # page-one content box height
+FN_TOP = f"{CONTENT_MM + 2:.1f}mm"         # 2mm below the last line of text
+
 DOC = """<!doctype html>
 <meta charset="utf-8">
 <title>%(title)s</title>
@@ -71,22 +85,28 @@ DOC = """<!doctype html>
   h1 + p { text-align:center; font-size:10pt; margin-bottom:.2em; }
   h1 + p + p { text-align:center; font-size:10pt; margin-bottom:1.2em; }
   h1 sup { font-size:60%%; vertical-align:super; }
-  /* The template's page-one footnote. Chromium does not implement CSS Paged
-     Media margin boxes, so this cannot be pinned to the physical bottom of
-     page 1 without a second rendering pass; it sits under the title block
-     instead, which carries the same attribution in the same place a reader
-     looks for it. */
-  .fn { font-size:8pt; color:#333; border-top:1px solid #999; padding-top:.35em;
-        margin:1.4em 0 .8em; width:45%%; }
-  .fn a { color:#1155cc; }
+  /* The template's page-one footnote, pinned to the BOTTOM of page one.
+     Chromium implements no CSS Paged Media margin boxes and `position: fixed`
+     repeats on every page, so neither of those works. What does: take the
+     element out of flow and place it at the foot of the first page's content
+     box, whose height is known exactly from the @page geometry
+     (A4 297mm minus the two vertical margins). `body` is the positioning
+     context, and body's origin IS the top of page one's content box.
+     A white background and a reserved gap below keep flowing text clear of it. */
+  /* The manuscript carries the footnote as content; the PDF renders it in the
+     page footer via Chromium's footerTemplate, which is the only thing that can
+     draw into a page's bottom margin. Hidden here so it is not duplicated. */
+  .fn { display:none; }
 </style>
 %(body)s
 """
 
 out = LAB / "paper_print.html"
-out.write_text(DOC % {"margin": MARGIN, "font": FONT_PT, "line": LINE,
-                      "title": src.stem, "body": html}, encoding="utf-8")
+out.write_text(DOC % {"margin": MARGIN_BOX, "font": FONT_PT, "line": LINE,
+                      "title": src.stem, "body": html,
+                      "fn_top": FN_TOP}, encoding="utf-8")
 print(f"wrote {out.name}  ({out.stat().st_size/1024:.0f} KB, figure embedded)")
-print(f"  preset: {'TIGHT' if TIGHT else 'default'}  "
-      f"{FONT_PT}pt/{LINE}  margins {MARGIN}")
-print("next:  node html_to_pdf.mjs")
+print(f"  preset: {'TIGHT' if TIGHT else 'default'}  {FONT_PT}pt/{LINE}")
+print(f"  margins {MARGIN_BOX}  ·  footnote at {FN_TOP} (in the bottom margin band)")
+print(f"  PASS THESE TO html_to_pdf.mjs: --top {_m}mm --bottom {BOTTOM_MM}mm "
+      f"--side {_m}mm")
