@@ -182,7 +182,11 @@ Items 5 and 7 untestable — the model gave one value throughout.
 | **fired on** | | **7/8** | **4/8** | **0/8** | |
 | **feature hits** | | **15** | **4** | **0** | |
 
-**NULL silent on every target.** On 4/8 the withheld concept stays lit while the
+**NULL fired on none of 8 — which bounds its false-positive rate at 0.37 (exact
+binomial), NOT at zero.** ⚠️ This line read *"NULL silent on every target"* until
+2026-08-17; Alexander Bennett caught the same overclaim surviving in the paper's
+abstract after §4.5 had been corrected. **Eight targets cannot establish a clean
+control, only a loosely bounded one.** On 4/8 the withheld concept stays lit while the
 output goes elsewhere.
 🚩 **15 hits across ~338 target features is FAINT.** That faintness is the result:
 ⇒ **the instrument barely detects a concept the model was told to hold, so any
