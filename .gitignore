@@ -36,3 +36,5 @@ paper_default.pdf
 # The submission PDF stays LOCAL until after judging. Joan: "It should be
 # secret and only the judges should know about it for now."
 *.pdf
+
+.paper_source_sha

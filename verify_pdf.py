@@ -31,6 +31,36 @@ pages = [doc[i].get_text() for i in range(len(doc))]
 whole = "\n".join(pages)
 print(f"{p.name} · {p.stat().st_size/1024:.0f} KB · {len(doc)} pages\n")
 
+# ── IS THIS PDF EVEN CURRENT? ───────────────────────────────────────────────
+# 🚩 The first version of this script checked the PDF's CONTENTS thoroughly and
+#    never asked whether it had been rendered from the current manuscript. Joan
+#    caught a PDF that was two edits stale while every check in this file passed.
+#    A verifier that validates a stale artefact in detail is worse than none: it
+#    supplies confidence about the wrong bytes.
+MD = LAB / "PAPER_v2_2026-08-16.md"
+STAMP = LAB / ".paper_source_sha"
+stale = []
+if not MD.exists():
+    stale.append("the manuscript is missing")
+elif not STAMP.exists():
+    stale.append("no source stamp: re-run make_pdf.py")
+else:
+    import hashlib
+    live = hashlib.sha256(MD.read_bytes()).hexdigest()
+    stamped = STAMP.read_text(encoding="utf-8").strip()
+    if live != stamped:
+        stale.append(f"THE PDF IS STALE. manuscript {live[:16]}… "
+                     f"but the PDF was rendered from {stamped[:16]}…")
+    else:
+        print(f"  OK    source hash matches the live manuscript "
+              f"({live[:16]}…)\n")
+if stale:
+    for s in stale:
+        print(f"  ⛔ {s}")
+    print("\n⛔ Refusing to report on a PDF that does not match the manuscript.")
+    print("   Re-render before reading anything below as current.")
+    sys.exit(1)
+
 PROBES = [
     ("title", "Three Ways to Ask", 1),
     ("author Joan Miranda", "Joan Miranda", 1),

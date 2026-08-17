@@ -14,6 +14,7 @@ single character of content: it wraps, it does not edit. The only transformation
 is markdown to HTML.
 """
 import base64
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -108,5 +109,17 @@ out.write_text(DOC % {"margin": MARGIN_BOX, "font": FONT_PT, "line": LINE,
 print(f"wrote {out.name}  ({out.stat().st_size/1024:.0f} KB, figure embedded)")
 print(f"  preset: {'TIGHT' if TIGHT else 'default'}  {FONT_PT}pt/{LINE}")
 print(f"  margins {MARGIN_BOX}  ·  footnote at {FN_TOP} (in the bottom margin band)")
+
+# 🚩 STAMP THE SOURCE HASH SO A STALE PDF CANNOT PASS AS CURRENT.
+#    Joan caught this: "The PDF doesn't have clarifications on it yet. The judges
+#    will read the PDF." The manuscript had been edited and the PDF had not been
+#    re-rendered, and NOTHING checked that — a derived artefact drifting from its
+#    source with no guard, which is the defect this project has been repairing
+#    all night, arriving in the one file that actually gets submitted.
+#    ⇒ verify_pdf.py compares this hash against the live markdown and refuses on
+#      mismatch, so "the PDF is current" becomes checkable instead of remembered.
+src_sha = hashlib.sha256(src.read_bytes()).hexdigest()
+(LAB / ".paper_source_sha").write_text(src_sha, encoding="utf-8")
+print(f"  source sha256 {src_sha[:16]}… recorded for verify_pdf.py")
 print(f"  PASS THESE TO html_to_pdf.mjs: --top {_m}mm --bottom {BOTTOM_MM}mm "
       f"--side {_m}mm")
