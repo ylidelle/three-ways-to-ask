@@ -258,34 +258,59 @@ def selftest() -> int:
     #   So these two cases drive the REAL entry point, through argv, and read its
     #   exit code. The snapshot file is redirected so the live baseline is never
     #   touched.
-    global SNAP
     real_snap = SNAP
+    sentinel = real_snap.read_bytes() if real_snap.exists() else None
 
     def snapshot_rc(text):
+        # 🚩 `global SNAP` USED TO SIT IN THE ENCLOSING FUNCTION, NOT HERE.
+        #    Assigning a module-level name inside a nested function makes it
+        #    LOCAL to that function unless declared global right here, so `main()`
+        #    kept resolving the real module global and this suite wrote the LIVE
+        #    `.quote_snapshot.json` twice — while its own comment claimed the live
+        #    baseline was never touched. Lucien Vale proved it with an external
+        #    sentinel (2026-08-17 10:05).
+        #    ⇒ A comment asserting isolation is not isolation. The assertion below
+        #      checks it instead.
+        global SNAP
         p = tmp / "b.md"
         p.write_text(text, encoding="utf-8")
         SNAP = tmp / "snap.json"
+        if SNAP.exists():
+            SNAP.unlink()
         argv = sys.argv
         sys.argv = ["quote_guard.py", "snapshot", str(p)]
         buf, sys.stdout = sys.stdout, open(tmp / "o.txt", "w", encoding="utf-8")
         try:
-            return main()
+            rc = main()
         finally:
             sys.stdout.close(); sys.stdout = buf
             sys.argv = argv
+            wrote = SNAP.exists()
             SNAP = real_snap
+        return rc, wrote
 
-    rc = snapshot_rc(src.replace("inherently insufficient", "sufficient"))
-    good = rc != 0
+    rc, wrote = snapshot_rc(src.replace("inherently insufficient", "sufficient"))
+    # A refusal must refuse the SIDE EFFECT too, not merely the exit code.
+    good = (rc != 0) and (not wrote)
     ok &= good
     print(f"  {'PASS' if good else '*** FAIL ***'}  "
-          f"{'pre-damaged paper refused as a BASELINE':52s} exit {rc}")
+          f"{'pre-damaged paper refused as a BASELINE':52s} exit {rc}, "
+          f"snapshot written: {wrote} (want False)")
 
-    rc = snapshot_rc(src)
-    good = rc == 0
+    rc, wrote = snapshot_rc(src)
+    good = (rc == 0) and wrote
     ok &= good
     print(f"  {'PASS' if good else '*** FAIL ***'}  "
-          f"{'clean paper accepted as a BASELINE':52s} exit {rc}")
+          f"{'clean paper accepted as a BASELINE':52s} exit {rc}, "
+          f"snapshot written: {wrote} (want True)")
+
+    # And the isolation claim itself, checked rather than asserted in a comment.
+    now = real_snap.read_bytes() if real_snap.exists() else None
+    untouched = (now == sentinel)
+    ok &= untouched
+    print(f"  {'PASS' if untouched else '*** FAIL ***'}  "
+          f"{'the LIVE baseline is byte-identical afterwards':52s} "
+          f"{'untouched' if untouched else 'MODIFIED BY THE SELFTEST'}")
 
     import shutil
     shutil.rmtree(tmp, ignore_errors=True)
@@ -313,15 +338,24 @@ def main() -> int:
         #    snapshot that does not find every expected quote is now FATAL.
         print(f"Snapshotting {path.name}\n")
         bad = report(counts, "snapshot")
-        SNAP.write_text(json.dumps(counts, indent=1, ensure_ascii=False), encoding="utf-8")
         print()
+        # 🚩 VALIDATE BEFORE WRITING. This wrote the snapshot FIRST and checked
+        #    `bad` after, so it printed "Refusing to certify a baseline that is
+        #    already wrong" having already certified it to disk — clobbering the
+        #    previous good baseline with data it claimed to reject. Lucien Vale,
+        #    2026-08-17 10:05: "it refuses by exit status but still clobbers the
+        #    previous baseline with the data it says it refused to certify."
+        #    ⇒ A refusal that happens after the side effect is a log line, not a
+        #      refusal. Order is the whole control here.
         if bad:
             print(f"⛔ {len(bad)} expected quote(s) not found at the expected count "
                   "INSIDE quotation marks:")
             for q, want, got in bad:
                 print(f"   · want x{want}, found x{got}: {q[:66]}")
             print("   Refusing to certify a baseline that is already wrong.")
+            print("   The existing baseline is left untouched.")
             return 1
+        SNAP.write_text(json.dumps(counts, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"✅ baseline: {len(EXPECT)} source quotes, each present exactly as expected.")
         return 0
 
